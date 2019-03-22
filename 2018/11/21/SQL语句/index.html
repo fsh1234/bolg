@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/bolg/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/bolg/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/bolg/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/bolg/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/bolg/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/bolg/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/bolg/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="W3school 插入INSERT INTO 表名称 VALUES (值1, 值2,….)更新UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值删除DELETE FROM 表名称 WHERE 列名称 = 值 排序SELECT Company, OrderNumber FROM Orders ORDER BY Company, OrderNumber倒序SELECT Com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL语句">
+<meta property="og:url" content="https://fsh1234.github.io/bolg/2018/11/21/SQL语句/index.html">
+<meta property="og:site_name" content="Hexo Blog">
+<meta property="og:description" content="W3school 插入INSERT INTO 表名称 VALUES (值1, 值2,….)更新UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值删除DELETE FROM 表名称 WHERE 列名称 = 值 排序SELECT Company, OrderNumber FROM Orders ORDER BY Company, OrderNumber倒序SELECT Com">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-25T11:03:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL语句">
+<meta name="twitter:description" content="W3school 插入INSERT INTO 表名称 VALUES (值1, 值2,….)更新UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值删除DELETE FROM 表名称 WHERE 列名称 = 值 排序SELECT Company, OrderNumber FROM Orders ORDER BY Company, OrderNumber倒序SELECT Com">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/bolg/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://fsh1234.github.io/bolg/2018/11/21/SQL语句/">
+
+
+
+
+
+  <title>SQL语句 | Hexo Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+    <a href="https://github.com/fsh1234" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/bolg/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">fsh的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/bolg/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/bolg/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/21/SQL语句/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SQL语句</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T16:57:45+08:00">
+                2018-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://www.w3school.com.cn/sql/sql_intro.asp" target="_blank" rel="noopener">W3school</a></p>
+<p>插入<br>INSERT INTO 表名称 VALUES (值1, 值2,….)<br>更新<br>UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值<br>删除<br>DELETE FROM 表名称 WHERE 列名称 = 值</p>
+<p>排序<br>SELECT Company, OrderNumber FROM Orders ORDER BY Company, OrderNumber<br>倒序<br>SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC</p>
+<p>去重<br>SELECT DISTINCT</p>
+<p>使用cmd指令<br>登录 mysql -u root -P3309 -p 实例_data</p>
+<p>版本兼容问题<br>修复 mysql_upgrade –protocol=tcp -P 3309 -u root -p</p>
+<p>Usage: mysql [OPTIONS] [database]<br>  -?, –help          Display this help and exit.<br>  -I, –help          Synonym for -?<br>  –auto-rehash       Enable automatic rehashing. One doesn’t need to use<br>                      ‘rehash’ to get table and field completion, but startup<br>                      and reconnecting may take a longer time. Disable with<br>                      –disable-auto-rehash.<br>                      (Defaults to on; use –skip-auto-rehash to disable.)<br>  -A, –no-auto-rehash<br>                      No automatic rehashing. One has to use ‘rehash’ to get<br>                      table and field completion. This gives a quicker start of<br>                      mysql and disables rehashing on reconnect.<br>  –auto-vertical-output<br>                      Automatically switch to vertical output mode if the<br>                      result is wider than the terminal width.<br>  -B, –batch         Don’t use history file. Disable interactive behavior.<br>                      (Enables –silent.)<br>  –bind-address=name IP address to bind to.<br>  –character-sets-dir=name<br>                      Directory for character set files.<br>  –column-type-info  Display column type information.<br>  -c, –comments      Preserve comments. Send comments to the server. The<br>                      default is –skip-comments (discard comments), enable<br>                      with –comments.<br>  -C, –compress      Use compression in server/client protocol.<br>  -#, –debug[=#]     This is a non-debug version. Catch this and exit.<br>  –debug-check       Check memory and open file usage at exit.<br>  -T, –debug-info    Print some debug info at exit.<br>  -D, –database=name Database to use.<br>  –default-character-set=name<br>                      Set the default character set.<br>  –delimiter=name    Delimiter to be used.<br>  –enable-cleartext-plugin<br>                      Enable/disable the clear text authentication plugin.<br>  -e, –execute=name  Execute command and quit. (Disables –force and history<br>                      file.)<br>  -E, –vertical      Print the output of a query (rows) vertically.<br>  -f, –force         Continue even if we get an SQL error.<br>  -G, –named-commands<br>                      Enable named commands. Named commands mean this program’s<br>                      internal commands; see mysql&gt; help . When enabled, the<br>                      named commands can be used from any line of the query,<br>                      otherwise only from the first line, before an enter.<br>                      Disable with –disable-named-commands. This option is<br>                      disabled by default.<br>  -i, –ignore-spaces Ignore space after function names.<br>  –init-command=name SQL Command to execute when connecting to MySQL server.<br>                      Will automatically be re-executed when reconnecting.<br>  –local-infile      Enable/disable LOAD DATA LOCAL INFILE.<br>  -b, –no-beep       Turn off beep on error.<br>  -h, –host=name     Connect to host.<br>  -H, –html          Produce HTML output.<br>  -X, –xml           Produce XML output.<br>  –line-numbers      Write line numbers for errors.<br>                      (Defaults to on; use –skip-line-numbers to disable.)<br>  -L, –skip-line-numbers<br>                      Don’t write line number for errors.<br>  -n, –unbuffered    Flush buffer after each query.<br>  –column-names      Write column names in results.<br>                      (Defaults to on; use –skip-column-names to disable.)<br>  -N, –skip-column-names<br>                      Don’t write column names in results.<br>  –sigint-ignore     Ignore SIGINT (CTRL-C).<br>  -o, –one-database  Ignore statements except those that occur while the<br>                      default database is the one named at the command line.<br>  -p, –password[=name]<br>                      Password to use when connecting to server. If password is<br>                      not given it’s asked from the tty.<br>  -W, –pipe          Use named pipes to connect to server.<br>  -P, –port=#        Port number to use for connection or 0 for default to, in<br>                      order of preference, my.cnf, $MYSQL_TCP_PORT,<br>                      /etc/services, built-in default (3306).<br>  –prompt=name       Set the mysql prompt to this value.<br>  –protocol=name     The protocol to use for connection (tcp, socket, pipe,<br>                      memory).<br>  -q, –quick         Don’t cache result, print it row by row. This may slow<br>                      down the server if the output is suspended. Doesn’t use<br>                      history file.<br>  -r, –raw           Write fields without conversion. Used with –batch.<br>  –reconnect         Reconnect if the connection is lost. Disable with<br>                      –disable-reconnect. This option is enabled by default.<br>                      (Defaults to on; use –skip-reconnect to disable.)<br>  -s, –silent        Be more silent. Print results with a tab as separator,<br>                      each row on new line.<br>  –shared-memory-base-name=name<br>                      Base name of shared memory.<br>  -S, –socket=name   The socket file to use for connection.<br>  –ssl               Enable SSL for connection (automatically enabled with<br>                      other flags).<br>  –ssl-ca=name       CA file in PEM format (check OpenSSL docs, implies<br>                      –ssl).<br>  –ssl-capath=name   CA directory (check OpenSSL docs, implies –ssl).<br>  –ssl-cert=name     X509 cert in PEM format (implies –ssl).<br>  –ssl-cipher=name   SSL cipher to use (implies –ssl).<br>  –ssl-key=name      X509 key in PEM format (implies –ssl).<br>  –ssl-crl=name      Certificate revocation list (implies –ssl).<br>  –ssl-crlpath=name  Certificate revocation list path (implies –ssl).<br>  –ssl-verify-server-cert<br>                      Verify server’s “Common Name” in its cert against<br>                      hostname used when connecting. This option is disabled by<br>                      default.<br>  -t, –table         Output in table format.<br>  –tee=name          Append everything into outfile. See interactive help (\h)<br>                      also. Does not work in batch mode. Disable with<br>                      –disable-tee. This option is disabled by default.<br>  -u, –user=name     User for login if not current user.<br>  -U, –safe-updates  Only allow UPDATE and DELETE that uses keys.<br>  -U, –i-am-a-dummy  Synonym for option –safe-updates, -U.<br>  -v, –verbose       Write more. (-v -v -v gives the table output format).<br>  -V, –version       Output version information and exit.<br>  -w, –wait          Wait and retry if connection is down.<br>  –connect-timeout=# Number of seconds before connection timeout.<br>  –max-allowed-packet=#<br>                      The maximum packet length to send to or receive from<br>                      server.<br>  –net-buffer-length=#<br>                      The buffer size for TCP/IP and socket communication.<br>  –select-limit=#    Automatic limit for SELECT when using –safe-updates.<br>  –max-join-size=#   Automatic limit for rows in a join when using<br>                      –safe-updates.<br>  –secure-auth       Refuse client connecting to server if it uses old<br>                      (pre-4.1.1) protocol.<br>                      (Defaults to on; use –skip-secure-auth to disable.)<br>  –server-arg=name   Send embedded server this as a parameter.<br>  –show-warnings     Show warnings after every statement.<br>  –plugin-dir=name   Directory for client-side plugins.<br>  –default-auth=name Default authentication client-side plugin to use.<br>  –histignore=name   A colon-separated list of patterns to keep statements<br>                      from getting logged into mysql history.<br>  –binary-mode       By default, ASCII ‘\0’ is disallowed and ‘\r\n’ is<br>                      translated to ‘\n’. This switch turns off both features,<br>                      and also turns off parsing of all clientcommands except<br>                      \C and DELIMITER, in non-interactive mode (for input<br>                      piped to mysql or loaded using the ‘source’ command).<br>                      This is necessary when processing output from mysqlbinlog<br>                      that may contain blobs.<br>  –connect-expired-password<br>                      Notify the server that this client is prepared to handle<br>                      expired password sandbox mode.</p>
+<p>Default options are read from the following files in the given order:<br>C:\WINDOWS\my.ini C:\WINDOWS\my.cnf C:\my.ini C:\my.cnf D:\apm\mysql\my.ini D:\apm\mysql\my.cnf<br>The following groups are read: mysql client<br>The following options may be given as the first argument:<br>–print-defaults        Print the program argument list and exit.<br>–no-defaults           Don’t read default options from any option file,<br>                        except for login file.<br>–defaults-file=#       Only read default options from the given file #.<br>–defaults-extra-file=# Read this file after the global files are read.<br>–defaults-group-suffix=#<br>                        Also read groups with concat(group, suffix)<br>–login-path=#          Read this path from the login file.</p>
+<p>Variables (–variable-name=value)<br>and boolean options {FALSE|TRUE}  Value (after reading options)</p>
+<hr>
+<p>auto-rehash                       TRUE<br>auto-vertical-output              FALSE<br>bind-address                      (No default value)<br>character-sets-dir                (No default value)<br>column-type-info                  FALSE<br>comments                          FALSE<br>compress                          FALSE<br>debug-check                       FALSE<br>debug-info                        FALSE<br>database                          (No default value)<br>default-character-set             auto<br>delimiter                         ;<br>enable-cleartext-plugin           FALSE<br>vertical                          FALSE<br>force                             FALSE<br>named-commands                    FALSE<br>ignore-spaces                     FALSE<br>init-command                      (No default value)<br>local-infile                      FALSE<br>no-beep                           FALSE<br>host                              (No default value)<br>html                              FALSE<br>xml                               FALSE<br>line-numbers                      TRUE<br>unbuffered                        FALSE<br>column-names                      TRUE<br>sigint-ignore                     FALSE<br>port                              0<br>prompt                            mysql&gt;<br>quick                             FALSE<br>raw                               FALSE<br>reconnect                         TRUE<br>shared-memory-base-name           (No default value)<br>socket                            (No default value)<br>ssl                               FALSE<br>ssl-ca                            (No default value)<br>ssl-capath                        (No default value)<br>ssl-cert                          (No default value)<br>ssl-cipher                        (No default value)<br>ssl-key                           (No default value)<br>ssl-crl                           (No default value)<br>ssl-crlpath                       (No default value)<br>ssl-verify-server-cert            FALSE<br>table                             FALSE<br>user                              (No default value)<br>safe-updates                      FALSE<br>i-am-a-dummy                      FALSE<br>connect-timeout                   0<br>max-allowed-packet                16777216<br>net-buffer-length                 16384<br>select-limit                      1000<br>max-join-size                     1000000<br>secure-auth                       TRUE<br>show-warnings                     FALSE<br>plugin-dir                        (No default value)<br>default-auth                      (No default value)<br>histignore                        (No default value)<br>binary-mode                       FALSE<br>connect-expired-password          FALSE</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/bolg/2018/11/20/数学/" rel="next" title="数学">
+                <i class="fa fa-chevron-left"></i> 数学
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/bolg/2018/11/23/用户密码加密/" rel="prev" title="用户密码加密">
+                用户密码加密 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">fsh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/bolg/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fsh</span>
+
+  
+  
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+      本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+  </div>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/bolg/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/bolg/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/bolg/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/bolg/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/bolg/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/bolg/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/bolg/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
+</body>
+</html>

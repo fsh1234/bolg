@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/bolg/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/bolg/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/bolg/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/bolg/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/bolg/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/bolg/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/bolg/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Spring-Boot,单元测试,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Idea下快速生成指令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899">
+<meta name="keywords" content="Spring-Boot,单元测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot 下的单元测试">
+<meta property="og:url" content="https://fsh1234.github.io/bolg/2018/10/12/Spring-Boot-下的单元测试/index.html">
+<meta property="og:site_name" content="Hexo Blog">
+<meta property="og:description" content="Idea下快速生成指令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-29T02:22:27.262Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring Boot 下的单元测试">
+<meta name="twitter:description" content="Idea下快速生成指令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/bolg/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://fsh1234.github.io/bolg/2018/10/12/Spring-Boot-下的单元测试/">
+
+
+
+
+
+  <title>Spring Boot 下的单元测试 | Hexo Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+    <a href="https://github.com/fsh1234" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/bolg/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">fsh的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/bolg/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/bolg/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/12/Spring-Boot-下的单元测试/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring Boot 下的单元测试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-12T12:14:34+08:00">
+                2018-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Idea下快速生成指令"><a href="#Idea下快速生成指令" class="headerlink" title="Idea下快速生成指令"></a>Idea下快速生成指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">ctrl+<span class="built_in">shift</span>+t --&gt; create new <span class="built_in">test</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 常使用注解</span></span><br><span class="line">```java</span><br><span class="line">类注解</span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br><span class="line">@AutoConfigureTestDatabase(replace = NONE) 对真实数据库运行测试</span><br><span class="line">public class MultipartFileServiceImplTest &#123;</span><br><span class="line">服务注解</span><br><span class="line">@Resource</span><br><span class="line">private *Service service;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 校验结果</span></span><br><span class="line">[参考](https://blog.csdn.net/sz85850597/article/details/80427408)</span><br><span class="line">Assert.assertThat();</span><br><span class="line"></span><br><span class="line">想判断某个字符串 s 是否含有子字符串 <span class="string">"developer"</span> 或 <span class="string">"Works"</span> 中间的一个</span><br><span class="line">assertThat(s, anyOf(containsString(<span class="string">"developer"</span>), containsString(<span class="string">"Works"</span>))); </span><br><span class="line"></span><br><span class="line">字符相关匹配符</span><br><span class="line">/**equalTo匹配符断言被测的testedValue等于expectedValue，</span><br><span class="line">* equalTo可以断言数值之间，字符串之间和对象之间是否相等，相当于Object的equals方法</span><br><span class="line">*/</span><br><span class="line">assertThat(testedValue, equalTo(expectedValue));</span><br><span class="line">/**equalToIgnoringCase匹配符断言被测的字符串testedString</span><br><span class="line">*在忽略大小写的情况下等于expectedString</span><br><span class="line">*/</span><br><span class="line">assertThat(testedString, equalToIgnoringCase(expectedString));</span><br><span class="line">/**equalToIgnoringWhiteSpace匹配符断言被测的字符串testedString</span><br><span class="line">*在忽略头尾的任意个空格的情况下等于expectedString，</span><br><span class="line">*注意：字符串中的空格不能被忽略</span><br><span class="line">*/</span><br><span class="line">assertThat(testedString, equalToIgnoringWhiteSpace(expectedString);</span><br><span class="line">/**containsString匹配符断言被测的字符串testedString包含子字符串subString**/</span><br><span class="line">assertThat(testedString, containsString(subString) );</span><br><span class="line">/**endsWith匹配符断言被测的字符串testedString以子字符串suffix结尾*/</span><br><span class="line">assertThat(testedString, endsWith(suffix));</span><br><span class="line">/**startsWith匹配符断言被测的字符串testedString以子字符串prefix开始*/</span><br><span class="line">assertThat(testedString, startsWith(prefix));</span><br><span class="line"></span><br><span class="line">一般匹配符</span><br><span class="line">/**nullValue()匹配符断言被测object的值为null*/</span><br><span class="line">assertThat(object,nullValue());</span><br><span class="line">/**notNullValue()匹配符断言被测object的值不为null*/</span><br><span class="line">assertThat(object,notNullValue());</span><br><span class="line">/**is匹配符断言被测的object等于后面给出匹配表达式*/</span><br><span class="line">assertThat(testedString, is(equalTo(expectedValue)));</span><br><span class="line">/**is匹配符简写应用之一，is(equalTo(x))的简写，断言testedValue等于expectedValue*/</span><br><span class="line">assertThat(testedValue, is(expectedValue));</span><br><span class="line">/**is匹配符简写应用之二，is(instanceOf(SomeClass.class))的简写，</span><br><span class="line">*断言testedObject为Cheddar的实例</span><br><span class="line">*/</span><br><span class="line">assertThat(testedObject, is(Cheddar.class));</span><br><span class="line">/**not匹配符和is匹配符正好相反，断言被测的object不等于后面给出的object*/</span><br><span class="line">assertThat(testedString, not(expectedString));</span><br><span class="line">/**allOf匹配符断言符合所有条件，相当于“与”（&amp;&amp;）*/</span><br><span class="line">assertThat(testedNumber, allOf( greaterThan(8), lessThan(16) ) );</span><br><span class="line">/**anyOf匹配符断言符合条件之一，相当于“或”（||）*/</span><br><span class="line">assertThat(testedNumber, anyOf( greaterThan(16), lessThan(8) ) );</span><br><span class="line">数值相关匹配符</span><br><span class="line">/**closeTo匹配符断言被测的浮点型数testedDouble在20.0¡À0.5范围之内*/</span><br><span class="line">assertThat(testedDouble, closeTo( 20.0, 0.5 ));</span><br><span class="line">/**greaterThan匹配符断言被测的数值testedNumber大于16.0*/</span><br><span class="line">assertThat(testedNumber, greaterThan(16.0));</span><br><span class="line">/** lessThan匹配符断言被测的数值testedNumber小于16.0*/</span><br><span class="line">assertThat(testedNumber, lessThan (16.0));</span><br><span class="line">/** greaterThanOrEqualTo匹配符断言被测的数值testedNumber大于等于16.0*/</span><br><span class="line">assertThat(testedNumber, greaterThanOrEqualTo (16.0));</span><br><span class="line">/** lessThanOrEqualTo匹配符断言被测的testedNumber小于等于16.0*/</span><br><span class="line">assertThat(testedNumber, lessThanOrEqualTo (16.0));</span><br><span class="line">集合相关匹配符</span><br><span class="line">/**hasEntry匹配符断言被测的Map对象mapObject含有一个键值为<span class="string">"key"</span>对应元素值为<span class="string">"value"</span>的Entry项*/</span><br><span class="line">assertThat(mapObject, hasEntry(<span class="string">"key"</span>, <span class="string">"value"</span> ) );</span><br><span class="line">/**hasItem匹配符表明被测的迭代对象iterableObject含有元素element项则测试通过*/</span><br><span class="line">assertThat(iterableObject, hasItem (element));</span><br><span class="line">/** hasKey匹配符断言被测的Map对象mapObject含有键值“key”*/</span><br><span class="line">assertThat(mapObject, hasKey (<span class="string">"key"</span>));</span><br><span class="line">/** hasValue匹配符断言被测的Map对象mapObject含有元素值value*/</span><br><span class="line">assertThat(mapObject, hasValue(value));</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用Mockito来录制结果</span></span><br><span class="line">```java</span><br><span class="line"> //Let<span class="string">'s import Mockito statically so that the code looks clearer</span></span><br><span class="line"><span class="string"> import static org.mockito.Mockito.*;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //mock creation</span></span><br><span class="line"><span class="string"> List mockedList = mock(List.class);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //using mock object</span></span><br><span class="line"><span class="string"> mockedList.add("one");</span></span><br><span class="line"><span class="string"> mockedList.clear();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //verification</span></span><br><span class="line"><span class="string"> verify(mockedList).add("one");</span></span><br><span class="line"><span class="string"> verify(mockedList).clear();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> when(mockedList.get(0)).thenReturn("first");</span></span><br><span class="line"><span class="string"> when(mockedList.get(1)).thenThrow(new RuntimeException());</span></span><br></pre></td></tr></table></figure>
+<h2 id="Mockito注释"><a href="#Mockito注释" class="headerlink" title="Mockito注释"></a>Mockito注释</h2><p>@mock<br>标记一个模仿区域<br>1.快速创建模拟<br>2.减少重复代码<br>3.使得的代码更有可读性<br>4.使验证错误更易于阅读，因为字段名称用于标识模拟</p>
+<p>@injection<br>1.允许快速模拟和注入。<br>2.最大限度地减少重复模拟和注入。</p>
+<p>注：无法注入接口，如果要测试，直接用实现类测试</p>
+<p>@spy<br>1.快速创建间谍类</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/bolg/tags/Spring-Boot/" rel="tag"># Spring-Boot</a>
+          
+            <a href="/bolg/tags/单元测试/" rel="tag"># 单元测试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/bolg/2018/09/25/LomLombok使用/" rel="next" title="LomLombok使用">
+                <i class="fa fa-chevron-left"></i> LomLombok使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/bolg/2018/10/15/Hexo-主题-NexT/" rel="prev" title="Hexo 主题-NexT">
+                Hexo 主题-NexT <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">fsh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/bolg/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Idea下快速生成指令"><span class="nav-number">1.</span> <span class="nav-text">Idea下快速生成指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mockito注释"><span class="nav-number">2.</span> <span class="nav-text">Mockito注释</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fsh</span>
+
+  
+  
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+      本站访客数:<span id="busuanzi_value_site_uv"></span>
+    </span>
+  </div>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/bolg/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/bolg/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/bolg/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/bolg/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/bolg/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/bolg/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/bolg/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/bolg/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
+</body>
+</html>
