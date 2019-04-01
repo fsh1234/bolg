@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="SSH协议  SSH密钥 md .sshssh-keygen -t ed25519 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset user.namegit config –global –unset user.email如要在repo中使用 user">
+<meta name="description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset use">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gitlab项目管理">
 <meta property="og:url" content="https://fsh1234.github.io/bolg/2019/03/22/Gitlab项目管理/index.html">
 <meta property="og:site_name" content="Hexo Blog">
-<meta property="og:description" content="SSH协议  SSH密钥 md .sshssh-keygen -t ed25519 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset user.namegit config –global –unset user.email如要在repo中使用 user">
+<meta property="og:description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset use">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-23T03:31:40.041Z">
+<meta property="og:updated_time" content="2019-03-25T02:18:14.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gitlab项目管理">
-<meta name="twitter:description" content="SSH协议  SSH密钥 md .sshssh-keygen -t ed25519 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset user.namegit config –global –unset user.email如要在repo中使用 user">
+<meta name="twitter:description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset use">
 
 
 
@@ -302,12 +302,12 @@
 
       
         <p>SSH协议  SSH密钥</p>
-<p>md .ssh<br>ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“</p>
+<p>md .ssh<br>兼容问题</p>
+<p>#ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br>ssh-keygen -o -t rsa -b 4096 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“</p>
 <p>cat ~/.ssh/id_ed25519.pub | clip</p>
 <p>git config –list<br>git config –global –unset user.name<br>git config –global –unset user.email<br>如要在repo中使用 user1 进行操作，进入repo目录后，先设置username 和 email，再进行其他操作<br>git config user.name “user1”<br>git config user.email “<a href="mailto:user1@xx.mail" target="_blank" rel="noopener">user1@xx.mail</a>“</p>
 <p>eval “$(ssh-agent -s)”</p>
-<p> $ ssh-add ~/.ssh/id_rsa</p>
-<p> ssh -T <a href="mailto:git@gitlab.com" target="_blank" rel="noopener">git@gitlab.com</a></p>
+<p> $ ssh-add ~/.ssh/id_rsa<br> $ ssh-add -l<br> $ ssh-add -d<br> $ ssh-add -D<br> ssh -T <a href="mailto:git@gitlab.com" target="_blank" rel="noopener">git@gitlab.com</a></p>
 
       
     </div>
@@ -341,6 +341,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/bolg/2019/03/25/Git-指令/" rel="prev" title="Git 指令">
+                Git 指令 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -408,7 +412,7 @@
               
                 <a href="/bolg/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

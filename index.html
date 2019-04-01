@@ -231,6 +231,379 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/28/MySQL-with-Docker/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2019/03/28/MySQL-with-Docker/" itemprop="url">MySQL with Docker</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-28T15:47:00+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="拉取Mysql镜像"><a href="#拉取Mysql镜像" class="headerlink" title="拉取Mysql镜像"></a>拉取Mysql镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull mysql:5.7.25</span><br></pre></td></tr></table></figure>
+<h2 id="实例化容器"><a href="#实例化容器" class="headerlink" title="实例化容器"></a>实例化容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-mysql -v /srv/mysql/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7.25</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/27/Spring-Boot-with-Docker/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2019/03/27/Spring-Boot-with-Docker/" itemprop="url">Spring-Boot with Docker</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-27T15:44:45+08:00">
+                2019-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Dockerfile文件制作"><a href="#Dockerfile文件制作" class="headerlink" title="Dockerfile文件制作"></a>Dockerfile文件制作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line">FROM openjdk:8-jdk-alpine</span><br><span class="line">#挂载匿名卷 防止容器存储层写入大量数据</span><br><span class="line">VOLUME /tmp</span><br><span class="line">#Dockerfile 中的 ARG 指令是定义参数名称，以及定义其默认值。该默认值可以在构建命令 docker build 中用 --build-arg &lt;参数名&gt;=&lt;值&gt; 来覆盖</span><br><span class="line">ARG JAR_FILE</span><br><span class="line">COPY $&#123;JAR_FILE&#125; app.jar</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd=file:/dev/./urandom&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line">docker build -t demo:1 .</span><br></pre></td></tr></table></figure>
+<p>The JAR_FILE could be passed in as part of the docker command E.g. for Maven:<br>JAR_FILE可以作为docker命令的一部分传入，就是target/*.jar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker build --build-args=target/*.jar -t myorg/myapp .</span><br></pre></td></tr></table></figure></p>
+<p>如果你已经有了jar包则可以直接指定位置，来制作镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jdk-alpine</span><br><span class="line">VOLUME /tmp</span><br><span class="line">COPY target/*.jar app.jar</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br></pre></td></tr></table></figure></p>
+<p>现在我们可以简单的构建镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t myorg/myapp .</span><br></pre></td></tr></table></figure></p>
+<p>然后运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -p 80:8080 myorg/app</span><br></pre></td></tr></table></figure></p>
+<p>如果你像进入镜像查看可以输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -ti --entrypoint /bin/sh myorg/myapp</span><br><span class="line">/ # ls</span><br><span class="line">app.jar  dev      home     media    proc     run      srv      tmp      var</span><br><span class="line">bin      etc      lib      mnt      root     sbin     sys      usr</span><br><span class="line">/ #</span><br></pre></td></tr></table></figure></p>
+<p>目前docker的配置非常简单，但是效率不高。docker镜像有一个简单文件系统分层放置jar包，每一次<br>对程序的改动都会影响到该层，肯能是10M或者更多。我们应该将jar分到其他层来改善这种情况。</p>
+<h2 id="精简图像"><a href="#精简图像" class="headerlink" title="精简图像"></a>精简图像</h2><p>上述构建镜像的基础镜像是：openjdk:8-jdk-alpine，这是一个比标准更为精简的镜像。然后你还可以使用“jre”而非<br>“jdk”来作为基础镜像可以省下20MB的空间，并不是说图像越小越好，小只是代表下载方便，前提是，他们的没有中间层被缓存</p>
+<p>解压缩文件到target/depency目录,并构建docker镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir target/dependency</span><br><span class="line">$ (cd target/dependency; jar -xf ../*.jar)</span><br><span class="line">$ docker build -t myorg/myapp .</span><br></pre></td></tr></table></figure></p>
+<p>构建镜像dockerFile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jdk-alpine</span><br><span class="line">VOLUME /tmp</span><br><span class="line">ARG DEPENDENCY=target/dependency</span><br><span class="line">COPY $&#123;DEPENDENCY&#125;/BOOT-INF/lib /app/lib</span><br><span class="line">COPY $&#123;DEPENDENCY&#125;/META-INF /app/META-INF</span><br><span class="line">COPY $&#123;DEPENDENCY&#125;/BOOT-INF/classes /app</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-cp&quot;,&quot;app:app/lib/*&quot;,&quot;hello.Application&quot;]</span><br></pre></td></tr></table></figure></p>
+<h2 id="多阶段构建"><a href="#多阶段构建" class="headerlink" title="多阶段构建"></a>多阶段构建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jdk-alpine as build</span><br><span class="line">WORKDIR /workspace/app</span><br><span class="line"></span><br><span class="line">COPY mvnw .</span><br><span class="line">COPY .mvn .mvn</span><br><span class="line">COPY pom.xml .</span><br><span class="line">COPY src src</span><br><span class="line"></span><br><span class="line">RUN ./mvnw install -DskipTests</span><br><span class="line">RUN mkdir -p target/dependency &amp;&amp; (cd target/dependency; jar -xf ../*.jar)</span><br><span class="line"></span><br><span class="line">FROM openjdk:8-jdk-alpine</span><br><span class="line">VOLUME /tmp</span><br><span class="line">ARG DEPENDENCY=/workspace/app/target/dependency</span><br><span class="line">COPY --from=build $&#123;DEPENDENCY&#125;/BOOT-INF/lib /app/lib</span><br><span class="line">COPY --from=build $&#123;DEPENDENCY&#125;/META-INF /app/META-INF</span><br><span class="line">COPY --from=build $&#123;DEPENDENCY&#125;/BOOT-INF/classes /app</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-cp&quot;,&quot;app:app/lib/*&quot;,&quot;hello.Application&quot;]</span><br></pre></td></tr></table></figure>
+<p>docker-compose的max-size选项来实现控制容器日志大小</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/25/Git-指令/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2019/03/25/Git-指令/" itemprop="url">Git 指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T17:09:18+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h1><p>拷贝git仓库<br>$ git clone <a href="https://github.com/libgit2/libgit2" target="_blank" rel="noopener">https://github.com/libgit2/libgit2</a></p>
+<h1 id="获取更新"><a href="#获取更新" class="headerlink" title="获取更新"></a>获取更新</h1><h2 id="设置远程仓库"><a href="#设置远程仓库" class="headerlink" title="设置远程仓库"></a>设置远程仓库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 查看</span><br><span class="line">$ git remote</span><br><span class="line"># 添加</span><br><span class="line">$ git remote add origin ssh://git@192.168.4.216:2222/FuShengHao/cmac-enterprise-server.git</span><br><span class="line"># 改名</span><br><span class="line">$ git remote rename &lt;old&gt; &lt;new&gt;</span><br><span class="line"># 改地址</span><br><span class="line">$ git remote set-url</span><br><span class="line"># 移除</span><br><span class="line">$ git remote remove &lt;name&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="拉取并合并到当前主干"><a href="#拉取并合并到当前主干" class="headerlink" title="拉取并合并到当前主干"></a>拉取并合并到当前主干</h2><p>$ git pull <remote> master</remote></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/22/Gitlab项目管理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -303,12 +676,12 @@
         
           
             <p>SSH协议  SSH密钥</p>
-<p>md .ssh<br>ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“</p>
+<p>md .ssh<br>兼容问题</p>
+<p>#ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br>ssh-keygen -o -t rsa -b 4096 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“</p>
 <p>cat ~/.ssh/id_ed25519.pub | clip</p>
 <p>git config –list<br>git config –global –unset user.name<br>git config –global –unset user.email<br>如要在repo中使用 user1 进行操作，进入repo目录后，先设置username 和 email，再进行其他操作<br>git config user.name “user1”<br>git config user.email “<a href="mailto:user1@xx.mail" target="_blank" rel="noopener">user1@xx.mail</a>“</p>
 <p>eval “$(ssh-agent -s)”</p>
-<p> $ ssh-add ~/.ssh/id_rsa</p>
-<p> ssh -T <a href="mailto:git@gitlab.com" target="_blank" rel="noopener">git@gitlab.com</a></p>
+<p> $ ssh-add ~/.ssh/id_rsa<br> $ ssh-add -l<br> $ ssh-add -d<br> $ ssh-add -D<br> ssh -T <a href="mailto:git@gitlab.com" target="_blank" rel="noopener">git@gitlab.com</a></p>
 
           
         
@@ -434,6 +807,7 @@
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="端口配置"><a href="#端口配置" class="headerlink" title="端口配置"></a>端口配置</h2><p>这里80端口被禁用，选择使用https默认端口访问<br>打开端口443以允许入站HTTPS流量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># UFW example (Debian, Ubuntu)</span><br><span class="line">sudo ufw allow https</span><br><span class="line"># lokkit example (RedHat, CentOS 6)</span><br><span class="line">sudo lokkit -s https</span><br><span class="line"># firewall-cmd (RedHat, Centos 7)</span><br><span class="line">sudo firewall-cmd --permanent --add-service=https</span><br><span class="line">sudo systemctl reload firewalld</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#进入容器内部</span><br><span class="line">$ docker exec -it gitlab bin/bash</span><br><span class="line">#编辑配置 </span><br><span class="line"></span><br><span class="line">$ vi /etc/gitlab/gitlab.rb </span><br><span class="line"></span><br><span class="line">#gitlab.rb 内添加内容</span><br><span class="line">external_url &quot;https://192.168.4.216&quot;</span><br><span class="line">将所有http转成https</span><br><span class="line">nginx[&apos;redirect_http_to_https&apos;] = true</span><br></pre></td></tr></table></figure>
 <h2 id="配置邮箱服务"><a href="#配置邮箱服务" class="headerlink" title="配置邮箱服务"></a>配置邮箱服务</h2><p>这里用的是腾讯企业邮箱<br><a href="https://docs.gitlab.com/omnibus/settings/smtp.html" target="_blank" rel="noopener">官方配置文档</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#gitlab.rb 内添加内容</span><br><span class="line"></span><br><span class="line">gitlab_rails[&apos;smtp_enable&apos;] = true</span><br><span class="line">gitlab_rails[&apos;smtp_address&apos;] = &quot;smtp.exmail.qq.com&quot;</span><br><span class="line">gitlab_rails[&apos;smtp_port&apos;] = 465</span><br><span class="line">gitlab_rails[&apos;smtp_user_name&apos;] = &quot;xxxx@xx.com&quot;</span><br><span class="line">gitlab_rails[&apos;smtp_password&apos;] = &quot;password&quot;</span><br><span class="line">gitlab_rails[&apos;smtp_authentication&apos;] = &quot;login&quot;</span><br><span class="line">gitlab_rails[&apos;smtp_enable_starttls_auto&apos;] = true</span><br><span class="line">gitlab_rails[&apos;smtp_tls&apos;] = true</span><br><span class="line">gitlab_rails[&apos;gitlab_email_from&apos;] = &apos;xxxx@xx.com&apos;</span><br><span class="line">gitlab_rails[&apos;smtp_domain&apos;] = &quot;exmail.qq.com&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置shell端口"><a href="#配置shell端口" class="headerlink" title="配置shell端口"></a>配置shell端口</h2><p>gitlab_rails[‘gitlab_shell_ssh_port’] = 2222</p>
 <h2 id="重启配置"><a href="#重启配置" class="headerlink" title="重启配置"></a>重启配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#时间较长</span><br><span class="line">gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#时间较长</span><br><span class="line">gitlab-rails console</span><br></pre></td></tr></table></figure>
 <p>Notify.test_email(‘邮箱地址’, ‘主题’, ‘摘要’).deliver_now</p>
@@ -559,7 +933,8 @@
           
             <h1 id="镜像制作"><a href="#镜像制作" class="headerlink" title="镜像制作"></a>镜像制作</h1><p>使用Dockerfile 定制镜像</p>
 <h2 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h2><p>新建一个Dockerfile文件夹将资源全部转移到其中<br>新建Dockerfile文件，Dockerfile 支持 Shell 类的行尾添加 \ 的命令换行方式，以及行首 # 进行注释的格式</p>
-<p>使用vi编辑Dockerfile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#在nginx镜像的基础上新建镜像</span><br><span class="line">$ FROM nginx</span><br><span class="line">#拷贝本地的web静态资源到nginx目录</span><br><span class="line">$ COPY html /usr/share/nginx/html</span><br></pre></td></tr></table></figure></p>
+<p>使用vi编辑Dockerfile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#在nginx镜像的基础上新建镜像</span><br><span class="line">FROM nginx</span><br><span class="line">#拷贝本地的web静态资源到nginx目录</span><br><span class="line">COPY html /usr/share/nginx/html</span><br></pre></td></tr></table></figure></p>
+<p>在Dockerfile文件下运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#制作镜像</span><br><span class="line">$ docker build -t my-nginx-image/myapp .</span><br><span class="line">#生成实例</span><br><span class="line">$ docker run --name my-nginx-container -p 80:80 -d my-nginx-image/myapp</span><br><span class="line">#以日志形式运行</span><br><span class="line">$ docker run --name my-nginx-container -p 80:80 -v /web/nginxImage/nginx.conf:/etc/nginx/nginx.conf:ro -d my-nginx-image/myapp nginx-debug -g &apos;daemon off;&apos;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -694,16 +1069,20 @@
 <p>docker build -t nginx:v1</p>
 <p>docker run –name webserver -d -p 80:80 6b91d233e367</p>
 <p>“<a href="https://registry.docker-cn.com&quot;" target="_blank" rel="noopener">https://registry.docker-cn.com&quot;</a></p>
-<h1 id="Docker如何装载应用程序？"><a href="#Docker如何装载应用程序？" class="headerlink" title="Docker如何装载应用程序？"></a>Docker如何装载应用程序？</h1><p>通过Docker Compose编排后快速部署</p>
+<h1 id="Docker如何装载应用程序？"><a href="#Docker如何装载应用程序？" class="headerlink" title="Docker如何装载应用程序？"></a>Docker如何装载应用程序？</h1><p>将应用程序制作成镜像，通过Docker引擎将镜像生成容器，最后以容器的形式运行程序</p>
 <h1 id="如何用docker运行SpringBoot？"><a href="#如何用docker运行SpringBoot？" class="headerlink" title="如何用docker运行SpringBoot？"></a>如何用docker运行SpringBoot？</h1><p>用docker运行的首先是一个容器，SpringBoot就在这个容器中,容器由镜像生成<br>因此首先要解决的是如何生成应用程序的镜像文件</p>
-<p>通过添加docker-compose.yaml来用Docker Compose编排文件<br>docker-compose start [SERVICE…]</p>
+<p>docker-compose.yaml来用Docker Compose编排文件<br>这是整合多容器直接的相互配合</p>
 <p>如果是在windows环境下则需要安装Docker for Windows </p>
 <h1 id="Docker操作"><a href="#Docker操作" class="headerlink" title="Docker操作"></a>Docker操作</h1><p>systemctl start docker<br>systemctl stop docker</p>
 <h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># docker build [选项] &lt;上下文路径/URL/-&gt; 下面的.路径为当前文件夹</span><br><span class="line">$ docker build -t nginx:v1 .</span><br></pre></td></tr></table></figure>
 <h2 id="查看和删除镜像"><a href="#查看和删除镜像" class="headerlink" title="查看和删除镜像"></a>查看和删除镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker image ls</span><br><span class="line">$ docker image rm &#123;id&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>8a965478d94d为DockerID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 基于镜像新建并启动</span><br><span class="line">$ docker run --name webserver -d -p 80:80 &#123;ImageID&#125;</span><br><span class="line"></span><br><span class="line"># 查看所有容器命令</span><br><span class="line">$ docker container ls -a </span><br><span class="line"># 容器启动</span><br><span class="line">$ docker container start 8a965478d94d</span><br><span class="line"># 容器停止</span><br><span class="line">$ docker container stop 684d344fd36f</span><br><span class="line"># 容器删除</span><br><span class="line">$ docker container rm 4cd3e089d3e5</span><br><span class="line"># 删除所有未启动的容器</span><br><span class="line">$ docker container prune</span><br></pre></td></tr></table></figure></p>
-<h2 id="进入-离开容器"><a href="#进入-离开容器" class="headerlink" title="进入/离开容器"></a>进入/离开容器</h2><p>$ docker exec {DockerId}/exit<br>$ docker attach /exit(会导致容器停止)</p>
+<h2 id="进入-离开容器"><a href="#进入-离开容器" class="headerlink" title="进入/离开容器"></a>进入/离开容器</h2><p>#$ docker exec {DockerId} bin/bash</p>
+<p>$ docker exec -it mysql1 bash<br>$ docker attach (会导致容器停止)<br>$ exit  </p>
 <h2 id="容器的导入和导出"><a href="#容器的导入和导出" class="headerlink" title="容器的导入和导出"></a>容器的导入和导出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#导出容器快照</span><br><span class="line">$ docker export 7691a814370e &gt; ubuntu.tar</span><br><span class="line">#导入容器快照</span><br><span class="line">$ cat ubuntu.tar | docker import - test/ubuntu:v1.0</span><br><span class="line">$ docker image ls</span><br><span class="line">#保存所有数据</span><br><span class="line">docker load</span><br></pre></td></tr></table></figure>
+<h2 id="更新权限"><a href="#更新权限" class="headerlink" title="更新权限"></a>更新权限</h2><p>docker exec -it gitlab update-permissions<br>docker restart gitlab</p>
+<h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p>docker logs -f {containerID}<br>docker logs –details {containerID}</p>
+
           
         
       
@@ -1206,396 +1585,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/02/14/TODO/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2019/02/14/TODO/" itemprop="url">TODO</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-14T15:08:21+08:00">
-                2019-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>(Https协议详解)[<a href="http://www.cnblogs.com/zxj015/p/6530766.html]" target="_blank" rel="noopener">http://www.cnblogs.com/zxj015/p/6530766.html]</a></p>
-<p>(你遇到过哪些质量很高的 Java 面试？)[<a href="https://www.zhihu.com/question/60949531/answer/182115799]" target="_blank" rel="noopener">https://www.zhihu.com/question/60949531/answer/182115799]</a></p>
-<p>(我简历上的Java项目都好low，怎么办？)[<a href="https://zhuanlan.zhihu.com/p/56807872]" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/56807872]</a></p>
-<p>系统设计</p>
-<p>nginx 配置自签名的ssl证书<br><a href="https://www.cnblogs.com/shindo/p/6117647.html?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">https://www.cnblogs.com/shindo/p/6117647.html?tdsourcetag=s_pcqq_aiomsg</a></p>
-<p>提取JKS文件的证书和私钥<br><a href="https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html?qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html?qq-pf-to=pcqq.c2c</a></p>
-<p>redis应用<br><a href="http://www.ityouknow.com/springboot/2016/03/06/spring-boot-redis.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2016/03/06/spring-boot-redis.html</a></p>
-<p><strong>POJO</strong>（Plain Ordinary Java Object）简单的Java对象，实际就是普通JavaBeans.</p>
-<p><a href="https://accounts.google.com" target="_blank" rel="noopener">https://accounts.google.com</a></p>
-<p>中间间<a href="https://juejin.im/post/5c1214a66fb9a049bb7c3410" target="_blank" rel="noopener">https://juejin.im/post/5c1214a66fb9a049bb7c3410</a></p>
-<p>为什么开发人员必须要了解数据库锁？<a href="https://mp.weixin.qq.com/s/yzXbbutzVJ1hIZgVszIBgw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/yzXbbutzVJ1hIZgVszIBgw</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/02/13/云服务/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2019/02/13/云服务/" itemprop="url">云服务</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-13T10:40:49+08:00">
-                2019-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>数据分离，来满足多客户需求</p>
-<h2 id="两台服务器中没有公网IP的服务器怎么连接外网"><a href="#两台服务器中没有公网IP的服务器怎么连接外网" class="headerlink" title="两台服务器中没有公网IP的服务器怎么连接外网"></a>两台服务器中没有公网IP的服务器怎么连接外网</h2><p>VPN，代理，转发等方法实现<br><a href="http://blog.liujason.com/2859.html" target="_blank" rel="noopener">http://blog.liujason.com/2859.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/01/28/前台打包部署/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2019/01/28/前台打包部署/" itemprop="url">前台打包部署</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-28T09:22:42+08:00">
-                2019-01-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="noopener">简书</a></p>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>简单的说 Node.js 就是运行在服务端的 JavaScript。<br>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。<br>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
-<h2 id="NPM-使用介绍"><a href="#NPM-使用介绍" class="headerlink" title="NPM 使用介绍"></a>NPM 使用介绍</h2><p>NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题，常见的使用场景有以下几种：</p>
-<ul>
-<li>允许用户从NPM服务器下载别人编写的第三方包到本地使用。</li>
-<li>允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。</li>
-<li>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</li>
-</ul>
-<p>由于新版的nodejs已经集成了npm，所以之前npm也一并安装好了。同样可以通过输入 “npm -v” 来测试是否成功安装。</p>
-<p>国内直接使用 npm 的官方镜像是非常慢的，推荐使用淘宝 NPM 镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<p>这样就可以使用 cnpm 命令来安装模块了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install [name]</span><br></pre></td></tr></table></figure></p>
-<p>npm 更新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g npm</span><br></pre></td></tr></table></figure></p>
-<p>npm 安装 Node.js 模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;Module Name&gt;</span><br></pre></td></tr></table></figure></p>
-<p>eg 我们使用 npm 命令安装常用的 Node.js web框架模块 express:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install express</span><br></pre></td></tr></table></figure></p>
-<p>安装好之后，express 包就放在了工程目录下的 node_modules 目录中，因此在代码中只需要通过 require(‘express’) 的方式就好，无需指定第三方包路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/bolg/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/4/">4</a><a class="extend next" rel="next" href="/bolg/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/bolg/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/5/">5</a><a class="extend next" rel="next" href="/bolg/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1641,7 +1635,7 @@
               
                 <a href="/bolg/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
