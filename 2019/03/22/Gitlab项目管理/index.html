@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset use">
+<meta name="description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“12345678cat ~/.ssh/id_ed25519.pub | clipgit config --listgit config --global --">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gitlab项目管理">
 <meta property="og:url" content="https://fsh1234.github.io/bolg/2019/03/22/Gitlab项目管理/index.html">
 <meta property="og:site_name" content="Hexo Blog">
-<meta property="og:description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset use">
+<meta property="og:description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“12345678cat ~/.ssh/id_ed25519.pub | clipgit config --listgit config --global --">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-25T02:18:14.695Z">
+<meta property="og:updated_time" content="2019-04-01T06:25:39.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gitlab项目管理">
-<meta name="twitter:description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“ cat ~/.ssh/id_ed25519.pub | clip git config –listgit config –global –unset use">
+<meta name="twitter:description" content="SSH协议  SSH密钥 md .ssh兼容问题 #ssh-keygen -t ed25519 -C “email@example.com“ssh-keygen -o -t rsa -b 4096 -C “email@example.com“12345678cat ~/.ssh/id_ed25519.pub | clipgit config --listgit config --global --">
 
 
 
@@ -303,12 +303,8 @@
       
         <p>SSH协议  SSH密钥</p>
 <p>md .ssh<br>兼容问题</p>
-<p>#ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br>ssh-keygen -o -t rsa -b 4096 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“</p>
-<p>cat ~/.ssh/id_ed25519.pub | clip</p>
-<p>git config –list<br>git config –global –unset user.name<br>git config –global –unset user.email<br>如要在repo中使用 user1 进行操作，进入repo目录后，先设置username 和 email，再进行其他操作<br>git config user.name “user1”<br>git config user.email “<a href="mailto:user1@xx.mail" target="_blank" rel="noopener">user1@xx.mail</a>“</p>
-<p>eval “$(ssh-agent -s)”</p>
-<p> $ ssh-add ~/.ssh/id_rsa<br> $ ssh-add -l<br> $ ssh-add -d<br> $ ssh-add -D<br> ssh -T <a href="mailto:git@gitlab.com" target="_blank" rel="noopener">git@gitlab.com</a></p>
-
+<p>#ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br>ssh-keygen -o -t rsa -b 4096 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_ed25519.pub | clip</span><br><span class="line"></span><br><span class="line">git config --list</span><br><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line">#如要在repo中使用 user1 进行操作，进入repo目录后，先设置username 和 email，再进行其他操作</span><br><span class="line">git config user.name &quot;user1&quot;</span><br><span class="line">git config user.email &quot;user1@xx.mail&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line"></span><br><span class="line"> $ ssh-add ~/.ssh/id_rsa</span><br><span class="line"> $ ssh-add -l</span><br><span class="line"> $ ssh-add -d</span><br><span class="line"> $ ssh-add -D</span><br><span class="line"></span><br><span class="line"> #如果是在本地ip而且不是默认端口22 则需要带端口号</span><br><span class="line"> ssh -T git@gitlab.com</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -396,8 +392,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -412,7 +417,7 @@
               
                 <a href="/bolg/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -457,6 +462,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加密钥"><span class="nav-number">1.</span> <span class="nav-text">添加密钥</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo Blog">
 <meta property="og:description" content="镜像制作使用Dockerfile 定制镜像 新建文件夹新建一个Dockerfile文件夹将资源全部转移到其中新建Dockerfile文件，Dockerfile 支持 Shell 类的行尾添加 \ 的命令换行方式，以及行首 # 进行注释的格式 使用vi编辑Dockerfile1234#在nginx镜像的基础上新建镜像FROM nginx#拷贝本地的web静态资源到nginx目录COPY html /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-29T07:04:42.157Z">
+<meta property="og:updated_time" content="2019-04-08T03:42:20.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云使用Docker部署前端服务">
 <meta name="twitter:description" content="镜像制作使用Dockerfile 定制镜像 新建文件夹新建一个Dockerfile文件夹将资源全部转移到其中新建Dockerfile文件，Dockerfile 支持 Shell 类的行尾添加 \ 的命令换行方式，以及行首 # 进行注释的格式 使用vi编辑Dockerfile1234#在nginx镜像的基础上新建镜像FROM nginx#拷贝本地的web静态资源到nginx目录COPY html /">
@@ -305,6 +305,7 @@
 <h2 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h2><p>新建一个Dockerfile文件夹将资源全部转移到其中<br>新建Dockerfile文件，Dockerfile 支持 Shell 类的行尾添加 \ 的命令换行方式，以及行首 # 进行注释的格式</p>
 <p>使用vi编辑Dockerfile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#在nginx镜像的基础上新建镜像</span><br><span class="line">FROM nginx</span><br><span class="line">#拷贝本地的web静态资源到nginx目录</span><br><span class="line">COPY html /usr/share/nginx/html</span><br></pre></td></tr></table></figure></p>
 <p>在Dockerfile文件下运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#制作镜像</span><br><span class="line">$ docker build -t my-nginx-image/myapp .</span><br><span class="line">#生成实例</span><br><span class="line">$ docker run --name my-nginx-container -p 80:80 -d my-nginx-image/myapp</span><br><span class="line">#以日志形式运行</span><br><span class="line">$ docker run --name my-nginx-container -p 80:80 -v /web/nginxImage/nginx.conf:/etc/nginx/nginx.conf:ro -d my-nginx-image/myapp nginx-debug -g &apos;daemon off;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>docker run –name my-nginx-container -p 80:80 \<br>  –volume /srv/nginx/nginx.conf:/etc/nginx/nginx.conf \<br>  –volume /srv/nginx/html:/usr/share/nginx/html \<br>  –volume /srv/nginx/log:/var/log/nginx \<br>  -d nginx</p>
 
       
     </div>
@@ -418,7 +419,7 @@
               
                 <a href="/bolg/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
