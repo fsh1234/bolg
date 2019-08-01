@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -133,7 +133,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -146,7 +146,7 @@
     <a href="https://github.com/fsh1234" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     </div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -226,20 +226,406 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/05/24/Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2019/05/24/Redis/" itemprop="url">Redis</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T09:48:02+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>redis 是一个持久化的键值对存储器，其中主键是用来表示数据块所在位置，而值在java则是通过序列化存储一切对象。redis和数据库类似可通过select命令切换数据库，并且通过快照来持久数据库。通常作用在数据缓存，消息队列，分布式集群Session分离处理等。</p>
+<h2 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h2><p>redis有5种数据类型结构分别是字符型，散列型，列表，集合，有序集合。</p>
+<h2 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h2><p>通常意义上的键值对，也是redis主要缓存数据的格式，可以通过命令对值进行长度获取，截断等操作</p>
+<h2 id="散列"><a href="#散列" class="headerlink" title="散列"></a>散列</h2><p>比字符串结构多了个中间层：字段，字段类比hash的Key可以有多个字段</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>可以存储数组形式的值</p>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>用于存储唯一值，可以用作交集运算</p>
+<h2 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h2><p>和集合一样，但是多了权重</p>
+<h2 id="Redis支持"><a href="#Redis支持" class="headerlink" title="Redis支持"></a>Redis支持</h2><h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>redis是支持管道的，所以你可以发送一堆请求却不用等待它们的响应</p>
+<h3 id="过期"><a href="#过期" class="headerlink" title="过期"></a>过期</h3><p>Redis 允许你指定 key 的存活时间，你可以使用expore key seconds 设置过时时间（秒），也可以expireat key timestamp 设置具体那一刻过时（从1970年01月01日开始的秒数）</p>
+<h3 id="消息中间间"><a href="#消息中间间" class="headerlink" title="消息中间间"></a>消息中间间</h3><p>redis通过发布订阅(Publication and Subscriptions)实现消息直接的传递</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/04/30/Docker-Compose/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2019/04/30/Docker-Compose/" itemprop="url">Docker-Compose</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T11:12:15+08:00">
+                2019-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Compose-简介"><a href="#Compose-简介" class="headerlink" title="Compose 简介"></a>Compose 简介</h2><p>Compose 项目是 Docker 官方的开源项目，负责实现对 Docker 容器集群的快速编排。<br>它允许用户通过一个单独的 docker-compose.yml 模板文件（YAML 格式）来定义一组相关联的应用容器为一个项目（project）。</p>
+<p>Compose 中有两个重要的概念：</p>
+<ol>
+<li><p>服务 (service)：一个应用的容器，实际上可以包括若干运行相同镜像的容器实例。</p>
+</li>
+<li><p>项目 (project)：由一组关联的应用容器组成的一个完整业务单元，在 docker-compose.yml 文件中定义。</p>
+</li>
+</ol>
+<h2 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h2><p>下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>授权</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>检查</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+<p>该docker-compose up命令聚合每个容器的输出（基本上正在运行docker-compose logs -f）。</p>
+<p>docker-compose -f cmac-server.yml up</p>
+<h2 id="容器配置修改"><a href="#容器配置修改" class="headerlink" title="容器配置修改"></a>容器配置修改</h2><p>先从容器中拷贝一份到指定目录，修改指定目录里面的配置，下次启动时将源目录挂载至此</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp -r c2dfee831758:/etc/mysql /cmac/mysql/conf</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/04/29/枚举类型的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2019/04/29/枚举类型的使用/" itemprop="url">枚举类型的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-29T16:24:58+08:00">
+                2019-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><p>枚举是final,意味着它不能被继承，他的作用是用来限制输入的类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> MaterialType&#123;</span><br><span class="line"></span><br><span class="line">    UNDEFINED(<span class="string">"Undefined"</span>, <span class="number">0</span>,<span class="string">"object"</span>),</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** 枚举值码 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String commandType;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 枚举描述 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String desc;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 实现类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String clazz ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MaterialType <span class="title">find</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (MaterialType c : MaterialType.values()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c.getIndex() == index) &#123;</span><br><span class="line">                <span class="keyword">return</span> c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/04/18/Spring-Boot全局异常处理/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -305,7 +691,7 @@
             <h2 id="SpringBoot自带的异常处理"><a href="#SpringBoot自带的异常处理" class="headerlink" title="SpringBoot自带的异常处理"></a>SpringBoot自带的异常处理</h2><p>SpringBoot有一个默认的视图“/error”来处理所有的异常，并且该视图注册成全局的错误页面在服务中，在客户端中他返回带有状态和错误码的json类型的响应。</p>
 <h2 id="取代默认的视图来处理"><a href="#取代默认的视图来处理" class="headerlink" title="取代默认的视图来处理"></a>取代默认的视图来处理</h2><p>To replace the default behavior completely, you can implement ErrorController and register a bean definition of that type or add a bean of type ErrorAttributes to use the existing mechanism but replace the contents.</p>
 <h2 id="自定义带注解的类处理"><a href="#自定义带注解的类处理" class="headerlink" title="自定义带注解的类处理"></a>自定义带注解的类处理</h2><p>You can also define a class annotated with @ControllerAdvice to customize the JSON document to return for a particular controller and/or exception type</p>
-<h3 id="自定义错误处理类来返回json格式的响应"><a href="#自定义错误处理类来返回json格式的响应" class="headerlink" title="自定义错误处理类来返回json格式的响应"></a>自定义错误处理类来返回json格式的响应</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ControllerAdvice</span>(basePackageClasses = AcmeController.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AcmeControllerAdvice</span> <span class="keyword">extends</span> <span class="title">ResponseEntityExceptionHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@ExceptionHandler</span>(YourException.class)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	ResponseEntity&lt;?&gt; handleControllerException(HttpServletRequest request, Throwable ex) &#123;</span><br><span class="line">		HttpStatus status = getStatus(request);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(<span class="keyword">new</span> CustomErrorType(status.value(), ex.getMessage()), status);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> HttpStatus <span class="title">getStatus</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">		Integer statusCode = (Integer) request.getAttribute(<span class="string">"javax.servlet.error.status_code"</span>);</span><br><span class="line">		<span class="keyword">if</span> (statusCode == <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> HttpStatus.INTERNAL_SERVER_ERROR;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> HttpStatus.valueOf(statusCode);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="自定义错误处理类来返回json格式的响应"><a href="#自定义错误处理类来返回json格式的响应" class="headerlink" title="自定义错误处理类来返回json格式的响应"></a>自定义错误处理类来返回json格式的响应</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ControllerAdvice</span>(basePackageClasses = AcmeController.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AcmeControllerAdvice</span> <span class="keyword">extends</span> <span class="title">ResponseEntityExceptionHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(YourException.class)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    ResponseEntity&lt;?&gt; handleControllerException(HttpServletRequest request, Throwable ex) &#123;</span><br><span class="line">        HttpStatus status = getStatus(request);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(<span class="keyword">new</span> CustomErrorType(status.value(), ex.getMessage()), status);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> HttpStatus <span class="title">getStatus</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        Integer statusCode = (Integer) request.getAttribute(<span class="string">"javax.servlet.error.status_code"</span>);</span><br><span class="line">        <span class="keyword">if</span> (statusCode == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> HttpStatus.INTERNAL_SERVER_ERROR;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> HttpStatus.valueOf(statusCode);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>basePackageClasses: 标识限定控制器，可以去掉，以对所有控制器生效，会产生性能影响</li>
 <li>ExceptionHandler：  拦截自定义错误，可以去掉拦截所有错误类型</li>
@@ -355,20 +741,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/28/MySQL-with-Docker/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -433,6 +819,8 @@
           
             <h2 id="拉取Mysql镜像"><a href="#拉取Mysql镜像" class="headerlink" title="拉取Mysql镜像"></a>拉取Mysql镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull mysql:5.7.25</span><br></pre></td></tr></table></figure>
 <h2 id="实例化容器"><a href="#实例化容器" class="headerlink" title="实例化容器"></a>实例化容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-mysql -v /srv/mysql/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7.25</span><br></pre></td></tr></table></figure>
+<p>docker run –name mysql-data -v /data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=”woyaoxuehuilinux” -d mysql:5.6</p>
+
           
         
       
@@ -475,20 +863,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/27/Spring-Boot-with-Docker/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -606,20 +994,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/25/Git-指令/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -690,6 +1078,8 @@
 <h1 id="改地址"><a href="#改地址" class="headerlink" title="改地址"></a>改地址</h1><p>$ git remote set-url</p>
 <h1 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h1><p>$ git remote remove <name><br><code>`</code></name></p>
 <h2 id="拉取并合并到当前主干"><a href="#拉取并合并到当前主干" class="headerlink" title="拉取并合并到当前主干"></a>拉取并合并到当前主干</h2><p>$ git pull <remote> master</remote></p>
+<h2 id="回退到某一次提交"><a href="#回退到某一次提交" class="headerlink" title="回退到某一次提交"></a>回退到某一次提交</h2><p>$ git reset –hard 945060fd5a5c300075b5ad4ae045766ad46e0f4c</p>
+<h2 id="放弃本次为add的修改"><a href="#放弃本次为add的修改" class="headerlink" title="放弃本次为add的修改"></a>放弃本次为add的修改</h2><p>$ git checkout .</p>
 
           
         
@@ -733,20 +1123,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/22/Gitlab项目管理/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -811,8 +1201,10 @@
           
             <p>SSH协议  SSH密钥</p>
 <p>md .ssh<br>兼容问题</p>
-<p>#ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br>ssh-keygen -o -t rsa -b 4096 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_ed25519.pub | clip</span><br><span class="line"></span><br><span class="line">git config --list</span><br><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line">#如要在repo中使用 user1 进行操作，进入repo目录后，先设置username 和 email，再进行其他操作</span><br><span class="line">git config user.name &quot;user1&quot;</span><br><span class="line">git config user.email &quot;user1@xx.mail&quot;</span><br></pre></td></tr></table></figure></p>
-<h2 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line"></span><br><span class="line"> $ ssh-add ~/.ssh/id_rsa</span><br><span class="line"> $ ssh-add -l</span><br><span class="line"> $ ssh-add -d</span><br><span class="line"> $ ssh-add -D</span><br><span class="line"></span><br><span class="line"> #如果是在本地ip而且不是默认端口22 则需要带端口号</span><br><span class="line"> ssh -T git@gitlab.com</span><br></pre></td></tr></table></figure>
+<p>ssh-keygen -t ed25519 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“<br>ssh-keygen -o -t rsa -b 4096 -C “<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a>“</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_ed25519.pub | clip</span><br><span class="line"></span><br><span class="line">git config --list</span><br><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line"><span class="meta">#</span><span class="bash">如要在repo中使用 user1 进行操作，进入repo目录后，先设置username 和 email，再进行其他操作</span></span><br><span class="line">git config user.name "user1"</span><br><span class="line">git config user.email "user1@xx.mail"</span><br></pre></td></tr></table></figure>
+<h2 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">eval "$(ssh-agent -s)"</span><br><span class="line"></span><br><span class="line"><span class="meta"> $</span><span class="bash"> ssh-add ~/.ssh/id_rsa</span></span><br><span class="line"><span class="meta"> $</span><span class="bash"> ssh-add -l</span></span><br><span class="line"><span class="meta"> $</span><span class="bash"> ssh-add -d</span></span><br><span class="line"><span class="meta"> $</span><span class="bash"> ssh-add -D</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 配置地址信息</span></span></span><br><span class="line">Host GitLab</span><br><span class="line">  HostName 127.0.0.1</span><br><span class="line">  Port 2222</span><br><span class="line">  Preferredauthentications publickey</span><br><span class="line">  IdentityFile  ~/.ssh/fsh_rsa</span><br><span class="line"></span><br><span class="line">Host github</span><br><span class="line">  HostName github.com</span><br><span class="line">  Preferredauthentications publickey</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line"><span class="meta"> #</span><span class="bash">如果是在本地ip而且不是默认端口22 则需要带端口号</span></span><br><span class="line"> ssh -T git@gitlab.com</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -855,20 +1247,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/21/Docker使用容器运行Gitlab/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -985,20 +1377,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/15/阿里云使用Docker部署前端服务/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -1101,471 +1493,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/04/Docker/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2019/03/04/Docker/" itemprop="url">Docker</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-04T09:23:01+08:00">
-                2019-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Docker是什么？"><a href="#Docker是什么？" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h1><p><a href="https://docs.docker.com/" target="_blank" rel="noopener">Docker</a>是一个容器平台，负责创建容器</p>
-<h1 id="使用Ubuntu安装Docker"><a href="#使用Ubuntu安装Docker" class="headerlink" title="使用Ubuntu安装Docker"></a>使用Ubuntu安装Docker</h1><h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p>Docker CE 支持以下版本的 Ubuntu 操作系统：</p>
-<ul>
-<li>Bionic 18.04 (LTS)</li>
-<li>Xenial 16.04 (LTS)</li>
-<li>Trusty 14.04 (LTS) (Docker CE v18.06 及以下版本)</li>
-</ul>
-<h2 id="使用-APT-安装"><a href="#使用-APT-安装" class="headerlink" title="使用 APT 安装"></a>使用 APT 安装</h2><p>由于 apt 源(APT是一个客户/服务器系统)使用 HTTPS 以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS 传输的软件包以及 CA 证书。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure></p>
-<p>为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></p>
-<p>然后，我们需要向 source.list 中添加 Docker 软件源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository \</span><br><span class="line">    &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \</span><br><span class="line">    $(lsb_release -cs) \</span><br><span class="line">    stable&quot;</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装-Docker-CE"><a href="#安装-Docker-CE" class="headerlink" title="安装 Docker CE"></a>安装 Docker CE</h2><p>更新 apt 软件包缓存，并安装 docker-ce：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line"></span><br><span class="line">$ sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure></p>
-<h2 id="启动-Docker-CE"><a href="#启动-Docker-CE" class="headerlink" title="启动 Docker CE"></a>启动 Docker CE</h2><h2 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h2><p>鉴于国内网络问题，强烈建议使用国内源，官方源请在注释中查看。</p>
-<p>docker build -t nginx:v1</p>
-<p>docker run –name webserver -d -p 80:80 6b91d233e367</p>
-<p>“<a href="https://registry.docker-cn.com&quot;" target="_blank" rel="noopener">https://registry.docker-cn.com&quot;</a></p>
-<h1 id="Docker如何装载应用程序？"><a href="#Docker如何装载应用程序？" class="headerlink" title="Docker如何装载应用程序？"></a>Docker如何装载应用程序？</h1><p>将应用程序制作成镜像，通过Docker引擎将镜像生成容器，最后以容器的形式运行程序</p>
-<h1 id="如何用docker运行SpringBoot？"><a href="#如何用docker运行SpringBoot？" class="headerlink" title="如何用docker运行SpringBoot？"></a>如何用docker运行SpringBoot？</h1><p>用docker运行的首先是一个容器，SpringBoot就在这个容器中,容器由镜像生成<br>因此首先要解决的是如何生成应用程序的镜像文件</p>
-<p>docker-compose.yaml来用Docker Compose编排文件<br>这是整合多容器直接的相互配合</p>
-<p>如果是在windows环境下则需要安装Docker for Windows </p>
-<h1 id="Docker操作"><a href="#Docker操作" class="headerlink" title="Docker操作"></a>Docker操作</h1><p>systemctl start docker<br>systemctl stop docker</p>
-<h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># docker build [选项] &lt;上下文路径/URL/-&gt; 下面的.路径为当前文件夹</span><br><span class="line">$ docker build -t nginx:v1 .</span><br></pre></td></tr></table></figure>
-<h2 id="查看和删除镜像"><a href="#查看和删除镜像" class="headerlink" title="查看和删除镜像"></a>查看和删除镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker image ls</span><br><span class="line">$ docker image rm &#123;id&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>8a965478d94d为DockerID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 基于镜像新建并启动</span><br><span class="line">$ docker run --name webserver -d -p 80:80 &#123;ImageID&#125;</span><br><span class="line"></span><br><span class="line"># 查看所有容器命令</span><br><span class="line">$ docker container ls -a </span><br><span class="line"># 容器启动</span><br><span class="line">$ docker container start 8a965478d94d</span><br><span class="line"># 容器停止</span><br><span class="line">$ docker container stop 684d344fd36f</span><br><span class="line"># 容器删除</span><br><span class="line">$ docker container rm 4cd3e089d3e5</span><br><span class="line"># 删除所有未启动的容器</span><br><span class="line">$ docker container prune</span><br></pre></td></tr></table></figure></p>
-<h2 id="进入-离开容器"><a href="#进入-离开容器" class="headerlink" title="进入/离开容器"></a>进入/离开容器</h2><p>#$ docker exec {DockerId} bin/bash</p>
-<p>$ docker exec -it mysql1 bash<br>$ docker attach (会导致容器停止)<br>$ exit  </p>
-<h2 id="容器的导入和导出"><a href="#容器的导入和导出" class="headerlink" title="容器的导入和导出"></a>容器的导入和导出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#导出容器快照</span><br><span class="line">$ docker export 7691a814370e &gt; ubuntu.tar</span><br><span class="line">#导入容器快照</span><br><span class="line">$ cat ubuntu.tar | docker import - test/ubuntu:v1.0</span><br><span class="line">$ docker image ls</span><br><span class="line">#保存所有数据</span><br><span class="line">docker load</span><br></pre></td></tr></table></figure>
-<h2 id="更新权限"><a href="#更新权限" class="headerlink" title="更新权限"></a>更新权限</h2><p>docker exec -it gitlab update-permissions<br>docker restart gitlab</p>
-<h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p>docker logs -f {containerID}<br>docker logs –details {containerID}</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/02/26/Java-ClassLoader/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2019/02/26/Java-ClassLoader/" itemprop="url">Java ClassLoader</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T11:18:11+08:00">
-                2019-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/bolg/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <img src="/bolg/images/ClassLoader.png" class="ClassLoaderPic" title="思维导图">
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/02/21/建模欲望09/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2019/02/21/建模欲望09/" itemprop="url">建模欲望09</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T11:17:51+08:00">
-                2019-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/bolg/categories/Diary/" itemprop="url" rel="index">
-                    <span itemprop="name">Diary</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://zhuanlan.zhihu.com/p/53722157" target="_blank" rel="noopener">转载YJango</a></p>
-<h2 id="一、好奇心的作用"><a href="#一、好奇心的作用" class="headerlink" title="一、好奇心的作用"></a>一、好奇心的作用</h2><p>人们现在都意识到好奇心的重要性，但却发现，随着年龄的增长，好奇心会慢慢消退，不仅如此，学习能力也不如以前。</p>
-<p>于是人们得出一个结论：好奇心和学习能力会随年龄增长而下降，很多人因此觉得自己已经来不及学习，这辈子就认命了。这是多数人对好奇心的认识。</p>
-<p>然而这个认识却完全错了，因为不管年龄是否与好奇心相关，都会随着时间而增长，无法认为年龄就是影响好奇心的因素。</p>
-<p>事实上，好奇心和食欲、性欲一样，是人类的基本欲望。和好奇心相关的大脑区域就是负责奖励机制的伏膈核，也正是对成瘾行为起重要作用的区域。因为我们不得不依赖自己的模型而存活，所以一定会想尽办法的去建立模型（学习），而好奇心便是演化出来促进学习的奖励机制，每个人生下来就是一部终身好奇的学习机器。</p>
-<p>但这却和我们的普遍认知不符。因为很多家长费劲了脑汁也无法让孩子喜欢“学习”，有些人也觉得自己根本不爱“学习”。怎么能说好奇心和食欲一样是人类的基本欲望呢？</p>
-<p><u>事实上，我们不是不喜欢学习，而是不喜欢不符合大脑特点的记忆。</u>当我们对食物饥饿时，大脑会产生进食欲，会无法抑制的想要进食。学习和进食一样，当我们对知识饥饿时，大脑会产生求知欲，也会无法抑制的想要学习。</p>
-<p>但多数人的“学习”并不是这样。他只是知道自己需要学习，却没有产生过好奇心，最终变成了强迫自己去记忆知识，又怎么可能会喜欢呢？</p>
-<hr>
-<h2 id="二、好奇心的对象"><a href="#二、好奇心的对象" class="headerlink" title="二、好奇心的对象"></a>二、好奇心的对象</h2><p>既然好奇心是促进学习的关键，那么如何调动自己的好奇心呢？回答这个问题首先要搞清楚的就是：我们到底对什么好奇？</p>
-<p>好奇心的目的是为了构建知识，让我们可以适应当前环境，得以生存，因此我们对知识好奇。然而最为关键的一点是，我们无法通过记忆知识来学习知识，只能通过归纳例子来构建知识，因此我们更为好奇的内容其实是例子。而在生活中的例子正是故事。</p>
-<p>这就解释了为什么我们如此喜欢故事，为什么大多数的演讲都是以一个故事作为开始，为什么春秋战国时期的纵横家都是以讲故事的方式来游说君主。因为一个故事可以瞬间让大脑清楚知识的输入和输出。</p>
-<p>而例子是从输入到输出的一个具体变换，缺一不可，所以当只有输入或输出时，好奇心会使我们的大脑急切的想要知道另一个，帮助自己搜集完整的例子。</p>
-<p>现在我们来回答网络标题是如何利用好奇心来引诱大众的。大致可分为例子残缺和知识白送两大类。</p>
-<h3 id="1-例子残缺"><a href="#1-例子残缺" class="headerlink" title="1.例子残缺"></a>1.例子残缺</h3><p>例子残缺的特点是：标题只给你输入或输出，但绝不完整的提供二者，让你的好奇心来点击内容。</p>
-<h4 id="1-1-不提供输入（“普及类”居多）"><a href="#1-1-不提供输入（“普及类”居多）" class="headerlink" title="1.1. 不提供输入（“普及类”居多）"></a>1.1. 不提供输入（“普及类”居多）</h4><p>例1：网上这些招数一直在把你当小猫诱骗（招数 X –&gt; 诱惑的）<br>例2：这个东西不能乱玩，否则后悔来不及（东西 X –&gt; 危险的）<br>例3：男人不育居然是这些习惯导致的（习惯 X –&gt; 使不育）<br>例4：长寿秘诀破解，最关键的因素居然是这个…（因素 X –&gt; 使长寿）<br>例5：赵丽颖和冯绍峰结婚背后的真相竟然是（原因 X –&gt; 使结婚）</p>
-<h4 id="1-2-不提供输出（新闻类居多）："><a href="#1-2-不提供输出（新闻类居多）：" class="headerlink" title="1.2. 不提供输出（新闻类居多）："></a>1.2. 不提供输出（新闻类居多）：</h4><p>例1：新手司机误把油门当刹车 结果…（ 错踩油门 –&gt; 后果 Y）<br>例2：世界上最不合拍的两个星座在一起了（不合拍在一起 –&gt; 后果 Y）<br>例3：那些辞职去考研的人，后来怎么样了？（辞职考研 –&gt; 结果 Y）<br>例4：如果世界上只剩一个女人，将会发生什么？( 极端情况 –&gt; 结果 Y)<br>例5：面试官问期望的薪酬是在问什么？(表面问题 –&gt; 实际问题 Y)</p>
-<h3 id="2-知识白送"><a href="#2-知识白送" class="headerlink" title="2.知识白送"></a>2.知识白送</h3><p>而白送的知识分为两种，正是《知识的分类（下）》里介绍的回归知识（程序性知识）与分类知识（陈述性知识）。</p>
-<h4 id="2-1-对分类知识，我们好奇的是“判断依据”"><a href="#2-1-对分类知识，我们好奇的是“判断依据”" class="headerlink" title="2.1. 对分类知识，我们好奇的是“判断依据”"></a>2.1. 对分类知识，我们好奇的是“判断依据”</h4><p>例1：开车遇到这种情况，赶紧加速离开（你–&gt;赶紧离开，情况依据 B）<br>例2：一个男生，真正爱你的八种表现（男生–&gt;爱你，表现依据 B）<br>例3：HR教你如何判断一个公司的好坏（公司–&gt;好or坏，判断依据 B）<br>例4：没有感冒却长期咳嗽有这些症状快就医（你–&gt;有病，症状依据 B）<br>例5：越没本事的男人，爱说下面四句话（男人–&gt;没本事，言语依据 B）</p>
-<h4 id="2-2-对回归知识，我们好奇的是“如何做到”"><a href="#2-2-对回归知识，我们好奇的是“如何做到”" class="headerlink" title="2.2.对回归知识，我们好奇的是“如何做到”"></a>2.2.对回归知识，我们好奇的是“如何做到”</h4><p>例1：6 分钟视频教你如何成为爱情高手（方法 P ）<br>例2：教你怎么涂粉底液三个小诀窍摆脱墙壁脸（诀窍 P ）<br>例3：学会这个技巧，关键时刻能救你一命（技巧 P ）<br>例4：像有钱人一样思考15个秘诀让你不知不觉发财（秘诀 P ）<br>例5：学会这一招 葱蒜姜放半年都不会坏（招 P ）</p>
-<p>从上面的例子你会发现，只要产生了好奇心，都难以抵挡这种诱惑，也就是说没有一个人是不喜欢学习的。所以家长们在教育孩子的时候请不要对他的好奇心不耐烦，因为我们当代的教育系统已经是好奇心的最强杀手了。</p>
-<h3 id="3-自我应用"><a href="#3-自我应用" class="headerlink" title="3. 自我应用"></a>3. 自我应用</h3><p>然而我们最感兴趣的是如何将好奇心应用到我们日常学习之中。关于这一点，我其实在《学习观5.5》中已经分享出来了。正是画思维导图时的自我提问。</p>
-<p>有些人看完《学习观5.5》后觉得还是不会画思维导图。然而思维导图是用来拆分要学习的新知识。每次我们都需要重新思考新知识与子知识之间的关系，这些人真的有思考过吗？真的有进行那些自我提问吗？那些自我提问不仅可以帮助我们拆分知识，更会调动我们的好奇心来促进我们的学习。</p>
-<h2 id="三、好奇心的敌人"><a href="#三、好奇心的敌人" class="headerlink" title="三、好奇心的敌人"></a>三、好奇心的敌人</h2><p>但知道了如何应用好奇心后还有一个关键问题没有回答那就是为什么随着年龄的增长自己的好奇心会下降呢？实际上，阻碍我们好奇心的根本不是年龄，恰恰是我们已有的知识。</p>
-<h3 id="1-固执心理"><a href="#1-固执心理" class="headerlink" title="1.固执心理"></a>1.固执心理</h3><p>因为我们依赖模型而活，因此不仅进化出了用于构建模型的好奇心，也同时进化出了用于保护已有模型的固执心。 倘若什么都信，那就会像受骗的老人一样把钱财交出去。 而固执心有两个常见的表现：</p>
-<h4 id="1-1-拒绝新知识"><a href="#1-1-拒绝新知识" class="headerlink" title="1.1.拒绝新知识"></a>1.1.拒绝新知识</h4><p>看到新知识后，会说服自己，这个没用，然后心安理得的不学习它。</p>
-<h4 id="1-2-归为旧已知"><a href="#1-2-归为旧已知" class="headerlink" title="1.2.归为旧已知"></a>1.2.归为旧已知</h4><p>看到新知识后，会说，这个不就是那个啥吗？我知道。然后忽略了细小差异。比如用中文发音系统来学习英语。</p>
-<p>小孩子由于没有任何知识，固执心弱，所以好奇心强，学习能力强；但抗欺骗力弱。 而成人由于已经构建知识，固执心强，所以好奇心弱，学习能力差；更新能力也弱。</p>
-<p>固执心是进化出的保护机制，没什么不对的，这样反而不容易陷入知识恐慌。 但你又想要让自己有创造力，就唯有保持初学者那种一无所知的心态，才会激起好奇心，才会保持对知识的饥渴。</p>
-<p>这正是乔布斯留给新生的 stay hungry, stay foolish（乔布斯更可能传达的是另一种意思）。</p>
-<h3 id="2-权威思维"><a href="#2-权威思维" class="headerlink" title="2.权威思维"></a>2.权威思维</h3><p>除了固执心理外，好奇心还有另一个敌人，是权威思维。这种思维是不独立思考，只相信权威，认为任何问题都有一个官方的、唯一的知识。看到新知识后，就相信一定有一本教科书罗列了所有内容。而这是当代教育环境最容易让人们形成的一种学生思维。</p>
-<p>有些人对于只要加上科学二字的内容就无条件相信。当意识到自己被骗后，就得出了科学不可相信的结论。但上面所指的“科学”是该人通过网络所形成的对科学的认识，而真正的科学是对知识不断验证和更新的一个过程。</p>
-<p>地心说在当时可以满足所有的观测，是最科学的知识，而观测到更多新数据后，科学又将知识更新为了日心说，但当发现太阳也不是宇宙中心后，就又再次更新了知识。正是科学这种以验证为标准，又不断完善的精神才被人们所推崇。</p>
-<p>所以我并不想要教任何现有知识，因为知识是无限的，当下的知识在未来一定会更新,我根本教不完，而当我死了之后呢？我做的所有努力都不会有任何意义。所以我想传达的是如何学习知识，如何判断知识。</p>
-<p>以上是我个人对我所看到的数据所总结的知识，那是否就一定是完善的呢？当然不是，上面就没有提影响好奇心的另一个重要因素：要与自己相关，毕竟我们只会去构建与自己相关的知识。然而即使加入了“与自己相关的”这个要素，我们对好奇心的认识仍然需要不断更新完善的。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1603,7 +1530,7 @@
 
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">fsh</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -1616,7 +1543,7 @@
               
                 <a href="/bolg/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1638,7 +1565,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1872,6 +1799,6 @@
   
 
 
-  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
+  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
 </body>
 </html>

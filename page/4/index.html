@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -133,7 +133,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -146,7 +146,7 @@
     <a href="https://github.com/fsh1234" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     </div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -226,20 +226,428 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/02/批处理命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2018/11/02/批处理命令/" itemprop="url">批处理命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T16:20:43+08:00">
+                2018-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>批处理命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"批处理文件 echo是输出的意思"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前目录"</span>%<span class="built_in">cd</span>%</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"脚本自身目录"</span>%~dp0</span><br><span class="line">pause</span><br></pre></td></tr></table></figure></p>
+<p>pause是暂停的意思不让命令行一闪而过 有中文时编码用ANSI 防止乱码 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br></pre></td></tr></table></figure>
+<p>echo off 是不显示命令的意思 加上@是这条命令本身也不显示<br>REM 有输出的注释<br>:: 无输出的注释</p>
+<h2 id="切换磁盘"><a href="#切换磁盘" class="headerlink" title="切换磁盘"></a>切换磁盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /d D:</span><br></pre></td></tr></table></figure>
+<h2 id="执行其他批处理命令"><a href="#执行其他批处理命令" class="headerlink" title="执行其他批处理命令"></a>执行其他批处理命令</h2><p>start d:\1.bat<br>call c:\2.bat </p>
+<p>start是在新的窗口执行任务,call是在当前窗口执行,执行完了才执行下面的语句</p>
+<h2 id="检查端口占用情况"><a href="#检查端口占用情况" class="headerlink" title="检查端口占用情况"></a>检查端口占用情况</h2><p>GOTO check80</p>
+<p>:check80<br>echo check port 80…<br>for /f “tokens=3 delims=:, “ %%i in (‘netstat -ano’) do (<br>if “%%i” == “80” GOTO 80used<br>)<br>GOTO check21</p>
+<p>:80used<br>mshta vbscript:CreateObject(“Wscript.Shell”).popup(“端口80被占用,请解除端口占用后重新启动”,7,”提示”,64)(window.close)<br>exit /B 2</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/26/Spring-Boot-企业级安装程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2018/10/26/Spring-Boot-企业级安装程序/" itemprop="url">Spring-Boot 企业级安装程序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T09:17:16+08:00">
+                2018-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>spring-boot 生成企业级安装程序，主要要求程序在windows下一键安装开机自启，这类的博客很少，基本只能自己摸索了。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>Springboot自带tomcat 只用启动-jar demo-0.0.1-SNAPSHOT.jar就可以启动项目了，然后在同目录下安装jre环境,说明java运行环境，配置好数据库就可以了。这里还是考虑用Tomcat+Nginx 来部署，方便以后的调试和扩展，而且配置更全面一些。</p>
+<p>下载apache-tomcat-8 将打好的war包放在webapp中 可以改配置放在其他文件夹<br>前台的包可以放在nginx的html目录下 这两个包都可以通过配置文件来更改存储位置。</p>
+<p>分为两部，第一部分是安装程序Stepup.exe（安装mysql,初始化数据库，获取项目路径，修改项目），第二步骤才是运行Start.exe（运行批处理文件）</p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><p>JDK1.8，MySQL5.7，Tomcat8，Nginx，BatToExeConverter等，这是需要压缩的文件资源。</p>
+<p>也可以考虑用到<a href="http://www.jrsoftware.org/isinfo.php" target="_blank" rel="noopener">Inno Setup</a></p>
+<h2 id="mysql部分"><a href="#mysql部分" class="headerlink" title="mysql部分"></a>mysql部分</h2><p>MySQL需要配置环境变量的原因是因为但是每次都切换到安装目录下太麻烦，如果不嫌弃麻烦可以直接在目录执行，这里我们就直接<br>跳转到安装路径执行需要的命令</p>
+<h3 id="安装服务"><a href="#安装服务" class="headerlink" title="安装服务"></a>安装服务</h3><p>rem 进入mysql目录<br>cd “%~dp0”..\mysql-5.7.24-win32\bin”<br>rem 初始化 –必不可少<br>mysqld –initialize-insecure<br>rem 先移除服务<br>mysqld –remove “服务名”<br>rem 安装服务<br>mysqld -install “服务名”</p>
+<h3 id="my-ini"><a href="#my-ini" class="headerlink" title="my.ini"></a>my.ini</h3><p>my.ini配置如下可以在批处理文件中写入,文件保存为ANSI格式文件,不然初始化报错，端口配置一个使用较少的3309<br>减少冲突的概率，当然还是要进行端口重复检查<br>[mysql]<br>default-character-set=utf8<br>[mysqld]<br>port = 3309<br>basedir=D:\mysql-5.7.24-win32<br>datadir=D:\mysql-5.7.24-win32\data<br>max_connections=200<br>character-set-server=utf8<br>default-storage-engine=INNODB  </p>
+<h3 id="端口占用检查"><a href="#端口占用检查" class="headerlink" title="端口占用检查"></a>端口占用检查</h3><p>echo check port 3309…<br>for /f “tokens=3 delims=:, “ %%i in (‘netstat -ano’) do (<br>if “%%i” == “3309” GOTO 3309used<br>)</p>
+<p>:3309used<br>mshta vbscript:CreateObject(“Wscript.Shell”).popup(“端口3309被占用,请解除端口占用后重新启动”,7,”提示”,64)(window.close)<br>exit /B 2</p>
+<h3 id="启动服务脚本如下"><a href="#启动服务脚本如下" class="headerlink" title="启动服务脚本如下"></a>启动服务脚本如下</h3><p>net stop “服务名”<br>net start “服务名”</p>
+<h3 id="登陆测试"><a href="#登陆测试" class="headerlink" title="登陆测试"></a>登陆测试</h3><p>mysql -u root -ppassword</p>
+<h2 id="Tomcat部分"><a href="#Tomcat部分" class="headerlink" title="Tomcat部分"></a>Tomcat部分</h2><p>修改端口，修改访问路径</p>
+<h3 id="server-xml"><a href="#server-xml" class="headerlink" title="server.xml"></a>server.xml</h3><p>修改端口为”8086”<br>    <connector port="8086" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443"></connector></p>
+<p>修改项目访问路径，缩减项目访问路径，path代表映射路径  docBase代表项目路径 workDir表示缓存文件位置<br>    <context path reloadable="false" docbase="D:/DSCMS/app/web/dscms-0.0.1-SNAPSHOT" workdir="D:/DSCMS/app/web/dscms-0.0.1-SNAPSHOT/work"></context></p>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>修改TOMCAT_HOME\bin\setclasspath.bat文件<br>set JAVA_HOME=D:\jdk1.8\<br>set JRE_HOME=D:\jdk1.8\jre</p>
+<h3 id="隐藏执行窗口"><a href="#隐藏执行窗口" class="headerlink" title="隐藏执行窗口"></a>隐藏执行窗口</h3><p>(1)修改脚本<br>setclasspath.bat文件<br>rem set _RUNJAVA=”%JRE_HOME%\bin\javaw” (隐藏文件)<br>set _RUNJAVA=”%JRE_HOME%\bin\java.exe”</p>
+<p>(2)注册成服务<br>cmd cd tomcat\bin<br>service.bat install [serviceName]<br>在此种方案中部署程序，该程序访问不到网络盘</p>
+<h3 id="自启动"><a href="#自启动" class="headerlink" title="自启动"></a>自启动</h3><p>这里采用（2）方便配置自启动<br>修改启动方式，在windows服务下设置成自启动，将mysql服务设置成依赖服务</p>
+<h2 id="Nginx部分"><a href="#Nginx部分" class="headerlink" title="Nginx部分"></a>Nginx部分</h2><p>代理和请求转发的概念是相对的，我通过Nginx发送一条请求到服务器，我到服务器的过程就叫做代理，服务器响应的信息通过Nginx转发到我就叫做反向代理，而Nginx的这一动作就叫做请求转发</p>
+<p>做服务器的时候还有安全策略配置，公网私网访问设置，主要是防火墙方面的配置，这点linux也一样。</p>
+<h3 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h3><p>请求转发<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /api&#123;</span><br><span class="line">    proxy_pass  http://127.0.0.1:8086;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首页配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location /&#123;</span><br><span class="line">    root   D:\DSCMS\app\html;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>websocket nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">location /wse&#123;</span><br><span class="line">    proxy_pass  http://127.0.0.1:8080;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#websocket服务通过nginx转发</span></span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line">    proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">    proxy_set_header Connection <span class="string">"upgrade"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#获取请求真实地址</span></span><br><span class="line">    proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">    proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">    proxy_set_header REMOTE-HOST <span class="variable">$remote_addr</span>;</span><br><span class="line">    proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Nginx指令"><a href="#Nginx指令" class="headerlink" title="Nginx指令"></a>Nginx指令</h3><p>所有安装指令基于nginx的安装目录下</p>
+<p>Nginx关闭 nginx -s stop (立刻停止) 或者 nginx -s quit (正常停止)<br>Nginx启动 start nginx<br>Nginx重启 Nginx -s reload  (修改配置nginx.conf后使用)</p>
+<p>window下无法正常停止Nginx进程<br>使用taskkill /im nginx.exe /f</p>
+<h2 id="开启自启动"><a href="#开启自启动" class="headerlink" title="开启自启动"></a>开启自启动</h2><p>将 windows 服务设置成自启动<br>bat文件转为exe，将bat文件设置</p>
+<p>sc delete ServiceName </p>
+<p>sc create ServiceName binpath= D:\DSCMS\start.exe type= own start= auto displayname= DSCMSServices</p>
+<p>net start ServiceName</p>
+<p>net stop ServiceName</p>
+<p>使用jar包部署环境<br>jre路径/ -jar demo-1.0.jar</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/23/Spring-Boot-快速使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/bolg/2018/10/23/Spring-Boot-快速使用/" itemprop="url">Spring-Boot 快速使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T15:15:03+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Spring-Boot-介绍"><a href="#Spring-Boot-介绍" class="headerlink" title="Spring-Boot 介绍"></a>Spring-Boot 介绍</h1><p>架构<br><a href="http://spring.io/projects/spring-boot" target="_blank" rel="noopener">spring boot</a><br><a href="http://mp.baomidou.com/" target="_blank" rel="noopener">MyBatis-Plus</a><br><a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">MySql</a><br><a href="https://start.spring.io/" target="_blank" rel="noopener">start</a></p>
+<h2 id="实体映射表"><a href="#实体映射表" class="headerlink" title="实体映射表"></a>实体映射表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Data</span><br><span class="line">@EqualsAndHashCode(callSuper = <span class="literal">false</span>)</span><br><span class="line"><span class="comment">#表名称 配置映射表</span></span><br><span class="line">@TableName(<span class="string">"t_cc_*"</span>)</span><br><span class="line">public class Dao implements Serializable &#123;</span><br><span class="line">    /**实现序列化，实现serializable接口的作用是就是可以把对象存到字节流，然后可以恢复。网络传输需要用到，分布式系统尤其重要*/</span><br><span class="line">    private static final long serialVersionUID = 1L;</span><br><span class="line"></span><br><span class="line">    //设置主键自增</span><br><span class="line">    @TableId(value = <span class="string">"id"</span>, <span class="built_in">type</span> = IdType.AUTO)</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String tableName;</span><br><span class="line">    private String tableColumn;</span><br></pre></td></tr></table></figure>
+<h2 id="Mapper层"><a href="#Mapper层" class="headerlink" title="Mapper层"></a>Mapper层</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Mapper</span><br><span class="line">public interface Mapper extends BaseMapper&lt;Dao&gt; &#123;</span><br><span class="line">    //自定义sql</span><br><span class="line">     @Select(<span class="string">"SELECT t.id,t.Key,t.name,t.version,t.createTime,t.mark FROM t_apk t where Key=#&#123;Key&#125;"</span>)</span><br><span class="line">    Dao selectByKey(@Param(<span class="string">"Key"</span>) String Key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="service实现层"><a href="#service实现层" class="headerlink" title="service实现层"></a>service实现层</h2><p>TO 继承了MyBatis-Plus的Pagination类有了分页属性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class ServiceImpl implements Service &#123;</span><br><span class="line"></span><br><span class="line">    private static AndroidPackageMapper mapper;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    @SuppressWarnings(<span class="string">"SpringJavaAutowiringInspection"</span>)</span><br><span class="line">    public AndroidPackageServiceImpl(AndroidPackageMapper mapper)&#123;</span><br><span class="line">        this.mapper=mapper;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public ActionResult&lt;Page&gt; List(TO)&#123;</span><br><span class="line">        EntityWrapper&lt;DO&gt; ew = new EntityWrapper&lt;&gt;();</span><br><span class="line">        ew.where(<span class="string">"key=&#123;0&#125;"</span>,key)</span><br><span class="line">        List&lt;DO&gt; DOList=mapper.selectPage(TO,ew);</span><br><span class="line">        Page&lt;AndroidPackageVO&gt; page=new Page(TO.getCurrent(),TO.getSize());</span><br><span class="line">        page.setRecords(DOList);</span><br><span class="line">        page.setTotal(TO.getTotal());</span><br><span class="line">        ActionResult&lt;Page&gt; ar=new ActionResult&lt;&gt;();</span><br><span class="line">        ar.setResult(page);</span><br><span class="line">        <span class="built_in">return</span> ar;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="service层"><a href="#service层" class="headerlink" title="service层"></a>service层</h2><p>使用在启动类上使用@EnableTransactionManagement注解开启事务,在单元测试中的test函数上添加 @Transactional 注解配合<br>@Rollback 注解让每个单元测试都能在结束时回滚</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//开启事务</span><br><span class="line">@Transactional</span><br><span class="line">public interface AndroidPackageService &#123;</span><br><span class="line">    ActionResult&lt;Page&gt; List(TO)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(<span class="string">"/api/Controller"</span>)</span><br><span class="line">public class Controller &#123;</span><br><span class="line">    //参数层次较多时用@RequestBody注解映射</span><br><span class="line">    @RequestMapping(<span class="string">"/find"</span>)</span><br><span class="line">    public ResponseEntity&lt;ActionResult&gt; findAPKList(@RequestBody PageTO pageTO)&#123;</span><br><span class="line">        ActionResult&lt;Page&gt; result=Service.List(pageTO);</span><br><span class="line">        <span class="built_in">return</span> ResponseEntity.ok(result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //参数层次单一时</span><br><span class="line">        @RequestMapping(<span class="string">"/delete"</span>)</span><br><span class="line">    public ResponseEntity&lt;ActionResult&gt; delete(String key)&#123;</span><br><span class="line">        ActionResult&lt;String&gt; result=Service.delete(key);</span><br><span class="line">        <span class="built_in">return</span> ResponseEntity.ok(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/19/阿里的JSONObject对象转换/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -348,20 +756,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/18/Spring-Booot-下的线程和进程/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -424,7 +832,7 @@
       
         
           
-            <h2 id="Component-注解"><a href="#Component-注解" class="headerlink" title="@Component 注解"></a>@Component 注解</h2><p>@component 把普通pojo实例化到spring容器中，相当于配置文件中的<bean id="" class=""><br>@component有3个为扩展：<br>1、@controller 控制器（注入服务）<br>2、@service 服务（注入dao）<br>3、@repository dao（实现dao访问）</bean></p>
+            <h2 id="Component-注解"><a href="#Component-注解" class="headerlink" title="@Component 注解"></a>@Component 注解</h2><p>@component 把普通pojo实例化到spring容器中，相当于配置文件中的<bean id class><br>@component有3个为扩展：<br>1、@controller 控制器（注入服务）<br>2、@service 服务（注入dao）<br>3、@repository dao（实现dao访问）</bean></p>
 <h2 id="异步注解"><a href="#异步注解" class="headerlink" title="异步注解"></a>异步注解</h2><p>在启动类*Application的上面添加@EnableAsync注解</p>
 <p>在异步类的上面添加@Async</p>
 <p>通常将异步执行的方法单独抽取成一个类方便阅读和避免调用方法的是对象本身，从而导致异步变成同步。具体一点就是spring容器在初始化时会将有AOP注解的类对象“替换”为代理对象，因此异步方法在同一类中会变成调用对象本身而非代理对象。</p>
@@ -474,20 +882,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/16/WebSocket/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -594,20 +1002,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/15/Hexo-主题-NexT/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -732,20 +1140,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/12/Spring-Boot-下的单元测试/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -856,20 +1264,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/25/LomLombok使用/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -976,20 +1384,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/22/在线预览文档/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
 
@@ -1099,457 +1507,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/20/Java-中foreach/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2018/09/20/Java-中foreach/" itemprop="url">Java 中foreach</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T17:32:41+08:00">
-                2018-09-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>不要在 foreach 循环里进行元素的 remove/add 操作。remove 元素请使用 Iterator<br>方式，如果并发操作，需要对 Iterator 对象加锁。<br>正例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;String&gt; iterator = list.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">String item = iterator.next();</span><br><span class="line"><span class="keyword">if</span> (删除元素的条件) &#123;</span><br><span class="line">iterator.remove();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>反例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line">list.add(<span class="string">"1"</span>);</span><br><span class="line">list.add(<span class="string">"2"</span>);</span><br><span class="line"><span class="keyword">for</span> (String item : list) &#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="string">"1"</span>.equals(item)) &#123;</span><br><span class="line">list.remove(item);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>说明：以上代码的执行结果肯定会出乎大家的意料，那么试一下把“1”换成“2”，会是同样的<br>结果吗？</p>
-<p>执行后“1”是正常 换成2后抛出ConcurrentModificationException异常</p>
-<p>ArrayList 的内部类 Itr 实现了 Iterator 接口  其中checkForComodification回判断集合的实际结构变化次数 和 Itr 记录的变化次数，不相等时，则抛出 ConcurrentModificationException 异常</p>
-<p>(参考)[<a href="https://www.jianshu.com/p/724f763fd242]" target="_blank" rel="noopener">https://www.jianshu.com/p/724f763fd242]</a></p>
-<p>JavaScript<br>数组遍历<br>foreach 无返回<br>map 返回相同长度的数组<br>filter 返回符合条件的数组<br>reduce 折叠数组</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/19/Lambda/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2018/09/19/Lambda/" itemprop="url">Lambda</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-19T10:01:27+08:00">
-                2018-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://baike.baidu.com/item/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/4585794?fr=aladdin" target="_blank" rel="noopener">参考百科</a></p>
-<h1 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h1><p>“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（注意和数学传统意义上的不同）。</p>
-<h1 id="Java表达式"><a href="#Java表达式" class="headerlink" title="Java表达式"></a>Java表达式</h1><p>Java 8的一个大亮点是引入Lambda表达式，使用它设计的代码会更加简洁。当开发者在编写Lambda表达式时，也会随之被编译成一个函数式接口。下面这个例子就是使用Lambda语法来代替匿名的内部类，代码不仅简洁，而且还可读。</p>
-<h3 id="没有使用Lambda的老方法："><a href="#没有使用Lambda的老方法：" class="headerlink" title="没有使用Lambda的老方法："></a>没有使用Lambda的老方法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(new ActionListener()&#123;</span><br><span class="line">    public void actionPerformed(ActionEvent actionEvent)&#123;</span><br><span class="line">        System.out.println(&quot;Action detected&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args)  &#123;</span><br><span class="line">        //第一种方式：</span><br><span class="line">        Outter outter = new Outter();</span><br><span class="line">        Outter.Inner inner = outter.new Inner();  //必须通过Outter对象来创建</span><br><span class="line">         </span><br><span class="line">        //第二种方式：</span><br><span class="line">        Outter.Inner inner1 = outter.getInnerInstance();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使用Lambda："><a href="#使用Lambda：" class="headerlink" title="使用Lambda："></a>使用Lambda：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button.addActionListener(() -&gt; &#123; </span><br><span class="line">    System.out.println(<span class="string">"Action detected"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="让我们来看一个更明显的例子。"><a href="#让我们来看一个更明显的例子。" class="headerlink" title="让我们来看一个更明显的例子。"></a>让我们来看一个更明显的例子。</h3><p>不采用Lambda的老方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Runnable runnable1=new <span class="function"><span class="title">Runnable</span></span>()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void <span class="function"><span class="title">run</span></span>()&#123;</span><br><span class="line">        System.out.println(<span class="string">"Running without Lambda"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>使用Lambda：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Runnable runnable2=()-&gt;&#123;</span><br><span class="line">    System.out.println(&quot;Running from Lambda&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scenes.forEach((ProgramScene scene) -&gt;&#123;</span><br><span class="line">    List children = scene.getChildren();</span><br><span class="line">    if(children != null &amp;&amp; children.size() &gt; 0)&#123;</span><br><span class="line">        children.forEach(o-&gt;&#123;</span><br><span class="line">            if(o instanceof JSONObject)</span><br><span class="line">            result.addAll(this.getMaterials((JSONObject)o));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>正如你所看到的，使用Lambda表达式不仅让代码变的简单、而且可读、最重要的是代码量也随之减少很多。然而，在某种程度上,<br>这些功能在Scala等这些JVM语言里已经被广泛使用。</p>
-<p>并不奇怪，Scala社区是难以置信的，因为许多Java 8里的内容看起来就像是从Scala里搬过来的。在某种程度上，Java 8的语法<br>要比Scala的更详细但不是很清晰，但这并不能说明什么，如果可以，它可能会像Scala那样构建Lambda表达式。</p>
-<p>一方面，如果Java继续围绕Lambda来发展和实现Scala都已经实现的功能，那么可能就不需要Scala了。另一方面，如果它只提供一<br>些核心的功能，例如帮助匿名内部类，那么Scala和其他语言将会继续茁壮成长，并且有可能会凌驾于Java之上。其实这才是最好的结果，有竞争才有进步，其它语言继续发展和成长，并且无需担心是否会过时。</p>
-<h1 id="函数语言"><a href="#函数语言" class="headerlink" title="函数语言"></a>函数语言</h1><p>Lambda演算和函数式语言的计算模型天生较为接近，Lambda表达式一般是这些语言必备的基本特性。如：<br>Scheme:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(lambda(x)(+x1))</span><br></pre></td></tr></table></figure></p>
-<p>Haskell:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\x-&gt;x+1</span><br></pre></td></tr></table></figure></p>
-<h2 id="Java8新特性Stream"><a href="#Java8新特性Stream" class="headerlink" title="Java8新特性Stream"></a>Java8新特性Stream</h2><p>Java 8 中的 Stream 是对集合（Collection）对象功能的增强</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/14/魔法上网/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2018/09/14/魔法上网/" itemprop="url">魔法上网</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T16:37:28+08:00">
-                2018-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>shadowsocks是一款自定义协议的代理软件，由于其流量特征不明显，不太容易用技术手段拦截。虽然作者@clowwindy两年前就被有司请喝茶了，shadowsocks却一直运转良好没有被彻底封杀过。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>shadowsocks客户端启动后会在本地开启一个代理，可以理解为一个数据的出入口。用户想通过shadowsocks访问墙外网站的请求都要经过这个本地代理。</p>
-<p>通过shadowsocks翻墙上网的过程是这样的：</p>
-<ol>
-<li><p>用户发起一个网络访问请求，比如用浏览器访问google.com，请求被发送到本地代理。</p>
-</li>
-<li><p>客户端从本地代理拿到请求数据，然后发送至墙外的shadowsocks服务端。</p>
-</li>
-<li><p>服务端向google.com发起请求，然后收到google的响应数据，也就是google首页的数据。</p>
-</li>
-<li><p>shadowsocks服务端把响应数据发回客户端。</p>
-</li>
-<li><p>客户端再通过本地代理把响应数据交给浏览器，google首页就显示出来了。</p>
-</li>
-</ol>
-<p>整个过程中的第2步和第4步都是通过shadowsocks自定义的协议隐蔽地进行，很难被过滤，所以我们才能一直用它顺畅地翻墙。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>下载<a href="https://github.com/shadowsocks" title="shadowsocks" target="_blank" rel="noopener">客户端</a>，购买<a href="https://www.shadowsocks.com.hk/" title="shadowsocksService" target="_blank" rel="noopener">服务端</a>。如果你愿意折腾，可以自己租一个VPS（虚拟主机）<strong><a href="#shadowsocks服务搭建">搭建shadowsocks服务</a></strong>，成本更低，而且流量上限取决于你购买的VPS套餐，一般来说都很充裕。</p>
-<p>客户端和服务端都有了，只要配置一下客户端就可以愉快地翻墙了。</p>
-<p>客户端需要按照服务器的配置填写服务器IP地址、服务器端口、本地端口（如果没有本地端口选项，就是默认的1080）、密码、加密方式等参数，可以参看上面的“编写配置文件”小节。</p>
-<p>Windows和macOS客户端支持全局代理和PAC代理两种方式，后者会使用一个脚本来自动检查一个网站是否在需要代理的网站列表中，自动选择直接连接或代理连接。</p>
-<p>PAC列表可以在线更新，但是难免有收录不全的情况。如果你用Chrome,可以使用支持自定义规则的代理管理插件来实现自动切换代理，比如switchyOmega。</p>
-<h2 id="switchyOmega自动切换代理"><a href="#switchyOmega自动切换代理" class="headerlink" title="switchyOmega自动切换代理"></a>switchyOmega自动切换代理</h2><p>switchyOmega是Chrome浏览器上一个很好用的代理管理插件。</p>
-<p>chrome应用商店本身需要翻墙才能访问，因此需要先在shadowsocks启动代理模式下下载安装，再关闭shadowsocks代理。</p>
-<p>安装完毕后，右击switchyOmega图标，选择选项，进入switchOmega配置界面。</p>
-<h3 id="创建shadowsocks情景模式"><a href="#创建shadowsocks情景模式" class="headerlink" title="创建shadowsocks情景模式"></a>创建shadowsocks情景模式</h3><p>新建一个情景模式，比如叫SS，代理协议选择socks5，代理地址为127.0.0.1，端口1080。</p>
-<p>现在切换到SS情景模式就可以通过shadowsocks科学上网了。后面获取自动切换规则列表</p>
-<h3 id="设置自动切换模式"><a href="#设置自动切换模式" class="headerlink" title="设置自动切换模式"></a>设置自动切换模式</h3><p>在设置界面选择自动切换模式，在“切换规则”中勾选“规则列表规则”，对应的情景模式选择刚刚新建的SS。</p>
-<p>然后在下面的规则列表地址中填写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</span><br></pre></td></tr></table></figure></p>
-<p>规则列表格式选择AutoProxy。这是一个一直在维护的被墙网站列表，项目地址是<a href="https://github.com/gfwlist/gfwlist。" target="_blank" rel="noopener">https://github.com/gfwlist/gfwlist。</a></p>
-<p>然后点击立即更新情景模式， 更新完成后会有提示。</p>
-<p>点击左侧的“应用选项”。然后单击switchyOmega图标，选择自动切换，就可以在访问“不存在的网站”时自动切换到shadowsocks代理了。</p>
-<h3 id="添加自定义规则"><a href="#添加自定义规则" class="headerlink" title="添加自定义规则"></a>添加自定义规则</h3><p>如果遇到某个国外网站无法直接连接或速度太慢时，可以单击switchyOmega图标，选择“添加条件”，情景模式选择SS，就可以了。</p>
-<p>这时打开switchyOmega选项，在自动切换模式的切换规则中就可以看到刚刚添加的规则。可以在这里管理自定义的规则。</p>
-<h3 id="导入和导出switchyOmega设置"><a href="#导入和导出switchyOmega设置" class="headerlink" title="导入和导出switchyOmega设置"></a>导入和导出switchyOmega设置</h3><p>如果换了一台电脑，重新设置一遍switchyOmega就太麻烦了。可以在设置好的switchyOmega中导出设置文件，在另一个chrome浏览器中导入，就可以直接复制原来的设置了。</p>
-<p>在switchyOmega选项的左侧点击“导入/导出”，点击“生成备份文件”即可生成switchyOmega设置备份。点击“从备份文件恢复”可以导入备份文件。</p>
-<h2 id="shadowsocks服务搭建"><a href="#shadowsocks服务搭建" class="headerlink" title="shadowsocks服务搭建"></a>shadowsocks服务搭建</h2><h3 id="购买VPS服务器"><a href="#购买VPS服务器" class="headerlink" title="购买VPS服务器"></a>购买VPS服务器</h3><p>主流的VPS（虚拟主机）服务器提供商有三家</p>
-<ul>
-<li>linode</li>
-<li>digital ocean</li>
-<li>bandwagon</li>
-</ul>
-<p>下面的比上面的便宜。如果只是自用，bandwagon足够。</p>
-<p>一般使用paypal绑定一个visa或mastercard信用卡来付款。注意要用国际paypal帐号，国内的是不能用外币付款的。</p>
-<p>在bandwagon购买VPS以后会获得一个主机地址和用于ssh登录的root密码。</p>
-<h3 id="远程登陆VPS"><a href="#远程登陆VPS" class="headerlink" title="远程登陆VPS"></a>远程登陆VPS</h3><p>Mac OS X 或Linux下直接在终端中</p>
-<p>ssh root@your_vps_ip -p your_ssh_port<br>即可。</p>
-<p>在windows系统下需要专门的客户端来SSH登录VPS。在xShell官网  下载xShell。</p>
-<p>家庭和学校用户可以免费试用，下载时选择home and school use即可。需要用邮箱注册一下，下载链接会发送到邮箱中。</p>
-<p>xShell中新建一个连接，会要求输入目标IP地址和端口，以及root密码，按提示操作即可。</p>
-<h3 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h3><p>打开shell，使用VPS服务商提供的root用户和密码SSH登录VPS。然后执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Debian/Ubuntu:</span><br><span class="line">apt-get install python-pip</span><br><span class="line">pip install shadowsocks</span><br><span class="line">CentOS:</span><br><span class="line">yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
-<p>shadowsocks就安装好了。</p>
-<p>有时Ubuntu会遇到第一个命令安装python-pip时找不到包的情况。pip官方给出了一个安装脚本，可以自动安装pip。先下载脚本，然后执行即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://bootstrap.pypa.io/get-pip.py</span><br><span class="line">python get-pip.py</span><br></pre></td></tr></table></figure></p>
-<p>或者使用easy_install安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install shadowsocks</span><br></pre></td></tr></table></figure></p>
-<p>编写配置文件<br>shadowsocks启动时的参数，如服务器端口，代理端口，登录密码等，可以通过启动时的命令行参数来设定，也可以通过json格式的配置文件设定。推荐使用配置文件，方便查看和修改。</p>
-<p>用vi新建一个配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure></p>
-<p>然后输入如下内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line">   <span class="string">"server"</span>:<span class="string">"my_server_ip"</span>, </span><br><span class="line">   <span class="string">"server_port"</span>:<span class="number">25</span>, </span><br><span class="line">   <span class="string">"local_address"</span>: <span class="string">"127.0.0.1"</span>, </span><br><span class="line">   <span class="string">"local_port"</span>:<span class="number">1080</span>, </span><br><span class="line">   <span class="string">"password"</span>:<span class="string">"mypassword"</span>,</span><br><span class="line">   <span class="string">"timeout"</span>:<span class="number">300</span>, </span><br><span class="line">   <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>, </span><br><span class="line">   <span class="string">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>简单说明一下各个配置项</p>
-<p><strong>server</strong><br>你的VPS服务器的IP地址</p>
-<p><strong>server_port</strong><br>你的shadowsocks服务端口。一般可以填一个1025到49151之间的数字。不过如果使用一个知名端口，比如25（电子邮件）、21（FTP），“可能”会更安全，因为GFW对这些基础互联网服务下手的可能性似乎会小一些。注意不要和你的VPS上已经有的服务冲突。</p>
-<p><strong>local_address</strong><br>本地IP地址，作为服务器使用的时候可以不用关注，填127.0.0.1即可。</p>
-<p><strong>local_port</strong><br>本地端口，也不用关注。</p>
-<p><strong>password</strong><br>你的shadowsocks服务密码，客户端连接时需要填写的。</p>
-<p><strong>timeout</strong><br>超时时间，如果当心网络不好可以设置大一点。</p>
-<p><strong>method</strong><br>加密方式，建议填写aes-256-cfb，安全性比较高。</p>
-<p><strong>fast_open</strong><br>在Ubuntu上建议填True。</p>
-<p>填好以后保存退出。</p>
-<h3 id="启动shadowsocks"><a href="#启动shadowsocks" class="headerlink" title="启动shadowsocks"></a>启动shadowsocks</h3><p>如果已经写好了配置文件，启动shadowsocks服务器的命令如下</p>
-<p><code>ssserver -c /etc/shadowsocks.json</code></p>
-<p>后台启动和停止shadowsocks服务器</p>
-<p><code>ssserver -c /etc/shadowsocks.json -d start</code><br><code>ssserver -c /etc/shadowsocks.json -d stop</code><br>shadowsocks的日志保存在</p>
-<p><code>/var/log/shadowsocks.log</code></p>
-<p><strong><a href="https://www.textarea.com/ExpectoPatronum/shiyong-shadowsocks-kexue-shangwang-265/" target="_blank" rel="noopener">转载地址</a></strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1587,7 +1544,7 @@
 
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">fsh</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -1600,7 +1557,7 @@
               
                 <a href="/bolg/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1622,7 +1579,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1856,6 +1813,6 @@
   
 
 
-  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
+  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
 </body>
 </html>
