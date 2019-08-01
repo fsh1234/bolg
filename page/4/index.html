@@ -2,124 +2,76 @@
 
 
 
-  
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/bolg/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/bolg/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/bolg/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/bolg/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/bolg/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/bolg/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/bolg/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/bolg/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/bolg/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/bolg/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/bolg/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/bolg/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/bolg/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo Blog">
-<meta property="og:url" content="https://fsh1234.github.io/bolg/page/4/index.html">
-<meta property="og:site_name" content="Hexo Blog">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Blog">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/bolg/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    scheme: 'Pisces',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
     algolia: {
       applicationID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/bolg/',
+      path: ''
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     }
   };
 </script>
 
-
-
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo Blog">
+<meta property="og:url" content="https://fsh1234.github.io/bolg/page/4/index.html">
+<meta property="og:site_name" content="Hexo Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo Blog">
   <link rel="canonical" href="https://fsh1234.github.io/bolg/page/4/">
 
 
-
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Hexo Blog</title>
   
@@ -131,25 +83,41 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband">
-    <a href="https://github.com/fsh1234" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    </div>
+  <div class="container sidebar-position-left page-home">
+    <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+  <div class="site-meta">
 
     <div class="custom-logo-site-title">
       <a href="/bolg/" class="brand" rel="start">
@@ -158,13 +126,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">fsh的博客</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -172,59 +139,171 @@
   </div>
 </div>
 
+
+
 <nav class="site-nav">
-  
-
-  
     <ul id="menu" class="menu">
-      
         
-        <li class="menu-item menu-item-home">
-          <a href="/bolg/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/bolg/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-home">
       
+    
 
+    <a href="/bolg/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
       
+    
+
+    <a href="/bolg/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
     </ul>
-  
-
-  
 </nav>
 
-
-
- </div>
+</div>
     </header>
+
+    
+
+  <a href="https://github.com/fsh1234" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
       
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/06/Nginx/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/11/06/Nginx/" class="post-title-link" itemprop="url">Nginx</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-06 09:35:48" itemprop="dateCreated datePublished" datetime="2018-11-06T09:35:48+08:00">2018-11-06</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-26 10:29:22" itemprop="dateModified" datetime="2018-12-26T10:29:22+08:00">2018-12-26</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="Nginx是什么？"><a href="#Nginx是什么？" class="headerlink" title="Nginx是什么？"></a>Nginx是什么？</h1><p>Nginx 是俄罗斯人编写的十分轻量级的 HTTP 服务器,Nginx，它的发音为“engine X”，是一个高性能的HTTP和反向代理服务器，同时也是一个 IMAP/POP3/SMTP 代理服务器。<br>到 2013 年，目前有很多国内网站采用 Nginx 作为 Web 服务器，如国内知名的新浪、163、腾讯、Discuz、豆瓣等。据 netcraft 统计，Nginx 排名第 3，约占 15% 的份额</p>
+<p>Nginx 以事件驱动的方式编写，所以有非常好的性能，同时也是一个非常高效的反向代理、负载平衡。其拥有匹配 Lighttpd 的性能，同时还没有 Lighttpd 的内存泄漏问题，<br>而且 Lighttpd 的 mod_proxy 也有一些问题并且很久没有更新。现在，Igor 将源代码以类 BSD 许可证的形式发布。Nginx 因为它的稳定性、丰富的模块库、灵活的配置和<br>低系统资源的消耗而闻名．业界一致认为它是 Apache2.2＋mod_proxy_balancer 的轻量级代替者，不仅是因为响应静态页面的速度非常快，而且它的模块数量达到 Apache<br>的近 2/3。对 proxy 和 rewrite 模块的支持很彻底，还支持 mod_fcgi、ssl、vhosts ，适合用来做 mongrel clusters 的前端 HTTP 响应。</p>
+<p>node.js则是一个JavaScript运行环境</p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>start nginx</p>
+<h2 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h2><p>nginx.exe -s stop<br>D:\nginx-1.0.2\nginx.exe -s quit<br>stop是强制退出 quit是有序退出</p>
+<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>nginx -s reload</p>
+<h2 id="服务监听真实ip"><a href="#服务监听真实ip" class="headerlink" title="服务监听真实ip"></a>服务监听真实ip</h2><p>proxy_set_header X-Real-IP $remote_addr;   　　　　　　　　　　　　# 远端真实ip地址<br>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;   # 反向代理之后转发之前的ip地址<br>proxy_set_header Host $http_host;  　　　　　　　　　　　　　　　　  # http请求的主机域名<br>proxy_set_header X-NginX-Proxy true;  　　　　　　　　　　　　　　　# nginx代理</p>
+<h2 id="websocket配置，通讯转发"><a href="#websocket配置，通讯转发" class="headerlink" title="websocket配置，通讯转发"></a>websocket配置，通讯转发</h2><p>location /wse{<br>  proxy_pass  <a href="http://127.0.0.1:8086" target="_blank" rel="noopener">http://127.0.0.1:8086</a>;</p>
+<p>  proxy_http_version 1.1;<br>  proxy_set_header Upgrade $http_upgrade;<br>  proxy_set_header Connection “upgrade”;</p>
+<p>  proxy_read_timeout 60s;<br>  proxy_set_header Host $host;<br>  proxy_set_header X-Real-IP $remote_addr;<br>  proxy_set_header REMOTE-HOST $remote_addr;<br>  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br>}</p>
+<h2 id="前端路由配置服务器配置"><a href="#前端路由配置服务器配置" class="headerlink" title="前端路由配置服务器配置"></a><a href="http://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html" target="_blank" rel="noopener">前端路由配置服务器配置</a></h2><p>服务器需要做好处理 URL 的准备。处理应用启动最初的 / 这样的请求应该没问题，但当用户来回跳转并在 /accounts/123 刷新时，服务器就会收到来自 /accounts/123 的请求，这时你需要处理这个 URL 并在响应中包含 JavaScript 应用代码。</p>
+<p>一个 express 的应用可能看起来像这样的：</p>
+<p>const express = require(‘express’)<br>const path = require(‘path’)<br>const port = process.env.PORT || 8080<br>const app = express()</p>
+<p>// 通常用于加载静态资源<br>app.use(express.static(__dirname + ‘/public’))</p>
+<p>// 在你应用 JavaScript 文件中包含了一个 script 标签<br>// 的 index.html 中处理任何一个 route<br>app.get(‘*’, function (request, response){<br>  response.sendFile(path.resolve(__dirname, ‘public’, ‘index.html’))<br>})</p>
+<p>app.listen(port)<br>console.log(“server started on port “ + port)<br>如果你的服务器是 nginx，请使用 try_files 指令：</p>
+<p>server {<br>  …<br>  location / {<br>    try_files $uri /index.html<br>  }<br>}<br>当在服务器上找不到其他文件时，这可以让 nginx 服务器提供静态文件服务并指向index.html 文件。</p>
+<p>对于Apache服务器也有类似的方式，创建一个.htaccess文件在你的文件根目录下：</p>
+<p>RewriteBase /<br>RewriteRule ^index.html$ - [L]<br>RewriteCond %{REQUEST_FILENAME} !-f<br>RewriteCond %{REQUEST_FILENAME} !-d<br>RewriteRule . /index.html [L]</p>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>nginx: [error] OpenEvent(“Global\ngx_reload_2380”) failed (2: The system cannot find the file specified)</p>
+<p>nginx未启动重启nginx就可以了</p>
+<h2 id="负载均衡-几种常用方式"><a href="#负载均衡-几种常用方式" class="headerlink" title="负载均衡 几种常用方式"></a>负载均衡 几种常用方式</h2><p>1、轮询（默认）<br>每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。<br>upstream backserver {<br>    server 192.168.0.14;<br>    server 192.168.0.15;<br>}</p>
+<p>2、weight（权重）<br>指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。<br>upstream backserver {<br>    server 192.168.0.14 weight=3;<br>    server 192.168.0.15 weight=7;<br>}</p>
+<p>3、ip_hash;<br>每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，<br>可以解决session的问题<br>upstream backserver {<br>    ip_hash;<br>    server 192.168.0.14:88;<br>    server 192.168.0.15:80;<br>}</p>
+<p>4、fair（第三方）<br>按后端服务器的响应时间来分配请求，响应时间短的优先分配。<br>upstream backserver {<br>    server server1;<br>    server server2;<br>    fair;<br>}</p>
+<p>5、url_hash（第三方）<br>按访问url的hash结果来分配请求，使每个url定向到同一个后端服务器，<br>后端服务器为缓存时比较有效。<br>upstream backserver {<br>    server squid1:3128;<br>    server squid2:3128;<br>    hash $request_uri;<br>    hash_method crc32;<br>}<br>node.js非阻塞和事件驱动</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
   
   
   
+  </article>
+
+    
+      
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -235,61 +314,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/11/02/批处理命令/" itemprop="url">批处理命令</a></h1>
+                
+                <a href="/bolg/2018/11/02/批处理命令/" class="post-title-link" itemprop="url">批处理命令</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T16:20:43+08:00">
-                2018-11-02
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2018-11-02 16:20:43" itemprop="dateCreated datePublished" datetime="2018-11-02T16:20:43+08:00">2018-11-02</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-16 11:42:52" itemprop="dateModified" datetime="2018-11-16T11:42:52+08:00">2018-11-16</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -297,10 +375,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <p>批处理命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"批处理文件 echo是输出的意思"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"当前目录"</span>%<span class="built_in">cd</span>%</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"脚本自身目录"</span>%~dp0</span><br><span class="line">pause</span><br></pre></td></tr></table></figure></p>
 <p>pause是暂停的意思不让命令行一闪而过 有中文时编码用ANSI 防止乱码 </p>
@@ -317,27 +391,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -345,15 +405,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -364,61 +417,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/10/26/Spring-Boot-企业级安装程序/" itemprop="url">Spring-Boot 企业级安装程序</a></h1>
+                
+                <a href="/bolg/2018/10/26/Spring-Boot-企业级安装程序/" class="post-title-link" itemprop="url">Spring-Boot 企业级安装程序</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T09:17:16+08:00">
-                2018-10-26
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2018-10-26 09:17:16" itemprop="dateCreated datePublished" datetime="2018-10-26T09:17:16+08:00">2018-10-26</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-19 10:57:53" itemprop="dateModified" datetime="2019-02-19T10:57:53+08:00">2019-02-19</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -426,10 +478,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>spring-boot 生成企业级安装程序，主要要求程序在windows下一键安装开机自启，这类的博客很少，基本只能自己摸索了。</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>Springboot自带tomcat 只用启动-jar demo-0.0.1-SNAPSHOT.jar就可以启动项目了，然后在同目录下安装jre环境,说明java运行环境，配置好数据库就可以了。这里还是考虑用Tomcat+Nginx 来部署，方便以后的调试和扩展，而且配置更全面一些。</p>
@@ -470,27 +518,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -498,15 +532,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -517,61 +544,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/10/23/Spring-Boot-快速使用/" itemprop="url">Spring-Boot 快速使用</a></h1>
+                
+                <a href="/bolg/2018/10/23/Spring-Boot-快速使用/" class="post-title-link" itemprop="url">Spring-Boot 快速使用</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T15:15:03+08:00">
-                2018-10-23
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2018-10-23 15:15:03" itemprop="dateCreated datePublished" datetime="2018-10-23T15:15:03+08:00">2018-10-23</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-20 10:38:20" itemprop="dateModified" datetime="2019-02-20T10:38:20+08:00">2019-02-20</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -579,10 +605,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="Spring-Boot-介绍"><a href="#Spring-Boot-介绍" class="headerlink" title="Spring-Boot 介绍"></a>Spring-Boot 介绍</h1><p>架构<br><a href="http://spring.io/projects/spring-boot" target="_blank" rel="noopener">spring boot</a><br><a href="http://mp.baomidou.com/" target="_blank" rel="noopener">MyBatis-Plus</a><br><a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">MySql</a><br><a href="https://start.spring.io/" target="_blank" rel="noopener">start</a></p>
 <h2 id="实体映射表"><a href="#实体映射表" class="headerlink" title="实体映射表"></a>实体映射表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Data</span><br><span class="line">@EqualsAndHashCode(callSuper = <span class="literal">false</span>)</span><br><span class="line"><span class="comment">#表名称 配置映射表</span></span><br><span class="line">@TableName(<span class="string">"t_cc_*"</span>)</span><br><span class="line">public class Dao implements Serializable &#123;</span><br><span class="line">    /**实现序列化，实现serializable接口的作用是就是可以把对象存到字节流，然后可以恢复。网络传输需要用到，分布式系统尤其重要*/</span><br><span class="line">    private static final long serialVersionUID = 1L;</span><br><span class="line"></span><br><span class="line">    //设置主键自增</span><br><span class="line">    @TableId(value = <span class="string">"id"</span>, <span class="built_in">type</span> = IdType.AUTO)</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String tableName;</span><br><span class="line">    private String tableColumn;</span><br></pre></td></tr></table></figure>
@@ -596,27 +618,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -624,15 +632,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -643,61 +644,50 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/10/19/阿里的JSONObject对象转换/" itemprop="url">阿里的JSONObject对象转换</a></h1>
+                
+                <a href="/bolg/2018/10/19/阿里的JSONObject对象转换/" class="post-title-link" itemprop="url">阿里的JSONObject对象转换</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T11:01:35+08:00">
-                2018-10-19
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
+              <time title="创建时间：2018-10-19 11:01:35 / 修改时间：16:19:54" itemprop="dateCreated datePublished" datetime="2018-10-19T11:01:35+08:00">2018-10-19</time>
+            </span>
           
+            
 
-          
             
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -705,10 +695,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="FASTJSON"><a href="#FASTJSON" class="headerlink" title="FASTJSON"></a>FASTJSON</h1><p><a href="https://github.com/alibaba/fastjson" target="_blank" rel="noopener">GitHub</a><br>Fastjson是一个Java库，可用于将Java对象转换为其JSON表示。它还可用于将JSON字符串转换为等效的Java对象。Fastjson可以处理任意Java对象，包括您没有源代码的预先存在的对象。</p>
 <h2 id="Fastjson目标"><a href="#Fastjson目标" class="headerlink" title="Fastjson目标"></a>Fastjson目标</h2><p>1.在服务器端和Android客户端提供最佳性能<br>2.提供简单的toJSONString（）和parseObject（）方法，将Java对象转换为JSON，反之亦然<br>3.允许将预先存在的不可修改对象转换为JSON和从JSON转换<br>4.广泛支持Java Generics<br>5.允许对象的自定义表示<br>6.支持任意复杂的对象（具有深层继承层次结构和泛型类型的广泛使用）</p>
@@ -718,27 +704,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -746,15 +718,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -765,61 +730,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/10/18/Spring-Booot-下的线程和进程/" itemprop="url">Spring-Booot 下的线程和进程</a></h1>
+                
+                <a href="/bolg/2018/10/18/Spring-Booot-下的线程和进程/" class="post-title-link" itemprop="url">Spring-Booot 下的线程和进程</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T16:13:19+08:00">
-                2018-10-18
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2018-10-18 16:13:19" itemprop="dateCreated datePublished" datetime="2018-10-18T16:13:19+08:00">2018-10-18</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-07 10:37:55" itemprop="dateModified" datetime="2019-01-07T10:37:55+08:00">2019-01-07</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -827,10 +791,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h2 id="Component-注解"><a href="#Component-注解" class="headerlink" title="@Component 注解"></a>@Component 注解</h2><p>@component 把普通pojo实例化到spring容器中，相当于配置文件中的<bean id class><br>@component有3个为扩展：<br>1、@controller 控制器（注入服务）<br>2、@service 服务（注入dao）<br>3、@repository dao（实现dao访问）</bean></p>
 <h2 id="异步注解"><a href="#异步注解" class="headerlink" title="异步注解"></a>异步注解</h2><p>在启动类*Application的上面添加@EnableAsync注解</p>
@@ -844,27 +804,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -872,15 +818,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -891,61 +830,50 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/10/16/WebSocket/" itemprop="url">WebSocket</a></h1>
+                
+                <a href="/bolg/2018/10/16/WebSocket/" class="post-title-link" itemprop="url">WebSocket</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T12:20:11+08:00">
-                2018-10-16
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
+              <time title="创建时间：2018-10-16 12:20:11 / 修改时间：16:47:40" itemprop="dateCreated datePublished" datetime="2018-10-16T12:20:11+08:00">2018-10-16</time>
+            </span>
           
+            
 
-          
             
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -953,10 +881,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h1><p>WebSocket协议是基于TCP的一种新的网络协议。它实现了浏览器与服务器全双工(full-duplex)通信——允许服务器主动发送信息给客户端。<br>WebSocket通信协议于2011年被IETF定为标准RFC 6455，并被RFC7936所补充规范。</p>
 
@@ -964,27 +888,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -992,15 +902,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -1011,61 +914,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/10/15/Hexo-主题-NexT/" itemprop="url">Hexo 主题-NexT</a></h1>
+                
+                <a href="/bolg/2018/10/15/Hexo-主题-NexT/" class="post-title-link" itemprop="url">Hexo 主题-NexT</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T16:16:16+08:00">
-                2018-10-15
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2018-10-15 16:16:16" itemprop="dateCreated datePublished" datetime="2018-10-15T16:16:16+08:00">2018-10-15</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-01 14:55:51" itemprop="dateModified" datetime="2019-08-01T14:55:51+08:00">2019-08-01</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -1073,10 +975,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a>NexT</h1><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next官网</a></p>
 <h2 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
@@ -1102,27 +1000,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -1130,15 +1014,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -1149,61 +1026,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/10/12/Spring-Boot-下的单元测试/" itemprop="url">Spring Boot 下的单元测试</a></h1>
+                
+                <a href="/bolg/2018/10/12/Spring-Boot-下的单元测试/" class="post-title-link" itemprop="url">Spring Boot 下的单元测试</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-12T12:14:34+08:00">
-                2018-10-12
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2018-10-12 12:14:34" itemprop="dateCreated datePublished" datetime="2018-10-12T12:14:34+08:00">2018-10-12</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-29 10:22:27" itemprop="dateModified" datetime="2019-01-29T10:22:27+08:00">2019-01-29</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -1211,10 +1087,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h2 id="Idea下快速生成指令"><a href="#Idea下快速生成指令" class="headerlink" title="Idea下快速生成指令"></a>Idea下快速生成指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">ctrl+<span class="built_in">shift</span>+t --&gt; create new <span class="built_in">test</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 常使用注解</span></span><br><span class="line">```java</span><br><span class="line">类注解</span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br><span class="line">@AutoConfigureTestDatabase(replace = NONE) 对真实数据库运行测试</span><br><span class="line">public class MultipartFileServiceImplTest &#123;</span><br><span class="line">服务注解</span><br><span class="line">@Resource</span><br><span class="line">private *Service service;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 校验结果</span></span><br><span class="line">[参考](https://blog.csdn.net/sz85850597/article/details/80427408)</span><br><span class="line">Assert.assertThat();</span><br><span class="line"></span><br><span class="line">想判断某个字符串 s 是否含有子字符串 <span class="string">"developer"</span> 或 <span class="string">"Works"</span> 中间的一个</span><br><span class="line">assertThat(s, anyOf(containsString(<span class="string">"developer"</span>), containsString(<span class="string">"Works"</span>))); </span><br><span class="line"></span><br><span class="line">字符相关匹配符</span><br><span class="line">/**equalTo匹配符断言被测的testedValue等于expectedValue，</span><br><span class="line">* equalTo可以断言数值之间，字符串之间和对象之间是否相等，相当于Object的equals方法</span><br><span class="line">*/</span><br><span class="line">assertThat(testedValue, equalTo(expectedValue));</span><br><span class="line">/**equalToIgnoringCase匹配符断言被测的字符串testedString</span><br><span class="line">*在忽略大小写的情况下等于expectedString</span><br><span class="line">*/</span><br><span class="line">assertThat(testedString, equalToIgnoringCase(expectedString));</span><br><span class="line">/**equalToIgnoringWhiteSpace匹配符断言被测的字符串testedString</span><br><span class="line">*在忽略头尾的任意个空格的情况下等于expectedString，</span><br><span class="line">*注意：字符串中的空格不能被忽略</span><br><span class="line">*/</span><br><span class="line">assertThat(testedString, equalToIgnoringWhiteSpace(expectedString);</span><br><span class="line">/**containsString匹配符断言被测的字符串testedString包含子字符串subString**/</span><br><span class="line">assertThat(testedString, containsString(subString) );</span><br><span class="line">/**endsWith匹配符断言被测的字符串testedString以子字符串suffix结尾*/</span><br><span class="line">assertThat(testedString, endsWith(suffix));</span><br><span class="line">/**startsWith匹配符断言被测的字符串testedString以子字符串prefix开始*/</span><br><span class="line">assertThat(testedString, startsWith(prefix));</span><br><span class="line"></span><br><span class="line">一般匹配符</span><br><span class="line">/**nullValue()匹配符断言被测object的值为null*/</span><br><span class="line">assertThat(object,nullValue());</span><br><span class="line">/**notNullValue()匹配符断言被测object的值不为null*/</span><br><span class="line">assertThat(object,notNullValue());</span><br><span class="line">/**is匹配符断言被测的object等于后面给出匹配表达式*/</span><br><span class="line">assertThat(testedString, is(equalTo(expectedValue)));</span><br><span class="line">/**is匹配符简写应用之一，is(equalTo(x))的简写，断言testedValue等于expectedValue*/</span><br><span class="line">assertThat(testedValue, is(expectedValue));</span><br><span class="line">/**is匹配符简写应用之二，is(instanceOf(SomeClass.class))的简写，</span><br><span class="line">*断言testedObject为Cheddar的实例</span><br><span class="line">*/</span><br><span class="line">assertThat(testedObject, is(Cheddar.class));</span><br><span class="line">/**not匹配符和is匹配符正好相反，断言被测的object不等于后面给出的object*/</span><br><span class="line">assertThat(testedString, not(expectedString));</span><br><span class="line">/**allOf匹配符断言符合所有条件，相当于“与”（&amp;&amp;）*/</span><br><span class="line">assertThat(testedNumber, allOf( greaterThan(8), lessThan(16) ) );</span><br><span class="line">/**anyOf匹配符断言符合条件之一，相当于“或”（||）*/</span><br><span class="line">assertThat(testedNumber, anyOf( greaterThan(16), lessThan(8) ) );</span><br><span class="line">数值相关匹配符</span><br><span class="line">/**closeTo匹配符断言被测的浮点型数testedDouble在20.0¡À0.5范围之内*/</span><br><span class="line">assertThat(testedDouble, closeTo( 20.0, 0.5 ));</span><br><span class="line">/**greaterThan匹配符断言被测的数值testedNumber大于16.0*/</span><br><span class="line">assertThat(testedNumber, greaterThan(16.0));</span><br><span class="line">/** lessThan匹配符断言被测的数值testedNumber小于16.0*/</span><br><span class="line">assertThat(testedNumber, lessThan (16.0));</span><br><span class="line">/** greaterThanOrEqualTo匹配符断言被测的数值testedNumber大于等于16.0*/</span><br><span class="line">assertThat(testedNumber, greaterThanOrEqualTo (16.0));</span><br><span class="line">/** lessThanOrEqualTo匹配符断言被测的testedNumber小于等于16.0*/</span><br><span class="line">assertThat(testedNumber, lessThanOrEqualTo (16.0));</span><br><span class="line">集合相关匹配符</span><br><span class="line">/**hasEntry匹配符断言被测的Map对象mapObject含有一个键值为<span class="string">"key"</span>对应元素值为<span class="string">"value"</span>的Entry项*/</span><br><span class="line">assertThat(mapObject, hasEntry(<span class="string">"key"</span>, <span class="string">"value"</span> ) );</span><br><span class="line">/**hasItem匹配符表明被测的迭代对象iterableObject含有元素element项则测试通过*/</span><br><span class="line">assertThat(iterableObject, hasItem (element));</span><br><span class="line">/** hasKey匹配符断言被测的Map对象mapObject含有键值“key”*/</span><br><span class="line">assertThat(mapObject, hasKey (<span class="string">"key"</span>));</span><br><span class="line">/** hasValue匹配符断言被测的Map对象mapObject含有元素值value*/</span><br><span class="line">assertThat(mapObject, hasValue(value));</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用Mockito来录制结果</span></span><br><span class="line">```java</span><br><span class="line"> //Let<span class="string">'s import Mockito statically so that the code looks clearer</span></span><br><span class="line"><span class="string"> import static org.mockito.Mockito.*;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //mock creation</span></span><br><span class="line"><span class="string"> List mockedList = mock(List.class);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //using mock object</span></span><br><span class="line"><span class="string"> mockedList.add("one");</span></span><br><span class="line"><span class="string"> mockedList.clear();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //verification</span></span><br><span class="line"><span class="string"> verify(mockedList).add("one");</span></span><br><span class="line"><span class="string"> verify(mockedList).clear();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> when(mockedList.get(0)).thenReturn("first");</span></span><br><span class="line"><span class="string"> when(mockedList.get(1)).thenThrow(new RuntimeException());</span></span><br></pre></td></tr></table></figure>
 <h2 id="Mockito注释"><a href="#Mockito注释" class="headerlink" title="Mockito注释"></a>Mockito注释</h2><p>@mock<br>标记一个模仿区域<br>1.快速创建模拟<br>2.减少重复代码<br>3.使得的代码更有可读性<br>4.使验证错误更易于阅读，因为字段名称用于标识模拟</p>
@@ -1226,27 +1098,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -1254,15 +1112,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -1273,61 +1124,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2018/09/25/LomLombok使用/" itemprop="url">LomLombok使用</a></h1>
+                
+                <a href="/bolg/2018/09/25/LomLombok使用/" class="post-title-link" itemprop="url">LomLombok使用</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T15:52:40+08:00">
-                2018-09-25
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2018-09-25 15:52:40" itemprop="dateCreated datePublished" datetime="2018-09-25T15:52:40+08:00">2018-09-25</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-27 10:50:34" itemprop="dateModified" datetime="2018-12-27T10:50:34+08:00">2018-12-27</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -1335,10 +1185,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <p>实体映射表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根据属性生成get和set方法</span></span><br><span class="line">@Data</span><br></pre></td></tr></table></figure></p>
 
@@ -1346,184 +1192,33 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
   
   
   </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/22/在线预览文档/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2018/09/22/在线预览文档/" itemprop="url">在线预览文档</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T10:55:08+08:00">
-                2018-09-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>java实现在线预览功能，无非是将各类文档转换成前端可以解析的统一格式的文件，前端可解析文件一般是目前有pdf或者html。</p>
-<h2 id="选用格式分析"><a href="#选用格式分析" class="headerlink" title="选用格式分析"></a>选用格式分析</h2><h3 id="pdf处理原理"><a href="#pdf处理原理" class="headerlink" title="pdf处理原理"></a>pdf处理原理</h3><p>1.通过第三方工具openoffice，将word、excel、ppt、txt等文件转换为pdf文件；<br>2.通过swfTools将pdf文件转换成swf格式的文件；<br>3.通过FlexPaper文档组件在页面上进行展示。</p>
-<h3 id="html处理原理"><a href="#html处理原理" class="headerlink" title="html处理原理"></a>html处理原理</h3><p>或者通过poi实现word、excel、ppt转html，这样就可以放在页面上了<br>ppt转成图片时，如果字体不是宋体会发时乱码<br>poi还有一些兼容问题，不太支持wps的文档</p>
-<p>通过个种在线工具对比，发现转成html，文档格式变动比较大，但是代码量相对较少，实现比较简单<br>而转成pdf对性能消耗比较大，文档格式基本无损，代码量较多，实现逻辑相对复杂</p>
-<p>还有一种 第三方成熟的服务 如<a href="http://www.officeweb365.com" target="_blank" rel="noopener">OfficeWeb365</a><br>优点很多，但是缺点致命，首先必须联网，然后文档安全无法保证，不稳定。</p>
-<h2 id="选用技术分析"><a href="#选用技术分析" class="headerlink" title="选用技术分析"></a>选用技术分析</h2><h3 id="jacob插件"><a href="#jacob插件" class="headerlink" title="jacob插件"></a>jacob插件</h3><p>jacob允许在java中调用com接口自动组件，它使用JNI（本地调用程序）来进行本地调用COM库。它可运行在x86和支持32位和64位Java虚拟机 X64的环境。</p>
-<p>需下载jacob-1.19-x86.dll  、jacob-1.19-x64.dll 并将文件放到jdk bin目录下，用户调用时启动插件功能<br>最后需要通过ComThread.Release()语句释放winword.exe进程<br>但是当被部署项目的服务器是centOS等linux server时，就不能用使用相关插件</p>
-<h3 id="OpenOffice"><a href="#OpenOffice" class="headerlink" title="OpenOffice"></a>OpenOffice</h3><p>OpenOffice跨平台可以在Windows和Linux下运行，并且开源免费（原则上GPL开源协议不推荐，相当于别人开源了你也需要开源不适用于商业软件）</p>
-<p>开源协议</p>
-<iframe src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=61b81db3f4dcd100d991f07313e22c75/9f510fb30f2442a7834c4a1bdd43ad4bd01302c9.jpg" width="565" height="353" frameborder="0" allowfullscreen></iframe>
-<p>开发思路<br><a href="https://blog.csdn.net/nuomizhende45/article/details/82317189" target="_blank" rel="noopener">参考block</a><br>1.一个文件只转换一次<br>2.多线程，<a href="www.openoffice.org">OpenOffice</a>为单进程不支持多线程，故需要多开进程（一个程序至少有一个进程,一个进程至少有一个线程）<br>3.存在用户同时请求未转换完文档，导致重复转换导致异常的情况，故需要加锁处理</p>
-<h2 id="OpenOffice转excel为pdf时出现折行"><a href="#OpenOffice转excel为pdf时出现折行" class="headerlink" title="OpenOffice转excel为pdf时出现折行"></a>OpenOffice转excel为pdf时出现折行</h2><p><a href="https://blog.csdn.net/qq_41639676/article/details/79094955?utm_source=copy" target="_blank" rel="noopener">参考block</a><br>问题：Java 操作  OpenOffice 将excel 转换为 pdf ，因多列出现折行；<br>原因：OpenOffice 默认输出为A4 大小，源excel 存在队列，总宽度超出 A4 宽度，所以出现折行；<br>解决方法：自定义一个类，继承OpenOfficeDocumentConverter 类 重写方法，与 refreshDocument 方法，设置 OpenOffice 输出 pdf 的宽度参数</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
 
     
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/bolg/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/bolg/">1</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/bolg/page/5/">5</a><a class="extend next" rel="next" href="/bolg/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/bolg/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/bolg/">1</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/bolg/page/5/">5</a><a class="extend next" rel="next" href="/bolg/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
-
 
 
           </div>
           
 
-
-          
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -1535,119 +1230,132 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
+
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">fsh</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/bolg/archives/">
-              
-                  <span class="site-state-item-count">46</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">分类</span>
-                
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
+  <p class="site-author-name" itemprop="name">fsh</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/bolg/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
           
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
 
-          
 
-          
-          
-
-          
-          
-
-          
 
         </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">fsh</span>
-
-  
-  
-  <div class="powered-by">
-    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-      本站访客数:<span id="busuanzi_value_site_uv"></span>
-    </span>
-  </div>
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
 
         
+
 
 
 
@@ -1658,32 +1366,36 @@
         
       </div>
     </footer>
-
-    
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
       </div>
-    
 
     
 
   </div>
 
   
+  <script src="/bolg/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/bolg/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/bolg/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  <script src="/bolg/js/utils.js?v=7.3.0"></script>
+  <script src="/bolg/js/motion.js?v=7.3.0"></script>
+
+  
+  <script src="/bolg/js/affix.js?v=7.3.0"></script>
+  <script src="/bolg/js/schemes/pisces.js?v=7.3.0"></script>
 
 
+  
 
+  <script src="/bolg/js/next-boot.js?v=7.3.0"></script>
 
+  
 
+  
 
-
+  
 
 
   
@@ -1699,120 +1411,29 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/jquery/index.js?v=2.1.3"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
 
 
-  
 
 
-  <script type="text/javascript" src="/bolg/js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/bolg/js/src/motion.js?v=5.1.4"></script>
 
 
 
-  
-  
 
 
-  <script type="text/javascript" src="/bolg/js/src/affix.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/bolg/js/src/schemes/pisces.js?v=5.1.4"></script>
 
 
 
-  
 
-  
 
 
-  <script type="text/javascript" src="/bolg/js/src/bootstrap.js?v=5.1.4"></script>
 
 
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-
-  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
 </body>
 </html>

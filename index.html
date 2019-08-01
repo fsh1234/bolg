@@ -2,124 +2,76 @@
 
 
 
-  
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/bolg/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/bolg/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/bolg/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/bolg/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/bolg/css/main.css?v=7.3.0">
 
 
+<link rel="stylesheet" href="/bolg/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/bolg/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/bolg/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/bolg/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/bolg/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/bolg/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/bolg/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/bolg/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo Blog">
-<meta property="og:url" content="https://fsh1234.github.io/bolg/index.html">
-<meta property="og:site_name" content="Hexo Blog">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo Blog">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/bolg/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    scheme: 'Pisces',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
     algolia: {
       applicationID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/bolg/',
+      path: ''
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     }
   };
 </script>
 
-
-
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo Blog">
+<meta property="og:url" content="https://fsh1234.github.io/bolg/index.html">
+<meta property="og:site_name" content="Hexo Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo Blog">
   <link rel="canonical" href="https://fsh1234.github.io/bolg/">
 
 
-
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Hexo Blog</title>
   
@@ -131,25 +83,41 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband">
-    <a href="https://github.com/fsh1234" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    </div>
+  <div class="container sidebar-position-left page-home">
+    <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+  <div class="site-meta">
 
     <div class="custom-logo-site-title">
       <a href="/bolg/" class="brand" rel="start">
@@ -158,13 +126,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">fsh的博客</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -172,59 +139,135 @@
   </div>
 </div>
 
+
+
 <nav class="site-nav">
-  
-
-  
     <ul id="menu" class="menu">
-      
         
-        <li class="menu-item menu-item-home">
-          <a href="/bolg/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/bolg/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-home">
       
+    
 
+    <a href="/bolg/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
       
+    
+
+    <a href="/bolg/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
     </ul>
-  
-
-  
 </nav>
 
-
-
- </div>
+</div>
     </header>
+
+    
+
+  <a href="https://github.com/fsh1234" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
       
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/08/01/index/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2019/08/01/index/" class="post-title-link" itemprop="url">未命名</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-01 00:00:00 / 修改时间：18:07:59" itemprop="dateCreated datePublished" datetime="2019-08-01T00:00:00+08:00">2019-08-01</time>
+            </span>
+          
+            
+
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
   
   
   
+  </article>
+
+    
+      
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -235,61 +278,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/05/24/Redis/" itemprop="url">Redis</a></h1>
+                
+                <a href="/bolg/2019/05/24/Redis/" class="post-title-link" itemprop="url">Redis</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T09:48:02+08:00">
-                2019-05-24
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-05-24 09:48:02" itemprop="dateCreated datePublished" datetime="2019-05-24T09:48:02+08:00">2019-05-24</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-31 15:27:22" itemprop="dateModified" datetime="2019-07-31T15:27:22+08:00">2019-07-31</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -297,10 +339,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>redis 是一个持久化的键值对存储器，其中主键是用来表示数据块所在位置，而值在java则是通过序列化存储一切对象。redis和数据库类似可通过select命令切换数据库，并且通过快照来持久数据库。通常作用在数据缓存，消息队列，分布式集群Session分离处理等。</p>
 <h2 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h2><p>redis有5种数据类型结构分别是字符型，散列型，列表，集合，有序集合。</p>
@@ -317,27 +355,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -345,15 +369,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -364,61 +381,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/04/30/Docker-Compose/" itemprop="url">Docker-Compose</a></h1>
+                
+                <a href="/bolg/2019/04/30/Docker-Compose/" class="post-title-link" itemprop="url">Docker-Compose</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T11:12:15+08:00">
-                2019-04-30
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-04-30 11:12:15" itemprop="dateCreated datePublished" datetime="2019-04-30T11:12:15+08:00">2019-04-30</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-01 11:08:43" itemprop="dateModified" datetime="2019-08-01T11:08:43+08:00">2019-08-01</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -426,10 +442,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h2 id="Compose-简介"><a href="#Compose-简介" class="headerlink" title="Compose 简介"></a>Compose 简介</h2><p>Compose 项目是 Docker 官方的开源项目，负责实现对 Docker 容器集群的快速编排。<br>它允许用户通过一个单独的 docker-compose.yml 模板文件（YAML 格式）来定义一组相关联的应用容器为一个项目（project）。</p>
 <p>Compose 中有两个重要的概念：</p>
@@ -440,7 +452,7 @@
 </li>
 </ol>
 <h2 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h2><p>下载</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)"</span><br><span class="line"> -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 <p>授权</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 <p>检查</p>
@@ -454,27 +466,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -482,15 +480,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -501,61 +492,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/04/29/枚举类型的使用/" itemprop="url">枚举类型的使用</a></h1>
+                
+                <a href="/bolg/2019/04/29/枚举类型的使用/" class="post-title-link" itemprop="url">枚举类型的使用</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-29T16:24:58+08:00">
-                2019-04-29
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-04-29 16:24:58" itemprop="dateCreated datePublished" datetime="2019-04-29T16:24:58+08:00">2019-04-29</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-03 14:12:46" itemprop="dateModified" datetime="2019-05-03T14:12:46+08:00">2019-05-03</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -563,10 +553,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><p>枚举是final,意味着它不能被继承，他的作用是用来限制输入的类型</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> MaterialType&#123;</span><br><span class="line"></span><br><span class="line">    UNDEFINED(<span class="string">"Undefined"</span>, <span class="number">0</span>,<span class="string">"object"</span>),</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** 枚举值码 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String commandType;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 枚举描述 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String desc;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 实现类</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String clazz ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MaterialType <span class="title">find</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (MaterialType c : MaterialType.values()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (c.getIndex() == index) &#123;</span><br><span class="line">                <span class="keyword">return</span> c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -574,27 +560,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -602,15 +574,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -621,61 +586,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/04/18/Spring-Boot全局异常处理/" itemprop="url">Spring-Boot全局异常处理</a></h1>
+                
+                <a href="/bolg/2019/04/18/Spring-Boot全局异常处理/" class="post-title-link" itemprop="url">Spring-Boot全局异常处理</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-18T14:28:33+08:00">
-                2019-04-18
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-04-18 14:28:33" itemprop="dateCreated datePublished" datetime="2019-04-18T14:28:33+08:00">2019-04-18</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-01 09:10:08" itemprop="dateModified" datetime="2019-08-01T09:10:08+08:00">2019-08-01</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -683,10 +647,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h2 id="SpringBoot自带的异常处理"><a href="#SpringBoot自带的异常处理" class="headerlink" title="SpringBoot自带的异常处理"></a>SpringBoot自带的异常处理</h2><p>SpringBoot有一个默认的视图“/error”来处理所有的异常，并且该视图注册成全局的错误页面在服务中，在客户端中他返回带有状态和错误码的json类型的响应。</p>
 <h2 id="取代默认的视图来处理"><a href="#取代默认的视图来处理" class="headerlink" title="取代默认的视图来处理"></a>取代默认的视图来处理</h2><p>To replace the default behavior completely, you can implement ErrorController and register a bean definition of that type or add a bean of type ErrorAttributes to use the existing mechanism but replace the contents.</p>
@@ -703,27 +663,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -731,15 +677,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -750,61 +689,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/03/28/MySQL-with-Docker/" itemprop="url">MySQL with Docker</a></h1>
+                
+                <a href="/bolg/2019/03/28/MySQL-with-Docker/" class="post-title-link" itemprop="url">MySQL with Docker</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-28T15:47:00+08:00">
-                2019-03-28
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-03-28 15:47:00" itemprop="dateCreated datePublished" datetime="2019-03-28T15:47:00+08:00">2019-03-28</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-30 18:27:24" itemprop="dateModified" datetime="2019-04-30T18:27:24+08:00">2019-04-30</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -812,10 +750,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h2 id="拉取Mysql镜像"><a href="#拉取Mysql镜像" class="headerlink" title="拉取Mysql镜像"></a>拉取Mysql镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull mysql:5.7.25</span><br></pre></td></tr></table></figure>
 <h2 id="实例化容器"><a href="#实例化容器" class="headerlink" title="实例化容器"></a>实例化容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-mysql -v /srv/mysql/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7.25</span><br></pre></td></tr></table></figure>
@@ -825,27 +759,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -853,15 +773,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -872,61 +785,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/03/27/Spring-Boot-with-Docker/" itemprop="url">Spring-Boot with Docker</a></h1>
+                
+                <a href="/bolg/2019/03/27/Spring-Boot-with-Docker/" class="post-title-link" itemprop="url">Spring-Boot with Docker</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-27T15:44:45+08:00">
-                2019-03-27
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-03-27 15:44:45" itemprop="dateCreated datePublished" datetime="2019-03-27T15:44:45+08:00">2019-03-27</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-29 11:05:02" itemprop="dateModified" datetime="2019-03-29T11:05:02+08:00">2019-03-29</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -934,10 +846,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="Dockerfile文件制作"><a href="#Dockerfile文件制作" class="headerlink" title="Dockerfile文件制作"></a>Dockerfile文件制作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line">FROM openjdk:8-jdk-alpine</span><br><span class="line">#挂载匿名卷 防止容器存储层写入大量数据</span><br><span class="line">VOLUME /tmp</span><br><span class="line">#Dockerfile 中的 ARG 指令是定义参数名称，以及定义其默认值。该默认值可以在构建命令 docker build 中用 --build-arg &lt;参数名&gt;=&lt;值&gt; 来覆盖</span><br><span class="line">ARG JAR_FILE</span><br><span class="line">COPY $&#123;JAR_FILE&#125; app.jar</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd=file:/dev/./urandom&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line">docker build -t demo:1 .</span><br></pre></td></tr></table></figure>
 <p>The JAR_FILE could be passed in as part of the docker command E.g. for Maven:<br>JAR_FILE可以作为docker命令的一部分传入，就是target/*.jar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker build --build-args=target/*.jar -t myorg/myapp .</span><br></pre></td></tr></table></figure></p>
@@ -956,27 +864,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -984,15 +878,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -1003,61 +890,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/03/25/Git-指令/" itemprop="url">Git 指令</a></h1>
+                
+                <a href="/bolg/2019/03/25/Git-指令/" class="post-title-link" itemprop="url">Git 指令</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T17:09:18+08:00">
-                2019-03-25
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-03-25 17:09:18" itemprop="dateCreated datePublished" datetime="2019-03-25T17:09:18+08:00">2019-03-25</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-06 15:36:15" itemprop="dateModified" datetime="2019-05-06T15:36:15+08:00">2019-05-06</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -1065,10 +951,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h1><h2 id="本地intit"><a href="#本地intit" class="headerlink" title="本地intit"></a>本地intit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git add *.c</span><br><span class="line">$ git add LICENSE</span><br><span class="line">$ git commit -m &apos;initial project version&apos;</span><br></pre></td></tr></table></figure>
 <h2 id="远程拷贝"><a href="#远程拷贝" class="headerlink" title="远程拷贝"></a>远程拷贝</h2><figure class="highlight plain"><figcaption><span>git clone</span><a href="https://github.com/libgit2/libgit2```" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 资源获取</span><br><span class="line"></span><br><span class="line">## 设置远程资源</span><br></pre></td></tr></table></figure>
@@ -1085,27 +967,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -1113,15 +981,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -1132,61 +993,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/03/22/Gitlab项目管理/" itemprop="url">Gitlab项目管理</a></h1>
+                
+                <a href="/bolg/2019/03/22/Gitlab项目管理/" class="post-title-link" itemprop="url">Gitlab项目管理</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T11:49:21+08:00">
-                2019-03-22
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-03-22 11:49:21" itemprop="dateCreated datePublished" datetime="2019-03-22T11:49:21+08:00">2019-03-22</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-31 18:09:40" itemprop="dateModified" datetime="2019-07-31T18:09:40+08:00">2019-07-31</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -1194,10 +1054,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <p>SSH协议  SSH密钥</p>
 <p>md .ssh<br>兼容问题</p>
@@ -1209,27 +1065,13 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
@@ -1237,15 +1079,8 @@
   
   </article>
 
-
     
       
-
-  
-
-  
-  
-  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -1256,61 +1091,60 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/bolg/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo Blog">
     </span>
-
-    
       <header class="post-header">
 
         
-        
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/bolg/2019/03/21/Docker使用容器运行Gitlab/" itemprop="url">Docker使用容器运行Gitlab</a></h1>
+                
+                <a href="/bolg/2019/03/21/Docker使用容器运行Gitlab/" class="post-title-link" itemprop="url">Docker使用容器运行Gitlab</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T10:54:28+08:00">
-                2019-03-21
-              </time>
-            
 
-            
+              
+                
+              
 
-            
-          </span>
-
-          
-
+              <time title="创建时间：2019-03-21 10:54:28" itemprop="dateCreated datePublished" datetime="2019-03-21T10:54:28+08:00">2019-03-21</time>
+            </span>
           
             
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-01 14:22:26" itemprop="dateModified" datetime="2019-04-01T14:22:26+08:00">2019-04-01</time>
+              </span>
+            
           
 
-          
-          
-
-          
-
-          
-
-          
+          <br>
 
         </div>
       </header>
-    
 
     
     
@@ -1318,10 +1152,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
             <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Gitlab-镜像"><a href="#Gitlab-镜像" class="headerlink" title="Gitlab 镜像"></a>Gitlab 镜像</h2><p>docker pull gitlab/gitlab-ce</p>
 <p><a href="https://hub.docker.com/r/gitlab/gitlab-ce" target="_blank" rel="noopener">https://hub.docker.com/r/gitlab/gitlab-ce</a></p>
@@ -1339,177 +1169,33 @@
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
-      
     </footer>
   </div>
   
   
   
   </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/15/阿里云使用Docker部署前端服务/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/bolg/2019/03/15/阿里云使用Docker部署前端服务/" itemprop="url">阿里云使用Docker部署前端服务</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-15T17:23:12+08:00">
-                2019-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="镜像制作"><a href="#镜像制作" class="headerlink" title="镜像制作"></a>镜像制作</h1><p>使用Dockerfile 定制镜像</p>
-<h2 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h2><p>新建一个Dockerfile文件夹将资源全部转移到其中<br>新建Dockerfile文件，Dockerfile 支持 Shell 类的行尾添加 \ 的命令换行方式，以及行首 # 进行注释的格式</p>
-<p>使用vi编辑Dockerfile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#在nginx镜像的基础上新建镜像</span><br><span class="line">FROM nginx</span><br><span class="line">#拷贝本地的web静态资源到nginx目录</span><br><span class="line">COPY html /usr/share/nginx/html</span><br></pre></td></tr></table></figure></p>
-<p>在Dockerfile文件下运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#制作镜像</span><br><span class="line">$ docker build -t my-nginx-image/myapp .</span><br><span class="line">#生成实例</span><br><span class="line">$ docker run --name my-nginx-container -p 80:80 -d my-nginx-image/myapp</span><br><span class="line">#以日志形式运行</span><br><span class="line">$ docker run --name my-nginx-container -p 80:80 -v /web/nginxImage/nginx.conf:/etc/nginx/nginx.conf:ro -d my-nginx-image/myapp nginx-debug -g &apos;daemon off;&apos;</span><br></pre></td></tr></table></figure></p>
-<p>docker run –name my-nginx-container -p 80:80 \<br>  –volume /srv/nginx/nginx.conf:/etc/nginx/nginx.conf \<br>  –volume /srv/nginx/html:/usr/share/nginx/html \<br>  –volume /srv/nginx/log:/var/log/nginx \<br>  -d nginx</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
 
     
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/bolg/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/5/">5</a><a class="extend next" rel="next" href="/bolg/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/bolg/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/5/">5</a><a class="extend next" rel="next" href="/bolg/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
-
 
 
           </div>
           
 
-
-          
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -1521,119 +1207,132 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
+
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">fsh</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/bolg/archives/">
-              
-                  <span class="site-state-item-count">46</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">分类</span>
-                
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
+  <p class="site-author-name" itemprop="name">fsh</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/bolg/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
           
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
 
-          
 
-          
-          
-
-          
-          
-
-          
 
         </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">fsh</span>
-
-  
-  
-  <div class="powered-by">
-    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-      本站访客数:<span id="busuanzi_value_site_uv"></span>
-    </span>
-  </div>
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
 
         
+
 
 
 
@@ -1644,32 +1343,36 @@
         
       </div>
     </footer>
-
-    
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
       </div>
-    
 
     
 
   </div>
 
   
+  <script src="/bolg/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/bolg/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/bolg/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  <script src="/bolg/js/utils.js?v=7.3.0"></script>
+  <script src="/bolg/js/motion.js?v=7.3.0"></script>
+
+  
+  <script src="/bolg/js/affix.js?v=7.3.0"></script>
+  <script src="/bolg/js/schemes/pisces.js?v=7.3.0"></script>
 
 
+  
 
+  <script src="/bolg/js/next-boot.js?v=7.3.0"></script>
 
+  
 
+  
 
-
+  
 
 
   
@@ -1685,120 +1388,29 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/jquery/index.js?v=2.1.3"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/bolg/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
 
 
-  
 
 
-  <script type="text/javascript" src="/bolg/js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/bolg/js/src/motion.js?v=5.1.4"></script>
 
 
 
-  
-  
 
 
-  <script type="text/javascript" src="/bolg/js/src/affix.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/bolg/js/src/schemes/pisces.js?v=5.1.4"></script>
 
 
 
-  
 
-  
 
 
-  <script type="text/javascript" src="/bolg/js/src/bootstrap.js?v=5.1.4"></script>
 
 
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-
-  <script src="/bolg/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/bolg/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":60,"height":120},"mobile":{"show":true},"log":false});</script>
 </body>
 </html>
