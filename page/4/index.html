@@ -191,6 +191,431 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/23/用户密码加密/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/11/23/用户密码加密/" class="post-title-link" itemprop="url">用户密码加密</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-23 12:27:32 / 修改时间：17:03:20" itemprop="dateCreated datePublished" datetime="2018-11-23T12:27:32+08:00">2018-11-23</time>
+            </span>
+          
+            
+
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <p>采用SHA256加密</p>
+<p>SHA-2，名称来自于安全散列算法2（英语：Secure Hash Algorithm 2）的缩写，一种密码散列函数算法标准，由美国国家安全局研发，属于SHA算法之一，是SHA-1的后继者。</p>
+<p>SHA256上，说白了，它就是一个哈希函数。</p>
+<p>哈希函数，又称散列算法，是一种从任何一种数据中创建小的数字“指纹”的方法。散列函数把消息或数据压缩成摘要，使得数据量变小，将数据的格式固定下来。该函数将数据打乱混合，重新创建一个叫做散列值（或哈希值）的指纹。散列值通常用一个短的随机字母和数字组成的字符串来代表。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.security.MessageDigest;</span><br><span class="line">import java.security.NoSuchAlgorithmException;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* SHA256 摘要算法工具类</span><br><span class="line">* @author Administrator</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">public class SHA256Util &#123;</span><br><span class="line"></span><br><span class="line">　　/**</span><br><span class="line">　　* 利用java原生的摘要实现SHA256加密</span><br><span class="line">　　* @param str 加密后的报文</span><br><span class="line">　　* @<span class="built_in">return</span></span><br><span class="line">　　*/</span><br><span class="line">　　public static String getSHA256StrJava(String str)&#123;</span><br><span class="line">　　　　MessageDigest messageDigest;</span><br><span class="line">　　　　String encodeStr = <span class="string">""</span>;</span><br><span class="line">　　　　try &#123;</span><br><span class="line">　　　　　　messageDigest = MessageDigest.getInstance(<span class="string">"SHA-256"</span>);</span><br><span class="line">　　　　　　messageDigest.update(str.getBytes(<span class="string">"UTF-8"</span>));</span><br><span class="line">　　　　　　encodeStr = byte2Hex(messageDigest.digest());</span><br><span class="line">　　　　&#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">　　　　　　e.printStackTrace();</span><br><span class="line">　　　　&#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">　　　　　　e.printStackTrace();</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　　　<span class="built_in">return</span> encodeStr;</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　/**</span><br><span class="line">　　* 将byte转为16进制</span><br><span class="line">　　* @param bytes</span><br><span class="line">　　* @<span class="built_in">return</span></span><br><span class="line">　　*/</span><br><span class="line">　　private static String byte2Hex(byte[] bytes)&#123;</span><br><span class="line">　　　　StringBuffer stringBuffer = new StringBuffer();</span><br><span class="line">　　　　String temp = null;</span><br><span class="line">　　　　<span class="keyword">for</span> (int i=0;i&lt;bytes.length;i++)&#123;</span><br><span class="line">　　　　　　temp = Integer.toHexString(bytes[i] &amp; 0xFF);</span><br><span class="line">　　　　　　<span class="keyword">if</span> (temp.length()==1)&#123;</span><br><span class="line">　　　　　　　　//1得到一位的进行补0操作</span><br><span class="line">　　　　　　　　stringBuffer.append(<span class="string">"0"</span>);</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　　　stringBuffer.append(temp);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　　　<span class="built_in">return</span> stringBuffer.toString();</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>spring security认证过程：<br>Spring Security认证是由 AuthenticationManager 来管理的，但是真正进行认证的是 AuthenticationManager 中定义的 AuthenticationProvider。</p>
+<p>AuthenticationManager 中可以定义有多个 AuthenticationProvider。当我们使用 authentication-provider 元素来定义一个 AuthenticationProvider 时，如果没有指定对应关联的 AuthenticationProvider 对象。</p>
+<p>Spring Security 默认会使用 DaoAuthenticationProvider。DaoAuthenticationProvider 在进行认证的时候需要一个 UserDetailsService 来获取用户的信息 UserDetails，其中包括用户名、密码和所拥有的权限等。</p>
+<p>所以如果我们需要改变认证的方式，我们可以实现自己的 AuthenticationProvider；如果需要改变认证的用户信息来源，我们可以实现 UserDetailsService。</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/21/SQL语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/11/21/SQL语句/" class="post-title-link" itemprop="url">SQL语句</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-21 16:57:45" itemprop="dateCreated datePublished" datetime="2018-11-21T16:57:45+08:00">2018-11-21</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-25 19:03:42" itemprop="dateModified" datetime="2018-12-25T19:03:42+08:00">2018-12-25</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <p><a href="http://www.w3school.com.cn/sql/sql_intro.asp" target="_blank" rel="noopener">W3school</a></p>
+<p>插入<br>INSERT INTO 表名称 VALUES (值1, 值2,….)<br>更新<br>UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值<br>删除<br>DELETE FROM 表名称 WHERE 列名称 = 值</p>
+<p>排序<br>SELECT Company, OrderNumber FROM Orders ORDER BY Company, OrderNumber<br>倒序<br>SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC</p>
+<p>去重<br>SELECT DISTINCT</p>
+<p>使用cmd指令<br>登录 mysql -u root -P3309 -p 实例_data</p>
+<p>版本兼容问题<br>修复 mysql_upgrade –protocol=tcp -P 3309 -u root -p</p>
+<p>Usage: mysql [OPTIONS] [database]<br>  -?, –help          Display this help and exit.<br>  -I, –help          Synonym for -?<br>  –auto-rehash       Enable automatic rehashing. One doesn’t need to use<br>                      ‘rehash’ to get table and field completion, but startup<br>                      and reconnecting may take a longer time. Disable with<br>                      –disable-auto-rehash.<br>                      (Defaults to on; use –skip-auto-rehash to disable.)<br>  -A, –no-auto-rehash<br>                      No automatic rehashing. One has to use ‘rehash’ to get<br>                      table and field completion. This gives a quicker start of<br>                      mysql and disables rehashing on reconnect.<br>  –auto-vertical-output<br>                      Automatically switch to vertical output mode if the<br>                      result is wider than the terminal width.<br>  -B, –batch         Don’t use history file. Disable interactive behavior.<br>                      (Enables –silent.)<br>  –bind-address=name IP address to bind to.<br>  –character-sets-dir=name<br>                      Directory for character set files.<br>  –column-type-info  Display column type information.<br>  -c, –comments      Preserve comments. Send comments to the server. The<br>                      default is –skip-comments (discard comments), enable<br>                      with –comments.<br>  -C, –compress      Use compression in server/client protocol.<br>  -#, –debug[=#]     This is a non-debug version. Catch this and exit.<br>  –debug-check       Check memory and open file usage at exit.<br>  -T, –debug-info    Print some debug info at exit.<br>  -D, –database=name Database to use.<br>  –default-character-set=name<br>                      Set the default character set.<br>  –delimiter=name    Delimiter to be used.<br>  –enable-cleartext-plugin<br>                      Enable/disable the clear text authentication plugin.<br>  -e, –execute=name  Execute command and quit. (Disables –force and history<br>                      file.)<br>  -E, –vertical      Print the output of a query (rows) vertically.<br>  -f, –force         Continue even if we get an SQL error.<br>  -G, –named-commands<br>                      Enable named commands. Named commands mean this program’s<br>                      internal commands; see mysql&gt; help . When enabled, the<br>                      named commands can be used from any line of the query,<br>                      otherwise only from the first line, before an enter.<br>                      Disable with –disable-named-commands. This option is<br>                      disabled by default.<br>  -i, –ignore-spaces Ignore space after function names.<br>  –init-command=name SQL Command to execute when connecting to MySQL server.<br>                      Will automatically be re-executed when reconnecting.<br>  –local-infile      Enable/disable LOAD DATA LOCAL INFILE.<br>  -b, –no-beep       Turn off beep on error.<br>  -h, –host=name     Connect to host.<br>  -H, –html          Produce HTML output.<br>  -X, –xml           Produce XML output.<br>  –line-numbers      Write line numbers for errors.<br>                      (Defaults to on; use –skip-line-numbers to disable.)<br>  -L, –skip-line-numbers<br>                      Don’t write line number for errors.<br>  -n, –unbuffered    Flush buffer after each query.<br>  –column-names      Write column names in results.<br>                      (Defaults to on; use –skip-column-names to disable.)<br>  -N, –skip-column-names<br>                      Don’t write column names in results.<br>  –sigint-ignore     Ignore SIGINT (CTRL-C).<br>  -o, –one-database  Ignore statements except those that occur while the<br>                      default database is the one named at the command line.<br>  -p, –password[=name]<br>                      Password to use when connecting to server. If password is<br>                      not given it’s asked from the tty.<br>  -W, –pipe          Use named pipes to connect to server.<br>  -P, –port=#        Port number to use for connection or 0 for default to, in<br>                      order of preference, my.cnf, $MYSQL_TCP_PORT,<br>                      /etc/services, built-in default (3306).<br>  –prompt=name       Set the mysql prompt to this value.<br>  –protocol=name     The protocol to use for connection (tcp, socket, pipe,<br>                      memory).<br>  -q, –quick         Don’t cache result, print it row by row. This may slow<br>                      down the server if the output is suspended. Doesn’t use<br>                      history file.<br>  -r, –raw           Write fields without conversion. Used with –batch.<br>  –reconnect         Reconnect if the connection is lost. Disable with<br>                      –disable-reconnect. This option is enabled by default.<br>                      (Defaults to on; use –skip-reconnect to disable.)<br>  -s, –silent        Be more silent. Print results with a tab as separator,<br>                      each row on new line.<br>  –shared-memory-base-name=name<br>                      Base name of shared memory.<br>  -S, –socket=name   The socket file to use for connection.<br>  –ssl               Enable SSL for connection (automatically enabled with<br>                      other flags).<br>  –ssl-ca=name       CA file in PEM format (check OpenSSL docs, implies<br>                      –ssl).<br>  –ssl-capath=name   CA directory (check OpenSSL docs, implies –ssl).<br>  –ssl-cert=name     X509 cert in PEM format (implies –ssl).<br>  –ssl-cipher=name   SSL cipher to use (implies –ssl).<br>  –ssl-key=name      X509 key in PEM format (implies –ssl).<br>  –ssl-crl=name      Certificate revocation list (implies –ssl).<br>  –ssl-crlpath=name  Certificate revocation list path (implies –ssl).<br>  –ssl-verify-server-cert<br>                      Verify server’s “Common Name” in its cert against<br>                      hostname used when connecting. This option is disabled by<br>                      default.<br>  -t, –table         Output in table format.<br>  –tee=name          Append everything into outfile. See interactive help (\h)<br>                      also. Does not work in batch mode. Disable with<br>                      –disable-tee. This option is disabled by default.<br>  -u, –user=name     User for login if not current user.<br>  -U, –safe-updates  Only allow UPDATE and DELETE that uses keys.<br>  -U, –i-am-a-dummy  Synonym for option –safe-updates, -U.<br>  -v, –verbose       Write more. (-v -v -v gives the table output format).<br>  -V, –version       Output version information and exit.<br>  -w, –wait          Wait and retry if connection is down.<br>  –connect-timeout=# Number of seconds before connection timeout.<br>  –max-allowed-packet=#<br>                      The maximum packet length to send to or receive from<br>                      server.<br>  –net-buffer-length=#<br>                      The buffer size for TCP/IP and socket communication.<br>  –select-limit=#    Automatic limit for SELECT when using –safe-updates.<br>  –max-join-size=#   Automatic limit for rows in a join when using<br>                      –safe-updates.<br>  –secure-auth       Refuse client connecting to server if it uses old<br>                      (pre-4.1.1) protocol.<br>                      (Defaults to on; use –skip-secure-auth to disable.)<br>  –server-arg=name   Send embedded server this as a parameter.<br>  –show-warnings     Show warnings after every statement.<br>  –plugin-dir=name   Directory for client-side plugins.<br>  –default-auth=name Default authentication client-side plugin to use.<br>  –histignore=name   A colon-separated list of patterns to keep statements<br>                      from getting logged into mysql history.<br>  –binary-mode       By default, ASCII ‘\0’ is disallowed and ‘\r\n’ is<br>                      translated to ‘\n’. This switch turns off both features,<br>                      and also turns off parsing of all clientcommands except<br>                      \C and DELIMITER, in non-interactive mode (for input<br>                      piped to mysql or loaded using the ‘source’ command).<br>                      This is necessary when processing output from mysqlbinlog<br>                      that may contain blobs.<br>  –connect-expired-password<br>                      Notify the server that this client is prepared to handle<br>                      expired password sandbox mode.</p>
+<p>Default options are read from the following files in the given order:<br>C:\WINDOWS\my.ini C:\WINDOWS\my.cnf C:\my.ini C:\my.cnf D:\apm\mysql\my.ini D:\apm\mysql\my.cnf<br>The following groups are read: mysql client<br>The following options may be given as the first argument:<br>–print-defaults        Print the program argument list and exit.<br>–no-defaults           Don’t read default options from any option file,<br>                        except for login file.<br>–defaults-file=#       Only read default options from the given file #.<br>–defaults-extra-file=# Read this file after the global files are read.<br>–defaults-group-suffix=#<br>                        Also read groups with concat(group, suffix)<br>–login-path=#          Read this path from the login file.</p>
+<p>Variables (–variable-name=value)<br>and boolean options {FALSE|TRUE}  Value (after reading options)</p>
+<hr>
+<p>auto-rehash                       TRUE<br>auto-vertical-output              FALSE<br>bind-address                      (No default value)<br>character-sets-dir                (No default value)<br>column-type-info                  FALSE<br>comments                          FALSE<br>compress                          FALSE<br>debug-check                       FALSE<br>debug-info                        FALSE<br>database                          (No default value)<br>default-character-set             auto<br>delimiter                         ;<br>enable-cleartext-plugin           FALSE<br>vertical                          FALSE<br>force                             FALSE<br>named-commands                    FALSE<br>ignore-spaces                     FALSE<br>init-command                      (No default value)<br>local-infile                      FALSE<br>no-beep                           FALSE<br>host                              (No default value)<br>html                              FALSE<br>xml                               FALSE<br>line-numbers                      TRUE<br>unbuffered                        FALSE<br>column-names                      TRUE<br>sigint-ignore                     FALSE<br>port                              0<br>prompt                            mysql&gt;<br>quick                             FALSE<br>raw                               FALSE<br>reconnect                         TRUE<br>shared-memory-base-name           (No default value)<br>socket                            (No default value)<br>ssl                               FALSE<br>ssl-ca                            (No default value)<br>ssl-capath                        (No default value)<br>ssl-cert                          (No default value)<br>ssl-cipher                        (No default value)<br>ssl-key                           (No default value)<br>ssl-crl                           (No default value)<br>ssl-crlpath                       (No default value)<br>ssl-verify-server-cert            FALSE<br>table                             FALSE<br>user                              (No default value)<br>safe-updates                      FALSE<br>i-am-a-dummy                      FALSE<br>connect-timeout                   0<br>max-allowed-packet                16777216<br>net-buffer-length                 16384<br>select-limit                      1000<br>max-join-size                     1000000<br>secure-auth                       TRUE<br>show-warnings                     FALSE<br>plugin-dir                        (No default value)<br>default-auth                      (No default value)<br>histignore                        (No default value)<br>binary-mode                       FALSE<br>connect-expired-password          FALSE</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/20/数学/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/11/20/数学/" class="post-title-link" itemprop="url">数学</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-20 16:17:56" itemprop="dateCreated datePublished" datetime="2018-11-20T16:17:56+08:00">2018-11-20</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-03 11:15:44" itemprop="dateModified" datetime="2018-12-03T11:15:44+08:00">2018-12-03</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><p>我认为世界的本质是数学，数学可以描述我们所认知的一切。</p>
+<p>数学模型就是我们解决问题方式，通过模型计算的结果就是我们针对问题给出的答案</p>
+<p>不关心具体结果，只研究关系</p>
+<p>预测将要发生的一切，从而做出决策</p>
+<p>用变量和函数来研究关系，于算数不同的是。代数不关心结果，只关心变量之间的关系</p>
+<p>语言可以用来交流，但更重要的是语言可以描述事务的关系</p>
+<p>计数模型-乘法模型</p>
+<p>积累因素-积累量 积累因素-积累速度</p>
+<p>做向量乘法时 权重的个数必须于因素一致</p>
+<h2 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h2><p>向量（vector）   可用一个向量x=[x1,x2]<br>权重w=[w1,w2]<br>偏移d=[d1,d2]<br>结果y=[y1,y2]</p>
+<h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><p>学习就是从有限的例子中找出问题和答案之间规律的一个过程,这个规律就叫做知识</p>
+<p>用 知识 - 压缩 消息 得出无限种可能</p>
+<p>最终的学习一定要通过例子来理清问题和答案之间的关系</p>
+<p>正真的机器学习是让机器自己从例子中发现规律</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/09/Spring-Boot的上传/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/11/09/Spring-Boot的上传/" class="post-title-link" itemprop="url">Spring-Boot的上传</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-09 14:38:42" itemprop="dateCreated datePublished" datetime="2018-11-09T14:38:42+08:00">2018-11-09</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-12 12:26:18" itemprop="dateModified" datetime="2019-03-12T12:26:18+08:00">2019-03-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/bolg/categories/IO/" itemprop="url" rel="index"><span itemprop="name">IO</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/bolg/categories/IO/文件流/" itemprop="url" rel="index"><span itemprop="name">文件流</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><p>前端用from表单提交，spring boot 参数已经通过拦截器做好了映射处理</p>
+<h2 id="文件上传配置"><a href="#文件上传配置" class="headerlink" title="文件上传配置"></a>文件上传配置</h2><p>spring.servlet.multipart.max-request-size=500MB<br>spring.servlet.multipart.max-file-size=500MB</p>
+<p>如果有覆盖总是最下面的生效</p>
+<h2 id="自定义配置文件"><a href="#自定义配置文件" class="headerlink" title="自定义配置文件"></a>自定义配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">property.param.key=key</span><br><span class="line">property.param.name=name</span><br></pre></td></tr></table></figure>
+<p>映射类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@PropertySource(<span class="string">"classpath:self-config.properties"</span>)</span><br><span class="line">@ConfigurationProperties(prefix=<span class="string">"property.param"</span>)</span><br><span class="line">@Data</span><br><span class="line">@Component</span><br><span class="line">public class FileProperties &#123;</span><br><span class="line">    private String key;</span><br><span class="line">    private String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现类<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@EnableConfigurationProperties(FileProperties.class)</span><br><span class="line">@Service</span><br><span class="line">@Slf4j</span><br><span class="line">public class ServiceImpl implements MultipartFileService&#123;</span><br><span class="line">    private final FileProperties fileProperties;</span><br><span class="line">    @Autowired</span><br><span class="line">    @SuppressWarnings(<span class="string">"SpringJavaAutowiringInspection"</span>)</span><br><span class="line">    public MultipartFileServiceImpl(FileProperties fileProperties) &#123;</span><br><span class="line">        this.fileProperties = fileProperties;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">        log.info(fileProperties.getKey+fileProperties.getName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件上传实现返回上传路径"><a href="#文件上传实现返回上传路径" class="headerlink" title="文件上传实现返回上传路径"></a>文件上传实现返回上传路径</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">private String saveFile(MultipartFile file,String fileType,String fileName)&#123;</span><br><span class="line">    //读取配置文件，获取文件上传路径</span><br><span class="line">    Path path= Paths.get(fileProperties.getUploadPath(fileType)+ fileName);</span><br><span class="line">    File targetFile=path.toFile().getParentFile();</span><br><span class="line">    <span class="keyword">if</span>(!targetFile.exists())&#123;</span><br><span class="line">        targetFile.mkdirs();</span><br><span class="line">    &#125;</span><br><span class="line">    try &#123;</span><br><span class="line">        byte[] bytes = file.getBytes();</span><br><span class="line">        Files.write(path,bytes);</span><br><span class="line">    &#125;catch (Exception e)&#123;</span><br><span class="line">        log.error(e.getMessage(),e);</span><br><span class="line">        <span class="built_in">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> path.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/06/Nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -819,399 +1244,11 @@
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/16/WebSocket/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2018/10/16/WebSocket/" class="post-title-link" itemprop="url">WebSocket</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-16 12:20:11 / 修改时间：16:47:40" itemprop="dateCreated datePublished" datetime="2018-10-16T12:20:11+08:00">2018-10-16</time>
-            </span>
-          
-            
-
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h1><p>WebSocket协议是基于TCP的一种新的网络协议。它实现了浏览器与服务器全双工(full-duplex)通信——允许服务器主动发送信息给客户端。<br>WebSocket通信协议于2011年被IETF定为标准RFC 6455，并被RFC7936所补充规范。</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/15/Hexo-主题-NexT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2018/10/15/Hexo-主题-NexT/" class="post-title-link" itemprop="url">Hexo 主题-NexT</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-15 16:16:16" itemprop="dateCreated datePublished" datetime="2018-10-15T16:16:16+08:00">2018-10-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-01 14:55:51" itemprop="dateModified" datetime="2019-08-01T14:55:51+08:00">2019-08-01</time>
-              </span>
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a>NexT</h1><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next官网</a></p>
-<h2 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<h2 id="配置主题（bolg下的-config-yml）"><a href="#配置主题（bolg下的-config-yml）" class="headerlink" title="配置主题（bolg下的_config.yml）"></a>配置主题（bolg下的_config.yml）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
-<h2 id="配置主题风格"><a href="#配置主题风格" class="headerlink" title="配置主题风格"></a>配置主题风格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
-<h2 id="Hexo指令"><a href="#Hexo指令" class="headerlink" title="Hexo指令"></a>Hexo指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<h2 id="Hexo控制台警告修复"><a href="#Hexo控制台警告修复" class="headerlink" title="Hexo控制台警告修复"></a>Hexo控制台警告修复</h2><p><a href="https://blog.csdn.net/xuewuzhijin2012/article/details/50117181" target="_blank" rel="noopener">原文</a><br>假如你正在Windows上写程序，又或者你正在和其他人合作，他们在Windows上编程，而你却在其他系统上，在这些情况下，你可能会遇到行尾 结束符问题。 这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。 虽然这是小问题，但它会极大地扰乱跨平台协作。</p>
-<p>Git可以在你提交时自动地把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。用core.autocrlf来打开此项功能， 如果是在Windows系统上，把它设置成true，这样当签出代码时，LF会被转换成CRLF：</p>
-<p>$ git config –global core.autocrlf true</p>
-<p>Linux或Mac系统使用LF作为行结束符，因此你不想Git在签出文件时进行自动的转换；当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正， 把core.autocrlf设置成input来告诉Git在提交时把CRLF转换成LF，签出时不转换：</p>
-<p>$ git config –global core.autocrlf input</p>
-<p>这样会在Windows系统上的签出文件中保留CRLF，会在Mac和Linux系统上，包括仓库中保留LF。</p>
-<p>如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中：</p>
-<p>$ git config –global core.autocrlf false</p>
-<h2 id="NexT主题配置"><a href="#NexT主题配置" class="headerlink" title="NexT主题配置"></a>NexT主题配置</h2><p>themes/next/_config.yml</p>
-<p>menu:<br>  home: /<br>  archives: /archives</p>
-<p>  #about: /about</p>
-<p>  #categories: /categories<br>  tags: /tags</p>
-<p>  #commonweal: /404.html</p>
-<p><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins.html</a></p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/12/Spring-Boot-下的单元测试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2018/10/12/Spring-Boot-下的单元测试/" class="post-title-link" itemprop="url">Spring Boot 下的单元测试</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-12 12:14:34" itemprop="dateCreated datePublished" datetime="2018-10-12T12:14:34+08:00">2018-10-12</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-29 10:22:27" itemprop="dateModified" datetime="2019-01-29T10:22:27+08:00">2019-01-29</time>
-              </span>
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h2 id="Idea下快速生成指令"><a href="#Idea下快速生成指令" class="headerlink" title="Idea下快速生成指令"></a>Idea下快速生成指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">ctrl+<span class="built_in">shift</span>+t --&gt; create new <span class="built_in">test</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 常使用注解</span></span><br><span class="line">```java</span><br><span class="line">类注解</span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br><span class="line">@AutoConfigureTestDatabase(replace = NONE) 对真实数据库运行测试</span><br><span class="line">public class MultipartFileServiceImplTest &#123;</span><br><span class="line">服务注解</span><br><span class="line">@Resource</span><br><span class="line">private *Service service;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 校验结果</span></span><br><span class="line">[参考](https://blog.csdn.net/sz85850597/article/details/80427408)</span><br><span class="line">Assert.assertThat();</span><br><span class="line"></span><br><span class="line">想判断某个字符串 s 是否含有子字符串 <span class="string">"developer"</span> 或 <span class="string">"Works"</span> 中间的一个</span><br><span class="line">assertThat(s, anyOf(containsString(<span class="string">"developer"</span>), containsString(<span class="string">"Works"</span>))); </span><br><span class="line"></span><br><span class="line">字符相关匹配符</span><br><span class="line">/**equalTo匹配符断言被测的testedValue等于expectedValue，</span><br><span class="line">* equalTo可以断言数值之间，字符串之间和对象之间是否相等，相当于Object的equals方法</span><br><span class="line">*/</span><br><span class="line">assertThat(testedValue, equalTo(expectedValue));</span><br><span class="line">/**equalToIgnoringCase匹配符断言被测的字符串testedString</span><br><span class="line">*在忽略大小写的情况下等于expectedString</span><br><span class="line">*/</span><br><span class="line">assertThat(testedString, equalToIgnoringCase(expectedString));</span><br><span class="line">/**equalToIgnoringWhiteSpace匹配符断言被测的字符串testedString</span><br><span class="line">*在忽略头尾的任意个空格的情况下等于expectedString，</span><br><span class="line">*注意：字符串中的空格不能被忽略</span><br><span class="line">*/</span><br><span class="line">assertThat(testedString, equalToIgnoringWhiteSpace(expectedString);</span><br><span class="line">/**containsString匹配符断言被测的字符串testedString包含子字符串subString**/</span><br><span class="line">assertThat(testedString, containsString(subString) );</span><br><span class="line">/**endsWith匹配符断言被测的字符串testedString以子字符串suffix结尾*/</span><br><span class="line">assertThat(testedString, endsWith(suffix));</span><br><span class="line">/**startsWith匹配符断言被测的字符串testedString以子字符串prefix开始*/</span><br><span class="line">assertThat(testedString, startsWith(prefix));</span><br><span class="line"></span><br><span class="line">一般匹配符</span><br><span class="line">/**nullValue()匹配符断言被测object的值为null*/</span><br><span class="line">assertThat(object,nullValue());</span><br><span class="line">/**notNullValue()匹配符断言被测object的值不为null*/</span><br><span class="line">assertThat(object,notNullValue());</span><br><span class="line">/**is匹配符断言被测的object等于后面给出匹配表达式*/</span><br><span class="line">assertThat(testedString, is(equalTo(expectedValue)));</span><br><span class="line">/**is匹配符简写应用之一，is(equalTo(x))的简写，断言testedValue等于expectedValue*/</span><br><span class="line">assertThat(testedValue, is(expectedValue));</span><br><span class="line">/**is匹配符简写应用之二，is(instanceOf(SomeClass.class))的简写，</span><br><span class="line">*断言testedObject为Cheddar的实例</span><br><span class="line">*/</span><br><span class="line">assertThat(testedObject, is(Cheddar.class));</span><br><span class="line">/**not匹配符和is匹配符正好相反，断言被测的object不等于后面给出的object*/</span><br><span class="line">assertThat(testedString, not(expectedString));</span><br><span class="line">/**allOf匹配符断言符合所有条件，相当于“与”（&amp;&amp;）*/</span><br><span class="line">assertThat(testedNumber, allOf( greaterThan(8), lessThan(16) ) );</span><br><span class="line">/**anyOf匹配符断言符合条件之一，相当于“或”（||）*/</span><br><span class="line">assertThat(testedNumber, anyOf( greaterThan(16), lessThan(8) ) );</span><br><span class="line">数值相关匹配符</span><br><span class="line">/**closeTo匹配符断言被测的浮点型数testedDouble在20.0¡À0.5范围之内*/</span><br><span class="line">assertThat(testedDouble, closeTo( 20.0, 0.5 ));</span><br><span class="line">/**greaterThan匹配符断言被测的数值testedNumber大于16.0*/</span><br><span class="line">assertThat(testedNumber, greaterThan(16.0));</span><br><span class="line">/** lessThan匹配符断言被测的数值testedNumber小于16.0*/</span><br><span class="line">assertThat(testedNumber, lessThan (16.0));</span><br><span class="line">/** greaterThanOrEqualTo匹配符断言被测的数值testedNumber大于等于16.0*/</span><br><span class="line">assertThat(testedNumber, greaterThanOrEqualTo (16.0));</span><br><span class="line">/** lessThanOrEqualTo匹配符断言被测的testedNumber小于等于16.0*/</span><br><span class="line">assertThat(testedNumber, lessThanOrEqualTo (16.0));</span><br><span class="line">集合相关匹配符</span><br><span class="line">/**hasEntry匹配符断言被测的Map对象mapObject含有一个键值为<span class="string">"key"</span>对应元素值为<span class="string">"value"</span>的Entry项*/</span><br><span class="line">assertThat(mapObject, hasEntry(<span class="string">"key"</span>, <span class="string">"value"</span> ) );</span><br><span class="line">/**hasItem匹配符表明被测的迭代对象iterableObject含有元素element项则测试通过*/</span><br><span class="line">assertThat(iterableObject, hasItem (element));</span><br><span class="line">/** hasKey匹配符断言被测的Map对象mapObject含有键值“key”*/</span><br><span class="line">assertThat(mapObject, hasKey (<span class="string">"key"</span>));</span><br><span class="line">/** hasValue匹配符断言被测的Map对象mapObject含有元素值value*/</span><br><span class="line">assertThat(mapObject, hasValue(value));</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用Mockito来录制结果</span></span><br><span class="line">```java</span><br><span class="line"> //Let<span class="string">'s import Mockito statically so that the code looks clearer</span></span><br><span class="line"><span class="string"> import static org.mockito.Mockito.*;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //mock creation</span></span><br><span class="line"><span class="string"> List mockedList = mock(List.class);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //using mock object</span></span><br><span class="line"><span class="string"> mockedList.add("one");</span></span><br><span class="line"><span class="string"> mockedList.clear();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> //verification</span></span><br><span class="line"><span class="string"> verify(mockedList).add("one");</span></span><br><span class="line"><span class="string"> verify(mockedList).clear();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> when(mockedList.get(0)).thenReturn("first");</span></span><br><span class="line"><span class="string"> when(mockedList.get(1)).thenThrow(new RuntimeException());</span></span><br></pre></td></tr></table></figure>
-<h2 id="Mockito注释"><a href="#Mockito注释" class="headerlink" title="Mockito注释"></a>Mockito注释</h2><p>@mock<br>标记一个模仿区域<br>1.快速创建模拟<br>2.减少重复代码<br>3.使得的代码更有可读性<br>4.使验证错误更易于阅读，因为字段名称用于标识模拟</p>
-<p>@injection<br>1.允许快速模拟和注入。<br>2.最大限度地减少重复模拟和注入。</p>
-<p>注：无法注入接口，如果要测试，直接用实现类测试</p>
-<p>@spy<br>1.快速创建间谍类</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/25/LomLombok使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2018/09/25/LomLombok使用/" class="post-title-link" itemprop="url">LomLombok使用</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-25 15:52:40" itemprop="dateCreated datePublished" datetime="2018-09-25T15:52:40+08:00">2018-09-25</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-27 10:50:34" itemprop="dateModified" datetime="2018-12-27T10:50:34+08:00">2018-12-27</time>
-              </span>
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>实体映射表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根据属性生成get和set方法</span></span><br><span class="line">@Data</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/bolg/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/bolg/">1</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/bolg/page/5/">5</a><a class="extend next" rel="next" href="/bolg/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/bolg/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/bolg/">1</a><span class="space">&hellip;</span><a class="page-number" href="/bolg/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/bolg/page/5/">5</a><a class="page-number" href="/bolg/page/6/">6</a><a class="extend next" rel="next" href="/bolg/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1244,7 +1281,7 @@
         
           <a href="/bolg/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1314,15 +1351,7 @@
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span>
         
       </div>
