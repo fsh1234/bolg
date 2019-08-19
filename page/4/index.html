@@ -191,6 +191,112 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/12/07/Spring-Boot-权限控制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/12/07/Spring-Boot-权限控制/" class="post-title-link" itemprop="url">Spring-Boot 权限控制</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-07 11:44:16" itemprop="dateCreated datePublished" datetime="2018-12-07T11:44:16+08:00">2018-12-07</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-29 11:20:09" itemprop="dateModified" datetime="2019-01-29T11:20:09+08:00">2019-01-29</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h2 id="实现权限控制"><a href="#实现权限控制" class="headerlink" title="实现权限控制"></a>实现权限控制</h2><p>Spring-Boot 权限控制 一般基于两种方式来实现 一种是url 另一种是基于code也就是注解来实现。</p>
+<h2 id="SpringSecurity权限框架"><a href="#SpringSecurity权限框架" class="headerlink" title="SpringSecurity权限框架"></a>SpringSecurity权限框架</h2><p>用户登陆，会被AuthenticationProcessingFilter拦截(即认证管理)，调用AuthenticationManager的实现，而且AuthenticationManager会调用ProviderManager来获取用户验证信息（不同的Provider调用的服务不同，因为这些信息可以是在数据库上，可以是在LDAP服务器上，可以是xml配置文件上等），<br>如果验证通过后会将用户的权限信息封装一个User放到spring的全局缓存SecurityContextHolder中，以备后面访问资源时使用。 </p>
+<p>访问资源（即授权管理），访问url时，会通过AbstractSecurityInterceptor拦截器拦截，<br>其中会调用FilterInvocationSecurityMetadataSource的方法来获取被拦截url所需的全部权限，<br>在调用授权管理器AccessDecisionManager，这个授权管理器会通过spring的全局缓存SecurityContextHolder获取用户的权限信息，还会获取被拦截的url和被拦截url所需的全部权限，【然后根据所配的策略】（有：一票决定，一票否定，少数服从多数等），如果权限足够，则返回，权限不够则报错并调用权限不足页面。</p>
+<p>Interceptor拦截器</p>
+<p> 通过Spring Security 配置一个springSecurityFilterChain的Servlet过滤器，来对我们应用中所有的安全相关的事项（保护应用的所有url，验证用户名密码，表单重定向等）负责。</p>
+<p> Spring Security原理，使用众多过滤器</p>
+<p> UriInvocationSecurityMetadataSourceService</p>
+<p> 将用户当前角色读取到session中<br> 请求时，通过请求的url查询对应的功能点找到相关连的角色<br> 对比当前用户的角色是否在存在于关联角色中，有则放行，没有则告知没有权限<br> 扩展添加权限注解，有注解的跳过权限验证</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.us.example.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.us.example.service.CustomUserService;</span><br><span class="line"><span class="keyword">import</span> com.us.example.service.MyFilterSecurityInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.builders.HttpSecurity;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.userdetails.UserDetailsService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.web.access.intercept.FilterSecurityInterceptor;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by yangyibo on 17/1/18.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebSecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MyFilterSecurityInterceptor myFilterSecurityInterceptor;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function">UserDetailsService <span class="title">customUserService</span><span class="params">()</span></span>&#123; <span class="comment">//注册UserDetailsService 的bean</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CustomUserService();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        auth.userDetailsService(customUserService()); <span class="comment">//user Details Service验证</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        http.authorizeRequests()</span><br><span class="line">                .anyRequest().authenticated() <span class="comment">//任何请求,登录后可以访问</span></span><br><span class="line">                .and()</span><br><span class="line">                .formLogin()</span><br><span class="line">                .loginPage(<span class="string">"/login"</span>)</span><br><span class="line">                .failureUrl(<span class="string">"/login?error"</span>)</span><br><span class="line">                .permitAll() <span class="comment">//登录页面用户任意访问</span></span><br><span class="line">                .and()</span><br><span class="line">                .logout().permitAll(); <span class="comment">//注销行为任意访问</span></span><br><span class="line">        http.addFilterBefore(myFilterSecurityInterceptor, FilterSecurityInterceptor.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注解<br>@Autowired默认是根据类型进行注入的，因此如果有多个类型一样的Bean候选者，则需要限定其中一个候选者，否则将抛出异常</p>
+<p>@Qualifier限定描述符除了能根据名字进行注入，更能进行更细粒度的控制如何选择候选者，具体使用方式如下：</p>
+<p>读取和写入分开<br>系统加载时根据子系统区分缓存用户角色功能</p>
+<h2 id="权限扩展"><a href="#权限扩展" class="headerlink" title="权限扩展"></a>权限扩展</h2><p>因为企业后台业务系统的权限和用户、组织机构这些是无法解耦的，而无论是spring security还是shiro对用户的自定义支持有限，对组织机构的支持则一点都没有</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/11/23/用户密码加密/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1144,106 +1250,6 @@
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/18/Spring-Booot-下的线程和进程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2018/10/18/Spring-Booot-下的线程和进程/" class="post-title-link" itemprop="url">Spring-Booot 下的线程和进程</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-18 16:13:19" itemprop="dateCreated datePublished" datetime="2018-10-18T16:13:19+08:00">2018-10-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-07 10:37:55" itemprop="dateModified" datetime="2019-01-07T10:37:55+08:00">2019-01-07</time>
-              </span>
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h2 id="Component-注解"><a href="#Component-注解" class="headerlink" title="@Component 注解"></a>@Component 注解</h2><p>@component 把普通pojo实例化到spring容器中，相当于配置文件中的<bean id class><br>@component有3个为扩展：<br>1、@controller 控制器（注入服务）<br>2、@service 服务（注入dao）<br>3、@repository dao（实现dao访问）</bean></p>
-<h2 id="异步注解"><a href="#异步注解" class="headerlink" title="异步注解"></a>异步注解</h2><p>在启动类*Application的上面添加@EnableAsync注解</p>
-<p>在异步类的上面添加@Async</p>
-<p>通常将异步执行的方法单独抽取成一个类方便阅读和避免调用方法的是对象本身，从而导致异步变成同步。具体一点就是spring容器在初始化时会将有AOP注解的类对象“替换”为代理对象，因此异步方法在同一类中会变成调用对象本身而非代理对象。</p>
-<p>如果需要在一个类使用则需要通过上下文SpringUtil.getBean(获取本身)来获得代理对象。然后通过代理对象使用。</p>
-<p>或者AopContext.currentProxy()获取当前代理对象，改对象和上面对象是同一个。</p>
-<p>##超时处理<br>修改下异步方法的返回类型，原本返回空修改成返回Future</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -1281,7 +1287,7 @@
         
           <a href="/bolg/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

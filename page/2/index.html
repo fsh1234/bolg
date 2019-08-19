@@ -191,6 +191,102 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/28/MySQL-with-Docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2019/03/28/MySQL-with-Docker/" class="post-title-link" itemprop="url">MySQL with Docker</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-28 15:47:00" itemprop="dateCreated datePublished" datetime="2019-03-28T15:47:00+08:00">2019-03-28</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-30 18:27:24" itemprop="dateModified" datetime="2019-04-30T18:27:24+08:00">2019-04-30</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h2 id="拉取Mysql镜像"><a href="#拉取Mysql镜像" class="headerlink" title="拉取Mysql镜像"></a>拉取Mysql镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull mysql:5.7.25</span><br></pre></td></tr></table></figure>
+<h2 id="实例化容器"><a href="#实例化容器" class="headerlink" title="实例化容器"></a>实例化容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-mysql -v /srv/mysql/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7.25</span><br></pre></td></tr></table></figure>
+<p>docker run –name mysql-data -v /data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=”woyaoxuehuilinux” -d mysql:5.6</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/03/27/Spring-Boot-with-Docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1192,108 +1288,6 @@
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2019/02/14/TODO/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2019/02/14/TODO/" class="post-title-link" itemprop="url">TODO</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-14 15:08:21" itemprop="dateCreated datePublished" datetime="2019-02-14T15:08:21+08:00">2019-02-14</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-01 17:25:53" itemprop="dateModified" datetime="2019-08-01T17:25:53+08:00">2019-08-01</time>
-              </span>
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>(Https协议详解)[<a href="http://www.cnblogs.com/zxj015/p/6530766.html]" target="_blank" rel="noopener">http://www.cnblogs.com/zxj015/p/6530766.html]</a></p>
-<p>(你遇到过哪些质量很高的 Java 面试？)[<a href="https://www.zhihu.com/question/60949531/answer/182115799]" target="_blank" rel="noopener">https://www.zhihu.com/question/60949531/answer/182115799]</a></p>
-<p>(我简历上的Java项目都好low，怎么办？)[<a href="https://zhuanlan.zhihu.com/p/56807872]" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/56807872]</a></p>
-<p>系统设计</p>
-<p>nginx 配置自签名的ssl证书<br><a href="https://www.cnblogs.com/shindo/p/6117647.html?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">https://www.cnblogs.com/shindo/p/6117647.html?tdsourcetag=s_pcqq_aiomsg</a></p>
-<p>提取JKS文件的证书和私钥<br><a href="https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html?qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">https://jingyan.baidu.com/article/066074d61de50cc3c21cb0ba.html?qq-pf-to=pcqq.c2c</a></p>
-<p>redis应用<br><a href="http://www.ityouknow.com/springboot/2016/03/06/spring-boot-redis.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2016/03/06/spring-boot-redis.html</a></p>
-<p>中间间<a href="https://juejin.im/post/5c1214a66fb9a049bb7c3410" target="_blank" rel="noopener">https://juejin.im/post/5c1214a66fb9a049bb7c3410</a></p>
-<p>为什么开发人员必须要了解数据库锁？<a href="https://mp.weixin.qq.com/s/yzXbbutzVJ1hIZgVszIBgw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/yzXbbutzVJ1hIZgVszIBgw</a></p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -1331,7 +1325,7 @@
         
           <a href="/bolg/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
