@@ -191,6 +191,206 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/12/26/Spring-Boot-集成SpringSecurit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/12/26/Spring-Boot-集成SpringSecurit/" class="post-title-link" itemprop="url">Spring-Boot 集成SpringSecurit</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-26 09:57:07" itemprop="dateCreated datePublished" datetime="2018-12-26T09:57:07+08:00">2018-12-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-14 15:21:44" itemprop="dateModified" datetime="2019-02-14T15:21:44+08:00">2019-02-14</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h1 id="Spring-securit"><a href="#Spring-securit" class="headerlink" title="Spring securit"></a>Spring securit</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Spring securit是基于Spring的安全框架，他的主要功能是认证和鉴权，主要原理是通关一系列的拦截器和过滤器来实现</p>
+<h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><p>1、WebSecurityConfig===》WebSecurityConfigurerAdapter（主要配置文件，代替原先XML文件）<br>2、MyAuthenticationProvider==》AuthenticationProvider（初始化用户）<br>3、CustomUserDetailsService==》UserDetailsService（MyAuthenticationProvider需要调用）<br>4、mySecurityFilter==》AbstractSecurityInterceptor 、Filter（自定义的过滤器）<br>5、FilterSourceMetadataSource==》FilterInvocationSecurityMetadataSource（加载需要过滤的数据）<br>6、MyAccessDecisionManager ==》AccessDecisionManager（过滤器调用，验证用户是否有权限访问资源）</p>
+<h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h2><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>通过拦截器认证(AuthenticationProvider)用户信息，通过过滤器鉴别用户是否有权限(AccessDecisionManager)</p>
+<p>WebSecurityConfigurerAdapter</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/12/11/Spring-Boot-MyBatis-Plus插件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/12/11/Spring-Boot-MyBatis-Plus插件/" class="post-title-link" itemprop="url">Spring-Boot-MyBatis-Plus插件</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-11 11:21:35" itemprop="dateCreated datePublished" datetime="2018-12-11T11:21:35+08:00">2018-12-11</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-29 09:46:32" itemprop="dateModified" datetime="2019-01-29T09:46:32+08:00">2019-01-29</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p><a href="https://mp.baomidou.com/" target="_blank" rel="noopener">MyBatis-Plus</a>（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p>
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.baomidou&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.0.7.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>在 application.yml 配置文件中添加 H2 数据库的相关配置：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># DataSource Config</span><br><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    driver-class-name: org.h2.Driver</span><br><span class="line">    schema: classpath:db/schema-h2.sql</span><br><span class="line">    data: classpath:db/data-h2.sql</span><br><span class="line">    url: jdbc:h2:mem:test</span><br><span class="line">    username: root</span><br><span class="line">    password: test</span><br></pre></td></tr></table></figure></p>
+<p>在 Spring Boot 启动类中添加 @MapperScan 注解，扫描 Mapper 文件夹：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.baomidou.mybatisplus.samples.quickstart.mapper"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(QuickStartApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h2><p>编写实体类 User.java（此处使用了 Lombok 简化代码和TableName来注明表名称）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TableName</span>(<span class="string">"t_user"</span>)</span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> String email;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编写Mapper类 UserMapper.java 并继承 BaseMapper<user>  UserMapper接口中可以直接写查询sql语句<br>也可以使用继承来的查询方法</user></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">BaseMapper</span>&lt;<span class="title">User</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Select</span>(<span class="string">"select * from t_User where username = #&#123;username&#125;"</span>)</span><br><span class="line">    <span class="function">UserDO <span class="title">getByUsername</span><span class="params">(String username)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SampleTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSelect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println((<span class="string">"----- selectAll method test ------"</span>));</span><br><span class="line">        List&lt;User&gt; userList = userMapper.selectList(<span class="keyword">null</span>);</span><br><span class="line">        Assert.assertEquals(<span class="number">5</span>, userList.size());</span><br><span class="line">        userList.forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>通过以上几个简单的步骤，我们就实现了 User 表的 CRUD 功能，甚至连 XML 文件都不用编写！<br>从以上步骤中，我们可以看到集成MyBatis-Plus非常的简单，只需要引入 starter 工程，并配置 mapper 扫描路径即可。<br>同时MyBatis-Plus也提供分页查询以及自定义扩展的接口，但是由于是开源的框架，作者好像完全没有考虑到兼容性，导致后面的升级十分困难。</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/12/07/Spring-Boot-权限控制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1064,192 +1264,6 @@
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/23/Spring-Boot-快速使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2018/10/23/Spring-Boot-快速使用/" class="post-title-link" itemprop="url">Spring-Boot 快速使用</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-23 15:15:03" itemprop="dateCreated datePublished" datetime="2018-10-23T15:15:03+08:00">2018-10-23</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-20 10:38:20" itemprop="dateModified" datetime="2019-02-20T10:38:20+08:00">2019-02-20</time>
-              </span>
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="Spring-Boot-介绍"><a href="#Spring-Boot-介绍" class="headerlink" title="Spring-Boot 介绍"></a>Spring-Boot 介绍</h1><p>架构<br><a href="http://spring.io/projects/spring-boot" target="_blank" rel="noopener">spring boot</a><br><a href="http://mp.baomidou.com/" target="_blank" rel="noopener">MyBatis-Plus</a><br><a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">MySql</a><br><a href="https://start.spring.io/" target="_blank" rel="noopener">start</a></p>
-<h2 id="实体映射表"><a href="#实体映射表" class="headerlink" title="实体映射表"></a>实体映射表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Data</span><br><span class="line">@EqualsAndHashCode(callSuper = <span class="literal">false</span>)</span><br><span class="line"><span class="comment">#表名称 配置映射表</span></span><br><span class="line">@TableName(<span class="string">"t_cc_*"</span>)</span><br><span class="line">public class Dao implements Serializable &#123;</span><br><span class="line">    /**实现序列化，实现serializable接口的作用是就是可以把对象存到字节流，然后可以恢复。网络传输需要用到，分布式系统尤其重要*/</span><br><span class="line">    private static final long serialVersionUID = 1L;</span><br><span class="line"></span><br><span class="line">    //设置主键自增</span><br><span class="line">    @TableId(value = <span class="string">"id"</span>, <span class="built_in">type</span> = IdType.AUTO)</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String tableName;</span><br><span class="line">    private String tableColumn;</span><br></pre></td></tr></table></figure>
-<h2 id="Mapper层"><a href="#Mapper层" class="headerlink" title="Mapper层"></a>Mapper层</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Mapper</span><br><span class="line">public interface Mapper extends BaseMapper&lt;Dao&gt; &#123;</span><br><span class="line">    //自定义sql</span><br><span class="line">     @Select(<span class="string">"SELECT t.id,t.Key,t.name,t.version,t.createTime,t.mark FROM t_apk t where Key=#&#123;Key&#125;"</span>)</span><br><span class="line">    Dao selectByKey(@Param(<span class="string">"Key"</span>) String Key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="service实现层"><a href="#service实现层" class="headerlink" title="service实现层"></a>service实现层</h2><p>TO 继承了MyBatis-Plus的Pagination类有了分页属性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class ServiceImpl implements Service &#123;</span><br><span class="line"></span><br><span class="line">    private static AndroidPackageMapper mapper;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    @SuppressWarnings(<span class="string">"SpringJavaAutowiringInspection"</span>)</span><br><span class="line">    public AndroidPackageServiceImpl(AndroidPackageMapper mapper)&#123;</span><br><span class="line">        this.mapper=mapper;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public ActionResult&lt;Page&gt; List(TO)&#123;</span><br><span class="line">        EntityWrapper&lt;DO&gt; ew = new EntityWrapper&lt;&gt;();</span><br><span class="line">        ew.where(<span class="string">"key=&#123;0&#125;"</span>,key)</span><br><span class="line">        List&lt;DO&gt; DOList=mapper.selectPage(TO,ew);</span><br><span class="line">        Page&lt;AndroidPackageVO&gt; page=new Page(TO.getCurrent(),TO.getSize());</span><br><span class="line">        page.setRecords(DOList);</span><br><span class="line">        page.setTotal(TO.getTotal());</span><br><span class="line">        ActionResult&lt;Page&gt; ar=new ActionResult&lt;&gt;();</span><br><span class="line">        ar.setResult(page);</span><br><span class="line">        <span class="built_in">return</span> ar;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="service层"><a href="#service层" class="headerlink" title="service层"></a>service层</h2><p>使用在启动类上使用@EnableTransactionManagement注解开启事务,在单元测试中的test函数上添加 @Transactional 注解配合<br>@Rollback 注解让每个单元测试都能在结束时回滚</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//开启事务</span><br><span class="line">@Transactional</span><br><span class="line">public interface AndroidPackageService &#123;</span><br><span class="line">    ActionResult&lt;Page&gt; List(TO)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(<span class="string">"/api/Controller"</span>)</span><br><span class="line">public class Controller &#123;</span><br><span class="line">    //参数层次较多时用@RequestBody注解映射</span><br><span class="line">    @RequestMapping(<span class="string">"/find"</span>)</span><br><span class="line">    public ResponseEntity&lt;ActionResult&gt; findAPKList(@RequestBody PageTO pageTO)&#123;</span><br><span class="line">        ActionResult&lt;Page&gt; result=Service.List(pageTO);</span><br><span class="line">        <span class="built_in">return</span> ResponseEntity.ok(result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //参数层次单一时</span><br><span class="line">        @RequestMapping(<span class="string">"/delete"</span>)</span><br><span class="line">    public ResponseEntity&lt;ActionResult&gt; delete(String key)&#123;</span><br><span class="line">        ActionResult&lt;String&gt; result=Service.delete(key);</span><br><span class="line">        <span class="built_in">return</span> ResponseEntity.ok(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/10/19/阿里的JSONObject对象转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/bolg/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo Blog">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/bolg/2018/10/19/阿里的JSONObject对象转换/" class="post-title-link" itemprop="url">阿里的JSONObject对象转换</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-19 11:01:35 / 修改时间：16:19:54" itemprop="dateCreated datePublished" datetime="2018-10-19T11:01:35+08:00">2018-10-19</time>
-            </span>
-          
-            
-
-            
-          
-
-          <br>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h1 id="FASTJSON"><a href="#FASTJSON" class="headerlink" title="FASTJSON"></a>FASTJSON</h1><p><a href="https://github.com/alibaba/fastjson" target="_blank" rel="noopener">GitHub</a><br>Fastjson是一个Java库，可用于将Java对象转换为其JSON表示。它还可用于将JSON字符串转换为等效的Java对象。Fastjson可以处理任意Java对象，包括您没有源代码的预先存在的对象。</p>
-<h2 id="Fastjson目标"><a href="#Fastjson目标" class="headerlink" title="Fastjson目标"></a>Fastjson目标</h2><p>1.在服务器端和Android客户端提供最佳性能<br>2.提供简单的toJSONString（）和parseObject（）方法，将Java对象转换为JSON，反之亦然<br>3.允许将预先存在的不可修改对象转换为JSON和从JSON转换<br>4.广泛支持Java Generics<br>5.允许对象的自定义表示<br>6.支持任意复杂的对象（具有深层继承层次结构和泛型类型的广泛使用）</p>
-<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.49&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="JSONObject对象转换"><a href="#JSONObject对象转换" class="headerlink" title="JSONObject对象转换"></a>JSONObject对象转换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">JSONObject.toJSONString(Javabean对象)</span><br><span class="line"></span><br><span class="line">JSONObject.toJavaObject(JSON字符串,Javabean.class)</span><br><span class="line"></span><br><span class="line">JSONObject.parseObject(JSON字符串)</span><br><span class="line"></span><br><span class="line">JSONObject.parseObject(JSON字符串,Javabean.class)</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -1287,7 +1301,7 @@
         
           <a href="/bolg/archives/">
         
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

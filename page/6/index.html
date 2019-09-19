@@ -191,6 +191,314 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/14/魔法上网/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/09/14/魔法上网/" class="post-title-link" itemprop="url">魔法上网</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-14 16:37:28" itemprop="dateCreated datePublished" datetime="2018-09-14T16:37:28+08:00">2018-09-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-06 15:28:59" itemprop="dateModified" datetime="2019-08-06T15:28:59+08:00">2019-08-06</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>shadowsocks是一款自定义协议的代理软件，由于其流量特征不明显，不太容易用技术手段拦截。虽然作者@clowwindy两年前就被有司请喝茶了，shadowsocks却一直运转良好没有被彻底封杀过。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>shadowsocks客户端启动后会在本地开启一个代理，可以理解为一个数据的出入口。用户想通过shadowsocks访问墙外网站的请求都要经过这个本地代理。</p>
+<p>通过shadowsocks翻墙上网的过程是这样的：</p>
+<ol>
+<li><p>用户发起一个网络访问请求，比如用浏览器访问google.com，请求被发送到本地代理。</p>
+</li>
+<li><p>客户端从本地代理拿到请求数据，然后发送至墙外的shadowsocks服务端。</p>
+</li>
+<li><p>服务端向google.com发起请求，然后收到google的响应数据，也就是google首页的数据。</p>
+</li>
+<li><p>shadowsocks服务端把响应数据发回客户端。</p>
+</li>
+<li><p>客户端再通过本地代理把响应数据交给浏览器，google首页就显示出来了。</p>
+</li>
+</ol>
+<p>整个过程中的第2步和第4步都是通过shadowsocks自定义的协议隐蔽地进行，很难被过滤，所以我们才能一直用它顺畅地翻墙。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>下载<a href="https://github.com/shadowsocks" title="shadowsocks" target="_blank" rel="noopener">客户端</a>，购买<a href="https://www.shadowsocks.com.hk/" title="shadowsocksService" target="_blank" rel="noopener">服务端</a>。如果你愿意折腾，可以自己租一个VPS（虚拟主机）<strong><a href="#shadowsocks服务搭建">搭建shadowsocks服务</a></strong>，成本更低，而且流量上限取决于你购买的VPS套餐，一般来说都很充裕。</p>
+<p>客户端和服务端都有了，只要配置一下客户端就可以愉快地翻墙了。</p>
+<p>客户端需要按照服务器的配置填写服务器IP地址、服务器端口、本地端口（如果没有本地端口选项，就是默认的1080）、密码、加密方式等参数，可以参看上面的“编写配置文件”小节。</p>
+<p>Windows和macOS客户端支持全局代理和PAC代理两种方式，后者会使用一个脚本来自动检查一个网站是否在需要代理的网站列表中，自动选择直接连接或代理连接。</p>
+<p>PAC列表可以在线更新，但是难免有收录不全的情况。如果你用Chrome,可以使用支持自定义规则的代理管理插件来实现自动切换代理，比如switchyOmega。</p>
+<h2 id="switchyOmega自动切换代理"><a href="#switchyOmega自动切换代理" class="headerlink" title="switchyOmega自动切换代理"></a>switchyOmega自动切换代理</h2><p>switchyOmega是Chrome浏览器上一个很好用的代理管理插件。</p>
+<p>chrome应用商店本身需要翻墙才能访问，因此需要先在shadowsocks启动代理模式下下载安装，再关闭shadowsocks代理。</p>
+<p>安装完毕后，右击switchyOmega图标，选择选项，进入switchOmega配置界面。</p>
+<h3 id="创建shadowsocks情景模式"><a href="#创建shadowsocks情景模式" class="headerlink" title="创建shadowsocks情景模式"></a>创建shadowsocks情景模式</h3><p>新建一个情景模式，比如叫SS，代理协议选择socks5，代理地址为127.0.0.1，端口1080。</p>
+<p>现在切换到SS情景模式就可以通过shadowsocks科学上网了。后面获取自动切换规则列表</p>
+<h3 id="设置自动切换模式"><a href="#设置自动切换模式" class="headerlink" title="设置自动切换模式"></a>设置自动切换模式</h3><p>在设置界面选择自动切换模式，在“切换规则”中勾选“规则列表规则”，对应的情景模式选择刚刚新建的SS。</p>
+<p>然后在下面的规则列表地址中填写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</span><br></pre></td></tr></table></figure>
+<p>规则列表格式选择<a href="https://github.com/gfwlist/gfwlist" target="_blank" rel="noopener">AutoProxy</a>。这是一个一直在维护的被墙网站列表。</p>
+<p>然后点击立即更新情景模式， 更新完成后会有提示。</p>
+<p>点击左侧的“应用选项”。然后单击switchyOmega图标，选择自动切换，就可以在访问“不存在的网站”时自动切换到shadowsocks代理了。</p>
+<h3 id="添加自定义规则"><a href="#添加自定义规则" class="headerlink" title="添加自定义规则"></a>添加自定义规则</h3><p>如果遇到某个国外网站无法直接连接或速度太慢时，可以单击switchyOmega图标，选择“添加条件”，情景模式选择SS，就可以了。</p>
+<p>这时打开switchyOmega选项，在自动切换模式的切换规则中就可以看到刚刚添加的规则。可以在这里管理自定义的规则。</p>
+<h3 id="导入和导出switchyOmega设置"><a href="#导入和导出switchyOmega设置" class="headerlink" title="导入和导出switchyOmega设置"></a>导入和导出switchyOmega设置</h3><p>如果换了一台电脑，重新设置一遍switchyOmega就太麻烦了。可以在设置好的switchyOmega中导出设置文件，在另一个chrome浏览器中导入，就可以直接复制原来的设置了。</p>
+<p>在switchyOmega选项的左侧点击“导入/导出”，点击“生成备份文件”即可生成switchyOmega设置备份。点击“从备份文件恢复”可以导入备份文件。</p>
+<h2 id="shadowsocks服务搭建"><a href="#shadowsocks服务搭建" class="headerlink" title="shadowsocks服务搭建"></a>shadowsocks服务搭建</h2><h3 id="购买VPS服务器"><a href="#购买VPS服务器" class="headerlink" title="购买VPS服务器"></a>购买VPS服务器</h3><p>主流的VPS（虚拟主机）服务器提供商有三家</p>
+<ul>
+<li>linode</li>
+<li>digital ocean</li>
+<li>bandwagon</li>
+</ul>
+<p>下面的比上面的便宜。如果只是自用，bandwagon足够。</p>
+<p>一般使用paypal绑定一个visa或mastercard信用卡来付款。注意要用国际paypal帐号，国内的是不能用外币付款的。</p>
+<p>在bandwagon购买VPS以后会获得一个主机地址和用于ssh登录的root密码。</p>
+<h3 id="远程登陆VPS"><a href="#远程登陆VPS" class="headerlink" title="远程登陆VPS"></a>远程登陆VPS</h3><p>Mac OS X 或Linux下直接在终端中</p>
+<p>ssh root@your_vps_ip -p your_ssh_port<br>即可。</p>
+<p>在windows系统下需要专门的客户端来SSH登录VPS。在xShell官网  下载xShell。</p>
+<p>家庭和学校用户可以免费试用，下载时选择home and school use即可。需要用邮箱注册一下，下载链接会发送到邮箱中。</p>
+<p>xShell中新建一个连接，会要求输入目标IP地址和端口，以及root密码，按提示操作即可。</p>
+<h3 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h3><p>打开shell，使用VPS服务商提供的root用户和密码SSH登录VPS。然后执行如下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Debian/Ubuntu:</span><br><span class="line">apt-get install python-pip</span><br><span class="line">pip install shadowsocks</span><br><span class="line">CentOS:</span><br><span class="line">yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<p>shadowsocks就安装好了。</p>
+<p>有时Ubuntu会遇到第一个命令安装python-pip时找不到包的情况。pip官方给出了一个安装脚本，可以自动安装pip。先下载脚本，然后执行即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://bootstrap.pypa.io/get-pip.py</span><br><span class="line">python get-pip.py</span><br></pre></td></tr></table></figure>
+<p>或者使用easy_install安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install shadowsocks</span><br></pre></td></tr></table></figure>
+<p>编写配置文件<br>shadowsocks启动时的参数，如服务器端口，代理端口，登录密码等，可以通过启动时的命令行参数来设定，也可以通过json格式的配置文件设定。推荐使用配置文件，方便查看和修改。</p>
+<p>用vi新建一个配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
+<p>然后输入如下内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="string">"server"</span>:<span class="string">"my_server_ip"</span>,</span><br><span class="line">   <span class="string">"server_port"</span>:<span class="number">25</span>,</span><br><span class="line">   <span class="string">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">   <span class="string">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">   <span class="string">"password"</span>:<span class="string">"mypassword"</span>,</span><br><span class="line">   <span class="string">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">   <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">   <span class="string">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简单说明一下各个配置项</p>
+<p><strong>server</strong><br>你的VPS服务器的IP地址</p>
+<p><strong>server_port</strong><br>你的shadowsocks服务端口。一般可以填一个1025到49151之间的数字。不过如果使用一个知名端口，比如25（电子邮件）、21（FTP），“可能”会更安全，因为GFW对这些基础互联网服务下手的可能性似乎会小一些。注意不要和你的VPS上已经有的服务冲突。</p>
+<p><strong>local_address</strong><br>本地IP地址，作为服务器使用的时候可以不用关注，填127.0.0.1即可。</p>
+<p><strong>local_port</strong><br>本地端口，也不用关注。</p>
+<p><strong>password</strong><br>你的shadowsocks服务密码，客户端连接时需要填写的。</p>
+<p><strong>timeout</strong><br>超时时间，如果当心网络不好可以设置大一点。</p>
+<p><strong>method</strong><br>加密方式，建议填写aes-256-cfb，安全性比较高。</p>
+<p><strong>fast_open</strong><br>在Ubuntu上建议填True。</p>
+<p>填好以后保存退出。</p>
+<h3 id="安装shadowsocks-docker"><a href="#安装shadowsocks-docker" class="headerlink" title="安装shadowsocks-docker"></a>安装shadowsocks-docker</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull shadowsocks/shadowsocks-libev</span><br><span class="line">docker run -e PASSWORD=&lt;password&gt; -p&lt;server-port&gt;:8388 -p&lt;server-port&gt;:8388/udp -d shadowsocks/shadowsocks-libev</span><br></pre></td></tr></table></figure>
+<h3 id="启动shadowsocks"><a href="#启动shadowsocks" class="headerlink" title="启动shadowsocks"></a>启动shadowsocks</h3><p>如果已经写好了配置文件，启动shadowsocks服务器的命令如下</p>
+<p><code>ssserver -c /etc/shadowsocks.json</code></p>
+<p>后台启动和停止shadowsocks服务器</p>
+<p><code>ssserver -c /etc/shadowsocks.json -d start</code><br><code>ssserver -c /etc/shadowsocks.json -d stop</code><br>shadowsocks的日志保存在</p>
+<p><code>/var/log/shadowsocks.log</code></p>
+<p><strong><a href="https://www.textarea.com/ExpectoPatronum/shiyong-shadowsocks-kexue-shangwang-265/" target="_blank" rel="noopener">转载地址</a></strong></p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/13/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/bolg/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/bolg/2018/09/13/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-13 17:02:19" itemprop="dateCreated datePublished" datetime="2018-09-13T17:02:19+08:00">2018-09-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-01 17:18:30" itemprop="dateModified" datetime="2019-08-01T17:18:30+08:00">2019-08-01</time>
+              </span>
+            
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Bash</td>
+<td style="text-align:center">bash</td>
+</tr>
+<tr>
+<td style="text-align:center">CSS</td>
+<td style="text-align:center">css</td>
+</tr>
+<tr>
+<td style="text-align:center">Java</td>
+<td style="text-align:center">java</td>
+</tr>
+<tr>
+<td style="text-align:center">JavaScript</td>
+<td style="text-align:center">javascript</td>
+</tr>
+<tr>
+<td style="text-align:center">Makefile</td>
+<td style="text-align:center">makefile</td>
+</tr>
+<tr>
+<td style="text-align:center">Shell</td>
+<td style="text-align:center">shell</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fsh1234.github.io/bolg/bolg/2018/09/13/Git命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,7 +781,7 @@
         
           <a href="/bolg/archives/">
         
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
